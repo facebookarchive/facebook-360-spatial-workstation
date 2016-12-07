@@ -3,3 +3,5 @@ The [Facebook 360 Spatial Workstation](https://facebook360.fb.com/spatial-workst
 Join the discussion and post your questions and issues to the [Spatial Workstation Facebook Group](https://www.facebook.com/groups/1812020965695437/)
 
 Browse open issues from the [issues page](https://github.com/facebookincubator/facebook-360-spatial-workstation/issues)
+
+[Download the latest version for OSX or Windows here](https://facebook360.fb.com/spatial-workstation/) 
