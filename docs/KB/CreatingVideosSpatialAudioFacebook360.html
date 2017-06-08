@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Videos with Spatial Audio for Facebook 360 &mdash; Facebook Audio 360  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Facebook Audio 360  documentation" href="../index.html"/>
+        <link rel="up" title="Knowledge Base" href="../KB.html"/>
+        <link rel="next" title="Encoding a Quad-Binaural Mix" href="EncodingQuadBinauralMix.html"/>
+        <link rel="prev" title="Add Spatial Audio To Oculus Video (Gear VR)" href="AddSpatialAudioToOculusVideo.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/fb360.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#workflow">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#components">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-pro-tools-hd">Using Pro Tools HD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-nuendo">Using Nuendo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#video-player">Video Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#encoding-assets">Encoding Assets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SUPPORT</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Videos with Spatial Audio for Facebook 360</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-macos">Installation (macOS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-windows">Installation (Windows)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encoding-for-facebook-360">Encoding For Facebook 360</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VideoFormatGuidelines.html">Video Format Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WhatToIncludeWhenReportingIssue.html">What To Include When Reporting an Issue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Facebook Audio 360</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &gt;</li>
+        
+          <li><a href="../KB.html">Knowledge Base</a> &gt;</li>
+        
+      <li>Creating Videos with Spatial Audio for Facebook 360</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-videos-with-spatial-audio-for-facebook-360">
+<span id="id1"></span><h1>Creating Videos with Spatial Audio for Facebook 360<a class="headerlink" href="#creating-videos-with-spatial-audio-for-facebook-360" title="Permalink to this headline">‽</a></h1>
+<div class="contents h1-local-toc local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#supported-platforms" id="id2">Supported Platforms</a></li>
+<li><a class="reference internal" href="#installation-macos" id="id3">Installation (macOS)</a></li>
+<li><a class="reference internal" href="#installation-windows" id="id4">Installation (Windows)</a></li>
+<li><a class="reference internal" href="#encoding-for-facebook-360" id="id5">Encoding For Facebook 360</a></li>
+</ul>
+</div>
+<p>Preparing videos with spatial audio for upload to Facebook requires the
+Facebook 360 Encoder application. The Encoder is available with the
+Spatial Workstation installer on macOS and Windows. Additionally, files
+with <a class="reference external" href="https://support.google.com/youtube/answer/6178631?hl=en">YouTube&#8217;s Spherical Video and Spatial Audio
+Metadata</a>
+are supported and can be directly uploaded to Facebook 360.</p>
+<div class="section" id="supported-platforms">
+<h2><a class="toc-backref" href="#contents">Supported Platforms</a><a class="headerlink" href="#supported-platforms" title="Permalink to this headline">‽</a></h2>
+<p>Spatial audio is supported on the following Facebook and Oculus video
+platforms:</p>
+<ul class="simple">
+<li>Facebook app on iOS</li>
+<li>Facebook app on Android</li>
+<li>Facebook on Chrome (desktop)</li>
+<li>Facebook on Firefox (desktop)</li>
+<li>Facebook 360 app on Gear VR</li>
+<li>Oculus Video app on Gear VR</li>
+</ul>
+</div>
+<div class="section" id="installation-macos">
+<h2><a class="toc-backref" href="#contents">Installation (macOS)</a><a class="headerlink" href="#installation-macos" title="Permalink to this headline">‽</a></h2>
+<ol class="arabic simple">
+<li>Download the Spatial Workstation installer from
+<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">here.</a></li>
+<li>Once downloaded, unzip FB360_SpatialWorkstation_OSX.zip and run
+SpatialWorkstation_x.x.x_OSX.mpkg, where x.x.x would be the current
+version number. Ensure you are using v1.2 or greater</li>
+<li>Follow the prompts on your screen to complete the installation</li>
+</ol>
+</div>
+<div class="section" id="installation-windows">
+<h2><a class="toc-backref" href="#contents">Installation (Windows)</a><a class="headerlink" href="#installation-windows" title="Permalink to this headline">‽</a></h2>
+<ol class="arabic">
+<li><p class="first">The Encoder requires Mp4Box and Python 2.7 installed on your Windows
+computer.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>The Python 2.7 installer can be downloaded from
+<a class="reference external" href="https://www.python.org/downloads/release/python-2712/">here</a>.
+Follow the instructions with the installer.</li>
+<li>Mp4Box can be installed using the GPAC installer from
+<a class="reference external" href="https://gpac.wp.mines-telecom.fr/downloads/">here</a>. The GPAC
+installer includes Mp4Box and other components. Installing the
+additional components is optional.</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Download the Spatial Workstation installer for Windows from
+<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">here</a> (choose
+<em>Spatial Workstation - Windows</em> from the dropdown menu)</p>
+</li>
+<li><p class="first">Unzip FB360_SpatialWorkstation_WIN_x.x.x.zip and run
+SpatialWorkstation-x.x.x-Win64</p>
+</li>
+<li><p class="first">Follow the prompts on your screen to complete the installation</p>
+</li>
+</ol>
+</div>
+<div class="section" id="encoding-for-facebook-360">
+<h2><a class="toc-backref" href="#contents">Encoding For Facebook 360</a><a class="headerlink" href="#encoding-for-facebook-360" title="Permalink to this headline">‽</a></h2>
+<ol class="arabic">
+<li><p class="first">Once installed, the Encoder application can be found in</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><em>Mac HD/Applications/FB360 Spatial Workstation/Encoder</em> on macOS</li>
+<li>By default: <em>C:\Program Files\FB360 Spatial
+Workstation\Encoder</em> on Windows</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Open <em>FB360 Encoder.</em> The screenshots below are applicable to both
+macOS and Windows.</p>
+<p><a class="reference internal" href="../_images/EncoderPng.png"><img alt="image0" src="../_images/EncoderPng.png" style="width: 415px; height: 737px;" /></a></p>
+</li>
+<li><p class="first">For uploads to Facebook, ensure that <em>OUTPUT FORMAT</em> is set to <em>Facebook
+360</em></p>
+</li>
+<li><p class="first">Drop or load the multichannel spatial audio wav file. This is the audio
+that will rotate and respond when looking around a 360 video. The wav
+file can be of any sample rate, but is ultimately converted to 48000
+samples per second.</p>
+</li>
+<li><p class="first">Ensure you specify the spatial audio format. It can be one of these five:</p>
+<p><a class="reference internal" href="../_images/SpatialAudioOptions1.png"><img alt="image1" src="../_images/SpatialAudioOptions1.png" style="width: 407px; height: 207px;" /></a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Spatial Workstation 8 Channel: If you have used the <a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">Spatial
+Workstation</a> to
+design your audio mix, this would be the output of the 3D master from
+your audio session</li>
+<li>B-format ambiX 1st order: First order ambisonics with ACN ordering
+and SN3D normalization, from any other mix or tool (4 channels)</li>
+<li>B-format FuMa 1st order: First order ambisonics with Furse-Malham
+ordering, typically the B-format audio from ambisonic microphones (4
+channels)</li>
+<li>B-format ambiX 2nd order: Second order ambisonics with ACN ordering
+and SN3D normalization, from any other mix or tool (9 channels)</li>
+<li>B-format FuMa 2nd order: Second order ambisonics with Furse-Malham
+ordering, typically the B-format audio from ambisonic microphones (9
+channels)</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Ensure the <em>From Pro Tools</em> checkbox is ticked if the 8 channel spatial
+audio file is from Pro Tools</p>
+</li>
+<li><p class="first">Optionally, you can also drop or load a stereo file for head-locked
+audio. This is audio that will not rotate when looking around a 360
+video.</p>
+<p><a class="reference internal" href="../_images/HeadlockedAudio1.png"><img alt="image2" src="../_images/HeadlockedAudio1.png" style="width: 345px; height: 79px;" /></a></p>
+</li>
+<li><p class="first">Drop or load the video file. In addition to the specifications mentioned
+<a class="reference external" href="https://www.facebook.com/facebookmedia/get-started/360">here,</a>
+ensure that the video is encoded as H.264 within a mp4 container</p>
+</li>
+<li><p class="first">Set the layout for the video file:</p>
+<p><a class="reference internal" href="../_images/VideoLayoutOptions1.png"><img alt="image3" src="../_images/VideoLayoutOptions1.png" style="width: 340px; height: 146px;" /></a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Monoscopic: A monoscopic video, where the same frame will be
+displayed to both eyes when viewing in 3D</li>
+<li>Left-Right Stereoscopic: A stereoscopic video, where the left half of
+the video will be displayed to the left eye and the right half of the
+video will be displayed to the right eye when viewing in 3D</li>
+<li>Top-Bottom Stereoscopic: A stereoscopic video, where the top half of
+the video will be displayed to the left eye and the bottom half of
+the video will be displayed to the right eye when viewing in 3D</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Click the <em>Encode</em> button and save your file</p>
+</li>
+<li><p class="first">Upload the encoded file to Facebook</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="EncodingQuadBinauralMix.html" class="btn btn-neutral float-right" title="Encoding a Quad-Binaural Mix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="AddSpatialAudioToOculusVideo.html" class="btn btn-neutral" title="Add Spatial Audio To Oculus Video (Gear VR)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Importing Pro Tools’ 8 Channel 3D Mix Into Reaper &mdash; Facebook Audio 360  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Facebook Audio 360  documentation" href="../index.html"/>
+        <link rel="up" title="Knowledge Base" href="../KB.html"/>
+        <link rel="next" title="Add Spatial Audio to a Video for YouTube" href="AddSpatialAudioForYoutube.html"/>
+        <link rel="prev" title="Knowledge Base" href="../KB.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/fb360.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#workflow">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#components">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-pro-tools-hd">Using Pro Tools HD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-nuendo">Using Nuendo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#video-player">Video Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#encoding-assets">Encoding Assets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SUPPORT</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VideoFormatGuidelines.html">Video Format Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WhatToIncludeWhenReportingIssue.html">What To Include When Reporting an Issue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Facebook Audio 360</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &gt;</li>
+        
+          <li><a href="../KB.html">Knowledge Base</a> &gt;</li>
+        
+      <li>Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="importing-pro-tools-8-channel-3d-mix-into-reaper">
+<h1>Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper<a class="headerlink" href="#importing-pro-tools-8-channel-3d-mix-into-reaper" title="Permalink to this headline">‽</a></h1>
+<p>After having exported an 8 channel 3D mix from Pro Tools, it is then
+possible to import it into Reaper, though it may initially sound
+incorrect due to the channels being ordered incorrectly. Additional
+sounds can then be added to the mix, however, it is not possible to make
+changes to the existing mix.</p>
+<p>Pro Tools exports 8 channels using the 7.1 SDDS format which is
+currently not recognised by Reaper. This means the channels must be
+manually reordered and routed to the Control Plugin.</p>
+<ol class="arabic">
+<li><p class="first">Import the 8 channel audio file into a new track in Reaper</p>
+</li>
+<li><p class="first">Open the track&#8217;s routing options and untick &#8216;Master send&#8217;.</p>
+</li>
+<li><p class="first">Right click the audio region and select &#8216;Item processing&#8217; &gt; &#8216;Explode
+multi-channel audio or MIDI items to new one channel items&#8217;</p>
+</li>
+<li><p class="first">Each of these new tracks need to be routed to the &#8216;3D Master&#8217; track.
+For each channel&#8217;s track open the routing options.</p>
+<p><a class="reference internal" href="../_images/ReaperRoutingOptions.png"><img alt="image0" src="../_images/ReaperRoutingOptions.png" style="width: 502px; height: 239px;" /></a></p>
+</li>
+<li><p class="first">And create a new send to &#8216;3D Master&#8217;.</p>
+<p><a class="reference internal" href="../_images/RprCreate3DMasterSend.png"><img alt="image1" src="../_images/RprCreate3DMasterSend.png" style="width: 505px; height: 327px;" /></a></p>
+</li>
+<li><p class="first">Set the &#8216;Audio:&#8217; drop down menu to &#8216;Mono source&#8217; &gt; &#8216;1&#8217;</p>
+<p><a class="reference internal" href="../_images/RprMonoSrc.png"><img alt="image2" src="../_images/RprMonoSrc.png" style="width: 506px; height: 254px;" /></a></p>
+</li>
+<li><p class="first">Set the destination channel using the following table</p>
+<p><a class="reference internal" href="../_images/RprDestChnl.png"><img alt="image3" src="../_images/RprDestChnl.png" style="width: 444px; height: 365px;" /></a></p>
+</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="11%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Original Channel</strong></td>
+<td>&nbsp;</td>
+<td><strong>3D Master Channel</strong></td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>-&gt;</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>-&gt;</td>
+<td>3</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>-&gt;</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>-&gt;</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>-&gt;</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>-&gt;</td>
+<td>7</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>-&gt;</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>-&gt;</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="AddSpatialAudioForYoutube.html" class="btn btn-neutral float-right" title="Add Spatial Audio to a Video for YouTube" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../KB.html" class="btn btn-neutral" title="Knowledge Base" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
