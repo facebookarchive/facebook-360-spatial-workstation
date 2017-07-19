@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -45,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
@@ -99,7 +105,7 @@
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools’ 8 Channel 3D Mix Into Reaper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
@@ -111,6 +117,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
@@ -120,6 +127,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ANNOUNCEMENTS</span></p>
+<ul class="simple">
 </ul>
 
             
@@ -132,8 +142,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Facebook Audio 360</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Facebook Audio 360</a>
+        
       </nav>
 
 
@@ -186,7 +198,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="encoding-a-quad-binaural-mix">
-<span id="id1"></span><h1>Encoding a Quad-Binaural Mix<a class="headerlink" href="#encoding-a-quad-binaural-mix" title="Permalink to this headline">‽</a></h1>
+<span id="id1"></span><h1>Encoding a Quad-Binaural Mix<a class="headerlink" href="#encoding-a-quad-binaural-mix" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#samsung-vr-filenames" id="id2">Samsung VR Filenames</a></li>
@@ -197,21 +209,21 @@
 <ol class="arabic simple">
 <li>Export the spatialised mix from the DAW using the instructions in the
 Spatial Workstation User Guide.</li>
-<li>Load the exported audio into the FB360 Encoder, select &#8216;Quad
-Binaural&#8217; from the drop down menu and click &#8216;Encode&#8217;.</li>
+<li>Load the exported audio into the FB360 Encoder, select ‘Quad
+Binaural’ from the drop down menu and click ‘Encode’.</li>
 <li>Below are instructions for adding the audio tracks to video using
 FFmpeg and iFFmpeg. If you are uncomfortable using the command line
 then iFFmpeg may be preferable.</li>
 </ol>
 <div class="section" id="samsung-vr-filenames">
-<h2><a class="toc-backref" href="#contents">Samsung VR Filenames</a><a class="headerlink" href="#samsung-vr-filenames" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Samsung VR Filenames</a><a class="headerlink" href="#samsung-vr-filenames" title="Permalink to this headline">¶</a></h2>
 <p>When using the video with Samsung VR make sure the filename is in the
 correct form. See
 <a class="reference external" href="https://samsungvr.com/portal/content/faq_tech_gear_vr">here</a> for
 more details.</p>
 </div>
 <div class="section" id="encoding-with-ffmpeg">
-<h2><a class="toc-backref" href="#contents">Encoding with FFmpeg</a><a class="headerlink" href="#encoding-with-ffmpeg" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Encoding with FFmpeg</a><a class="headerlink" href="#encoding-with-ffmpeg" title="Permalink to this headline">¶</a></h2>
 <p><em>Thanks to Evan Mangiamele!</em></p>
 <p>Use these FFmpeg commands to encode a quad-binaural mix to a video.</p>
 <p>If your input files are WAV, then use this command:</p>
@@ -224,16 +236,16 @@ more details.</p>
 </div>
 </div>
 <div class="section" id="encoding-with-iffmpeg">
-<h2><a class="toc-backref" href="#contents">Encoding with iFFmpeg</a><a class="headerlink" href="#encoding-with-iffmpeg" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Encoding with iFFmpeg</a><a class="headerlink" href="#encoding-with-iffmpeg" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Import the video file</p>
 </li>
-<li><p class="first">Add an Audio stream and click &#8216;Edit&#8217;.</p>
+<li><p class="first">Add an Audio stream and click ‘Edit’.</p>
 <p><a class="reference internal" href="../_images/iFFmpegAddAudioStream.png"><img alt="image0" src="../_images/iFFmpegAddAudioStream.png" style="width: 193px; height: 292px;" /></a></p>
 </li>
-<li><p class="first">Click &#8216;Add External File&#8217; and select the 0.wav file. Set the Codec to
-&#8216;AAC&#8217;. If your input files are already AAC then you can set &#8216;Codec&#8217;
-to &#8216;PassThru&#8217;.</p>
+<li><p class="first">Click ‘Add External File’ and select the 0.wav file. Set the Codec to
+‘AAC’. If your input files are already AAC then you can set ‘Codec’
+to ‘PassThru’.</p>
 <p><a class="reference internal" href="../_images/iFFmpegSetCodec.png"><img alt="image1" src="../_images/iFFmpegSetCodec.png" style="width: 515px; height: 267px;" /></a></p>
 </li>
 <li><p class="first">Repeat steps 2 and 3 for the 90.wav, 180.wav and 270.wav files in
@@ -241,9 +253,9 @@ that order. You should end up with 4 separate audio streams.</p>
 <p><a class="reference internal" href="../_images/iFFmpegQuadAudioStreams.png"><img alt="image2" src="../_images/iFFmpegQuadAudioStreams.png" style="width: 359px; height: 435px;" /></a></p>
 </li>
 <li><p class="first">If the video is already in the correct format you can edit the video
-stream and set &#8216;Codec&#8217; to &#8216;PassThru&#8217;.</p>
+stream and set ‘Codec’ to ‘PassThru’.</p>
 </li>
-<li><p class="first">Click the &#8216;Convert&#8217; button</p>
+<li><p class="first">Click the ‘Convert’ button</p>
 </li>
 </ol>
 </div>
@@ -251,15 +263,18 @@ stream and set &#8216;Codec&#8217; to &#8216;PassThru&#8217;.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ManualInstallationFFmpegWindows.html" class="btn btn-neutral float-right" title="Manual Installation of FFmpeg on Windows" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ManualInstallationFFmpegWindows.html" class="btn btn-neutral float-right" title="Manual Installation of FFmpeg on Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="CreatingVideosSpatialAudioFacebook360.html" class="btn btn-neutral" title="Creating Videos with Spatial Audio for Facebook 360" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="CreatingVideosSpatialAudioFacebook360.html" class="btn btn-neutral" title="Creating Videos with Spatial Audio for Facebook 360" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -291,7 +306,8 @@ stream and set &#8216;Codec&#8217; to &#8216;PassThru&#8217;.</p>
             VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

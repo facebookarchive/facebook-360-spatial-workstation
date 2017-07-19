@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mastering And Avoiding Distortion &mdash; Facebook Audio 360  documentation</title>
+  <title>Add Spatial Audio To Oculus Video (Oculus Rift) &mdash; Facebook Audio 360  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Facebook Audio 360  documentation" href="../index.html"/>
         <link rel="up" title="Knowledge Base" href="../KB.html"/>
-        <link rel="next" title="Add Spatial Audio To Oculus Video (Oculus Rift)" href="OculusVideoOnRift.html"/>
-        <link rel="prev" title="Manual Installation of FFmpeg on Windows" href="ManualInstallationFFmpegWindows.html"/> 
+        <link rel="next" title="Spatial Workstation Workflow" href="SpatialWorkstationWorkflow.html"/>
+        <link rel="prev" title="Mastering And Avoiding Distortion" href="MasteringAndAvoidingDistortion.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -111,8 +111,13 @@
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mastering And Avoiding Distortion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Add Spatial Audio To Oculus Video (Oculus Rift)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#side-loading-support-only">Side-loading Support Only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-playback-parameters">Adding Playback Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oculus-video-on-rift-output-from-fb360-encoder">Oculus Video on Rift Output from FB360 Encoder</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
@@ -175,7 +180,7 @@
         
           <li><a href="../KB.html">Knowledge Base</a> &gt;</li>
         
-      <li>Mastering And Avoiding Distortion</li>
+      <li>Add Spatial Audio To Oculus Video (Oculus Rift)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,11 +197,81 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mastering-and-avoiding-distortion">
-<h1>Mastering And Avoiding Distortion<a class="headerlink" href="#mastering-and-avoiding-distortion" title="Permalink to this headline">¶</a></h1>
-<p>Most mobile devices audibly clip and distort signals as they get closer to 0dBFS. Furthermore, the rendering engine requires some amount of headroom for mixing and binaural processing.</p>
-<p>When mixing content with the Spatial Workstation, it is recommended that you maintain at least 8-10dB of headroom on your 3D master bus. Using a multi-channel limiter can help keep the peaks in check, while also helping you achieve the loudness profile required for your mix.</p>
-<p>As always, it is best to test your mix on the target device using the apps we provide or with the actual target application or platform you are mixing for.</p>
+  <div class="section" id="add-spatial-audio-to-oculus-video-oculus-rift">
+<span id="id1"></span><h1>Add Spatial Audio To Oculus Video (Oculus Rift)<a class="headerlink" href="#add-spatial-audio-to-oculus-video-oculus-rift" title="Permalink to this headline">¶</a></h1>
+<div class="contents h1-local-toc local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#side-loading-support-only" id="id2">Side-loading Support Only</a></li>
+<li><a class="reference internal" href="#adding-playback-parameters" id="id3">Adding Playback Parameters</a></li>
+<li><a class="reference internal" href="#oculus-video-on-rift-output-from-fb360-encoder" id="id4">Oculus Video on Rift Output from FB360 Encoder</a></li>
+</ul>
+</div>
+<p>Oculus Video on the Rift supports spatial audio through side-loading.</p>
+<div class="section" id="side-loading-support-only">
+<h2><a class="toc-backref" href="#contents">Side-loading Support Only</a><a class="headerlink" href="#side-loading-support-only" title="Permalink to this headline">¶</a></h2>
+<p>Oculus Video app on the Rift is <strong>not</strong> supported with streaming content. Only video files which are saved on the computer can be side-loaded and played back with spatial audio. Videos which are streamed in the Oculus video app will still be played back in stereo.</p>
+<p>To read more on how to side-load videos in the Oculus video app on Desktop, read <a class="reference external" href="https://support.oculus.com/help/oculus/1707817122769530">https://support.oculus.com/help/oculus/1707817122769530</a>.</p>
+</div>
+<div class="section" id="adding-playback-parameters">
+<h2><a class="toc-backref" href="#contents">Adding Playback Parameters</a><a class="headerlink" href="#adding-playback-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The supported file format for side-loading into the Rift is <strong>different</strong> to the file created for upload to Facebook, or for side-loading into the Gear VR. We have added extra options in the FB360 Encoder application, more on this below.</p>
+<p>All videos that are side-loaded on the Oculus video need an extra file with parameters defining playback, regardless of whether the file has spatial audio or not. This is different than the side-loading support available on the Gear VR, which relies on a particular filename convention to recognise the type of 360 file being played (360, stereo, etc). The parameters file makes it easier and less confusing to define the playback options.</p>
+<p>Details of what parameters to add are <a class="reference external" href="https://www.facebook.com/help/oculus/161488604393997">here</a></p>
+</div>
+<div class="section" id="oculus-video-on-rift-output-from-fb360-encoder">
+<h2><a class="toc-backref" href="#contents">Oculus Video on Rift Output from FB360 Encoder</a><a class="headerlink" href="#oculus-video-on-rift-output-from-fb360-encoder" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/OutputFormatOptions.png" src="../_images/OutputFormatOptions.png" />
+<p>Starting from <strong>FB360 Encoder V2.1</strong>, you can now choose <em>Rift: Oculus video</em> as an export option. This will automatically create an MKV file with spatial audio and the additional text file required for side-loading. Both files can then be added to the “Movies” directory on your PC.</p>
+<p>The text file can be modified to also include video format details:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><em>Format</em></td>
+</tr>
+<tr class="row-even"><td>(no value) —
+Full screen
+2D. (default)</td>
+</tr>
+<tr class="row-odd"><td>2D — Full
+screen 2D.</td>
+</tr>
+<tr class="row-even"><td>3D —3D with
+left and
+right images
+in
+side-by-side
+anamorphic
+format.</td>
+</tr>
+<tr class="row-odd"><td>3DLR — 3D
+with left and
+right images
+in
+side-by-side
+anamorphic
+format.</td>
+</tr>
+<tr class="row-even"><td>3DLRF — 3D
+with left and
+right images
+in
+side-by-side
+format.</td>
+</tr>
+<tr class="row-odd"><td>3DTB — 3D
+with left and
+right images
+in
+top-to-bottom
+anamorphic
+format.</td>
+</tr>
+</tbody>
+</table>
+<p>For more details, please read the <a class="reference external" href="https://www.facebook.com/help/oculus/161488604393997">Oculus Video documentation</a>.</p>
+</div>
 </div>
 
 
@@ -209,10 +284,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="OculusVideoOnRift.html" class="btn btn-neutral float-right" title="Add Spatial Audio To Oculus Video (Oculus Rift)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="SpatialWorkstationWorkflow.html" class="btn btn-neutral float-right" title="Spatial Workstation Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ManualInstallationFFmpegWindows.html" class="btn btn-neutral" title="Manual Installation of FFmpeg on Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MasteringAndAvoidingDistortion.html" class="btn btn-neutral" title="Mastering And Avoiding Distortion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

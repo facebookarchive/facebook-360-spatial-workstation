@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -36,7 +38,7 @@
     <link rel="top" title="Facebook Audio 360  documentation" href="../index.html"/>
         <link rel="up" title="Knowledge Base" href="../KB.html"/>
         <link rel="next" title="Uninstalling Spatial Workstation on macOS" href="UninstallingSWMac.html"/>
-        <link rel="prev" title="Mastering And Avoiding Distortion" href="MasteringAndAvoidingDistortion.html"/> 
+        <link rel="prev" title="Add Spatial Audio To Oculus Video (Oculus Rift)" href="OculusVideoOnRift.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -45,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
@@ -99,13 +105,14 @@
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools’ 8 Channel 3D Mix Into Reaper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Spatial Workstation Workflow</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#content-creation">Content Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#encoding-and-asset-preparation">Encoding and Asset Preparation</a></li>
@@ -121,6 +128,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
 </ul>
+<p class="caption"><span class="caption-text">ANNOUNCEMENTS</span></p>
+<ul class="simple">
+</ul>
 
             
           
@@ -132,8 +142,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Facebook Audio 360</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Facebook Audio 360</a>
+        
       </nav>
 
 
@@ -186,7 +198,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="spatial-workstation-workflow">
-<span id="id1"></span><h1>Spatial Workstation Workflow<a class="headerlink" href="#spatial-workstation-workflow" title="Permalink to this headline">‽</a></h1>
+<span id="id1"></span><h1>Spatial Workstation Workflow<a class="headerlink" href="#spatial-workstation-workflow" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="http://facebook360.fb.com/spatial-workstation">FB360 Spatial
 Workstation</a> is an
 end-to-end pipeline that allows sound designers to drop in audio sources,
@@ -200,29 +212,29 @@ These plugins help designers create spatial audio content, encode it with
 platform-specific metadata (for Facebook, YouTube, etc), and play it back
 in a client application.</p>
 <img alt="../_images/Workflow.png" src="../_images/Workflow.png" />
-<p>The diagram above illustrates a typical end-to-end workflow focusing on sound design, asset preparation, multiplexing, a.k.a &#8216;muxing&#8217; (combining audio and video) with final video and publishing to Facebook, Oculus or other supported apps.</p>
+<p>The diagram above illustrates a typical end-to-end workflow focusing on sound design, asset preparation, multiplexing, a.k.a ‘muxing’ (combining audio and video) with final video and publishing to Facebook, Oculus or other supported apps.</p>
 <p>If the application uses the Audio 360 Rendering SDK, the sound designer prepares a <em>.tbe</em> file, which is delivered separately. The Rendering SDK allows for the .tbe file to be played in sync with a video file.</p>
 <p>On Facebook and YouTube, the Encoder application creates an upload-ready video file.</p>
 <div class="section" id="content-creation">
-<h2>Content Creation<a class="headerlink" href="#content-creation" title="Permalink to this headline">‽</a></h2>
+<h2>Content Creation<a class="headerlink" href="#content-creation" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>Spatial Workstation</strong> is a collection of DAW plugins that allow the sound designer to create an interactive spatial mix for 360 videos.</p>
 <img alt="../_images/ToolsInAction.png" src="../_images/ToolsInAction.png" />
 <ul class="simple">
-<li><strong>Spatialiser</strong> plugin: This allows the sound designer to place a sound source in space. The source itself could be a mono source, an ambisonics recording, or a multi-channel source such as a surround reverb. Non-mono sources act as a &#8216;bed&#8217; while diegetic mono sources, such as dialogue and sound effects, are usually placed in a scene. Non-diegetic audio such as narration or background music is usually routed to the head-locked stereo bus.  This makes it part of the final mix but not relative to head orientation.</li>
+<li><strong>Spatialiser</strong> plugin: This allows the sound designer to place a sound source in space. The source itself could be a mono source, an ambisonics recording, or a multi-channel source such as a surround reverb. Non-mono sources act as a ‘bed’ while diegetic mono sources, such as dialogue and sound effects, are usually placed in a scene. Non-diegetic audio such as narration or background music is usually routed to the head-locked stereo bus.  This makes it part of the final mix but not relative to head orientation.</li>
 <li><strong>Control</strong> plugin: This plugin acts as the command centre, controlling how all audio is routed for real-time binaural playback over headphones. This plugin also manages global settings of features such as early reflections and mix focus.</li>
-<li><strong>Video</strong> player: Spatial Workstation includes a 360 video player that is &#8216;slaved&#8217; to the DAW timeline, and allows the sound designer to preview the mix with the 360 video in real time, either in VR or on the desktop. Desktop mode allows rotating the video with the keyboard or mouse, which will rotate the sound field instantly, providing direct feedback during the authoring stage.</li>
+<li><strong>Video</strong> player: Spatial Workstation includes a 360 video player that is ‘slaved’ to the DAW timeline, and allows the sound designer to preview the mix with the 360 video in real time, either in VR or on the desktop. Desktop mode allows rotating the video with the keyboard or mouse, which will rotate the sound field instantly, providing direct feedback during the authoring stage.</li>
 <li><strong>Converter</strong> plugin: Utility plugin offering the option to rotate a mix after it has been created, or output to other formats such as 4-channel ambiX.</li>
 <li><strong>Loudness</strong> meter: Provides an overview of the loudness of the entire mix. Loudness for spatial mixes is considerably different than what is offered inside DAWs, which is usually for static content. Spatial audio for 360 videos is considerably more complex and this meter gives useful data that will prevent the final uploaded content from distorting when played back on the target device.</li>
 </ul>
 </div>
 <div class="section" id="encoding-and-asset-preparation">
-<h2>Encoding and Asset Preparation<a class="headerlink" href="#encoding-and-asset-preparation" title="Permalink to this headline">‽</a></h2>
+<h2>Encoding and Asset Preparation<a class="headerlink" href="#encoding-and-asset-preparation" title="Permalink to this headline">¶</a></h2>
 <p>The FB360 Encoder application, takes a video file and combines the audio files into the video container, suitable for playback on Facebook and other supported platforms. Additionally, it also allows adding metadata to the file describing values for the Focus feature.</p>
 <img alt="../_images/OutputFormatOptions1.png" src="../_images/OutputFormatOptions1.png" />
 <p>This process also injects relevant metadata into the tool, making the final asset ready for upload to supported platforms.</p>
 </div>
 <div class="section" id="supported-platforms-for-playback">
-<h2>Supported Platforms for Playback<a class="headerlink" href="#supported-platforms-for-playback" title="Permalink to this headline">‽</a></h2>
+<h2>Supported Platforms for Playback<a class="headerlink" href="#supported-platforms-for-playback" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Facebook 360 Video format (8 or 10 channel audio): Facebook newsfeed, Oculus video on Gear VR</li>
 <li>.tbe format: Apps with Rendering SDK</li>
@@ -235,15 +247,18 @@ Note that these platforms have specific instructions for preparing assets.</li>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="UninstallingSWMac.html" class="btn btn-neutral float-right" title="Uninstalling Spatial Workstation on macOS" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="UninstallingSWMac.html" class="btn btn-neutral float-right" title="Uninstalling Spatial Workstation on macOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MasteringAndAvoidingDistortion.html" class="btn btn-neutral" title="Mastering And Avoiding Distortion" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="OculusVideoOnRift.html" class="btn btn-neutral" title="Add Spatial Audio To Oculus Video (Oculus Rift)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -275,7 +290,8 @@ Note that these platforms have specific instructions for preparing assets.</li>
             VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

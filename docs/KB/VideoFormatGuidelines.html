@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -45,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
@@ -99,13 +105,14 @@
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools’ 8 Channel 3D Mix Into Reaper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
@@ -120,6 +127,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
 </ul>
+<p class="caption"><span class="caption-text">ANNOUNCEMENTS</span></p>
+<ul class="simple">
+</ul>
 
             
           
@@ -131,8 +141,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Facebook Audio 360</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Facebook Audio 360</a>
+        
       </nav>
 
 
@@ -185,7 +197,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="video-format-guidelines">
-<span id="id1"></span><h1>Video Format Guidelines<a class="headerlink" href="#video-format-guidelines" title="Permalink to this headline">‽</a></h1>
+<span id="id1"></span><h1>Video Format Guidelines<a class="headerlink" href="#video-format-guidelines" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#converting-videos-to-dnxhd-with-iffmpeg" id="id2">Converting videos to DNxHD with iFFMpeg</a></li>
@@ -258,7 +270,7 @@ video:</p>
 </pre></div>
 </div>
 <div class="section" id="converting-videos-to-dnxhd-with-iffmpeg">
-<h2><a class="toc-backref" href="#contents">Converting videos to DNxHD with iFFMpeg</a><a class="headerlink" href="#converting-videos-to-dnxhd-with-iffmpeg" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Converting videos to DNxHD with iFFMpeg</a><a class="headerlink" href="#converting-videos-to-dnxhd-with-iffmpeg" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.iffmpeg.com/">iFFmpeg</a> for OSX is a useful
 video conversion utility. The Windows version is called
 <a class="reference external" href="http://www.myffmpeg.com/">MyFFMpeg</a>. The steps below are for
@@ -285,14 +297,14 @@ the downloaded preset there</p>
 preset you just downloaded)</p>
 <p><a class="reference internal" href="../_images/iFFmpegSelectPreset.png"><img alt="iFFmpegSelectPreset" src="../_images/iFFmpegSelectPreset.png" style="width: 451px; height: 280px;" /></a></p>
 </li>
-<li><p class="first">Click on &#8220;Edit&#8221; under &#8220;Video (DNxHD)&#8221; in the right column. Set the
+<li><p class="first">Click on “Edit” under “Video (DNxHD)” in the right column. Set the
 video size or other settings beyond what the preset offers. We
 recommend a maximum resolution of 3840x2160 and a maximum frame rate
 of 30FPS (higher frame rates and resolutions might work depending on
 your computer).</p>
 <p><a class="reference internal" href="../_images/iFFmpegVideoSettingsEdit.png"><img alt="iFFmpegVideoSettingsEdit" src="../_images/iFFmpegVideoSettingsEdit.png" style="width: 450px; height: 281px;" /></a></p>
 </li>
-<li><p class="first">Click on &#8220;General&#8221; to confirm that the &#8216;Custom Encode options&#8217; have
+<li><p class="first">Click on “General” to confirm that the ‘Custom Encode options’ have
 this value:-profile:v dnxhr_lb</p>
 <p><a class="reference internal" href="../_images/iFFmpegCustomEncode.png"><img alt="iFFmpegCustomEncode" src="../_images/iFFmpegCustomEncode.png" style="width: 451px; height: 281px;" /></a></p>
 </li>
@@ -302,7 +314,7 @@ around resolution, scaling and frame rate options.</p>
 </ol>
 </div>
 <div class="section" id="converting-3d-video-to-2d">
-<h2><a class="toc-backref" href="#contents">Converting 3D Video to 2D</a><a class="headerlink" href="#converting-3d-video-to-2d" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Converting 3D Video to 2D</a><a class="headerlink" href="#converting-3d-video-to-2d" title="Permalink to this headline">¶</a></h2>
 <p>The simplest way to convert stereoscopic video to mono is to use the
 video for a single eye and crop the other half of the video.</p>
 <p>The bottom portion of a top bottom video can be cropped with:</p>
@@ -333,15 +345,18 @@ video for a single eye and crop the other half of the video.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="WhatToIncludeWhenReportingIssue.html" class="btn btn-neutral float-right" title="What To Include When Reporting an Issue" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="WhatToIncludeWhenReportingIssue.html" class="btn btn-neutral float-right" title="What To Include When Reporting an Issue" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="UsingAnAmbisonicMicrophone.html" class="btn btn-neutral" title="Using an Ambisonic Microphone With Your Live 360 Video on Facebook" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="UsingAnAmbisonicMicrophone.html" class="btn btn-neutral" title="Using an Ambisonic Microphone With Your Live 360 Video on Facebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -373,7 +388,8 @@ video for a single eye and crop the other half of the video.</p>
             VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

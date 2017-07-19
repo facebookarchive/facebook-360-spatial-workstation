@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -45,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
@@ -99,13 +105,14 @@
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools&#8217; 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools’ 8 Channel 3D Mix Into Reaper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ManualInstallationFFmpegWindows.html">Manual Installation of FFmpeg on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a><ul>
@@ -132,6 +139,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
 </ul>
+<p class="caption"><span class="caption-text">ANNOUNCEMENTS</span></p>
+<ul class="simple">
+</ul>
 
             
           
@@ -143,8 +153,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Facebook Audio 360</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Facebook Audio 360</a>
+        
       </nav>
 
 
@@ -197,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-an-ambisonic-microphone-with-your-live-360-video-on-facebook">
-<h1>Using an Ambisonic Microphone With Your Live 360 Video on Facebook<a class="headerlink" href="#using-an-ambisonic-microphone-with-your-live-360-video-on-facebook" title="Permalink to this headline">‽</a></h1>
+<h1>Using an Ambisonic Microphone With Your Live 360 Video on Facebook<a class="headerlink" href="#using-an-ambisonic-microphone-with-your-live-360-video-on-facebook" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#hardware" id="id1">Hardware</a></li>
@@ -222,7 +234,7 @@ live with an ambisonic microphone independent of the 360 camera. This is
 possible, though there are a few extra steps to get started so our guide
 below walks you through the entire workflow.</p>
 <div class="section" id="hardware">
-<h2><a class="toc-backref" href="#contents">Hardware</a><a class="headerlink" href="#hardware" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Hardware</a><a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>A computer. This document describes the workflow on a Macbook.</li>
 <li>An ambisonic microphone and compatible audio interface. Any ambisonic
@@ -241,7 +253,7 @@ iO</a>.</li>
 </ul>
 </div>
 <div class="section" id="software">
-<h2><a class="toc-backref" href="#contents">Software</a><a class="headerlink" href="#software" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Software</a><a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>A Digital Audio Workstation (DAW). Screenshots herein are from
 <a class="reference external" href="http://www.reaper.fm/">Reaper</a>.</li>
@@ -263,22 +275,22 @@ take care of Soundflower, NGINX, and FFmpeg:</p>
 </div>
 </div>
 <div class="section" id="signal-flow">
-<h2><a class="toc-backref" href="#contents">Signal Flow</a><a class="headerlink" href="#signal-flow" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Signal Flow</a><a class="headerlink" href="#signal-flow" title="Permalink to this headline">¶</a></h2>
 <p>NGINX acts as an RTMP relay, and calls out to FFmpeg which mixes the
 ambisonic audio with the video, then relays the RTMP stream to Facebook.</p>
 <p><img alt="signal-flow.png" src="../_images/live_signal-flow.png" /></p>
 </div>
 <div class="section" id="workflow">
-<h2><a class="toc-backref" href="#contents">Workflow</a><a class="headerlink" href="#workflow" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Workflow</a><a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="microphone-daw">
-<h3><a class="toc-backref" href="#contents">Microphone → DAW</a><a class="headerlink" href="#microphone-daw" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">Microphone → DAW</a><a class="headerlink" href="#microphone-daw" title="Permalink to this headline">¶</a></h3>
 <p>Bringing the microphone signal into the DAW and doing any necessary
 processing (e.g. A-format or FuMa B-format to ambiX) is beyond the scope
 of this document. Facebook Live 360 supports first-order ambisonics in
 ambiX format (4 channels in ACN order with SN3D normalization).</p>
 </div>
 <div class="section" id="daw-soundflower">
-<h3><a class="toc-backref" href="#contents">DAW → Soundflower</a><a class="headerlink" href="#daw-soundflower" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">DAW → Soundflower</a><a class="headerlink" href="#daw-soundflower" title="Permalink to this headline">¶</a></h3>
 <p>The ambisonic signal needs to be routed to Soundflower where FFmpeg can
 read it. You may need to set up an aggregate device with the appropriate
 ambisonic microphone device and the Soundflower (64ch) device — as seen
@@ -337,7 +349,7 @@ in the Control plugin.</p>
 <p><img alt="spadlive-reaper.png" src="../_images/spadlive-reaper.png" /></p>
 </div>
 <div class="section" id="camera-nginx">
-<h3><a class="toc-backref" href="#contents">Camera → NGINX</a><a class="headerlink" href="#camera-nginx" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">Camera → NGINX</a><a class="headerlink" href="#camera-nginx" title="Permalink to this headline">¶</a></h3>
 <p>NGINX is the hub of RTMP activity on the computer. It calls out to
 FFmpeg for transcoding, and is pulled from by VLC for preview and FFmpeg
 for streaming to Facebook. Sample NGINX configuration:</p>
@@ -405,7 +417,7 @@ hostname (or IP address) of your computer and some simple name to
 identify this session (e.g. “foo” above).</p>
 </div>
 <div class="section" id="nginx-ffmpeg-soundflower">
-<h3><a class="toc-backref" href="#contents">NGINX → FFmpeg ← Soundflower</a><a class="headerlink" href="#nginx-ffmpeg-soundflower" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">NGINX → FFmpeg ← Soundflower</a><a class="headerlink" href="#nginx-ffmpeg-soundflower" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">transcode.sh</span></code> is a wrapper around FFmpeg that transcodes the video
 and muxes it with the audio.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -413,17 +425,17 @@ and muxes it with the audio.</p>
 
  <span class="nv">SPADLIVE_LOG</span><span class="o">=</span><span class="si">${</span><span class="nv">SPADLIVE_LOG</span><span class="k">:-</span><span class="p">/usr/local/var/log/spadlive.log</span><span class="si">}</span>
 
- <span class="nv">video_kbps</span><span class="o">=</span>2000
- <span class="nv">video_height</span><span class="o">=</span>1080
- <span class="nv">audio_kbps</span><span class="o">=</span>256
- <span class="nv">buffer_secs</span><span class="o">=</span>3
+ <span class="nv">video_kbps</span><span class="o">=</span><span class="m">2000</span>
+ <span class="nv">video_height</span><span class="o">=</span><span class="m">1080</span>
+ <span class="nv">audio_kbps</span><span class="o">=</span><span class="m">256</span>
+ <span class="nv">buffer_secs</span><span class="o">=</span><span class="m">3</span>
 
  <span class="c1"># rtmp stream to pull</span>
  <span class="nv">src</span><span class="o">=</span><span class="nv">$1</span>
- <span class="nb">test</span> -n <span class="s2">&quot;</span><span class="nv">$src</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> 1
+ <span class="nb">test</span> -n <span class="s2">&quot;</span><span class="nv">$src</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
  <span class="c1"># rtmp stream to push</span>
  <span class="nv">dst</span><span class="o">=</span><span class="nv">$2</span>
- <span class="nb">test</span> -n <span class="s2">&quot;</span><span class="nv">$dst</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> 2
+ <span class="nb">test</span> -n <span class="s2">&quot;</span><span class="nv">$dst</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">2</span>
 
  <span class="c1"># mark the time</span>
  date &gt;&gt; <span class="s2">&quot;</span><span class="nv">$SPADLIVE_LOG</span><span class="s2">&quot;</span>
@@ -443,37 +455,37 @@ and muxes it with the audio.</p>
  <span class="nb">exec</span> ffmpeg -nostats <span class="se">\</span>
      -i <span class="s2">&quot;</span><span class="nv">$src</span><span class="s2">&quot;</span> <span class="se">\</span>
      -f avfoundation -i <span class="s2">&quot;none:</span><span class="nv">$soundflower64</span><span class="s2">&quot;</span> <span class="se">\</span>
-         -map_channel 1.0.0 <span class="se">\</span>
-         -map_channel 1.0.1 <span class="se">\</span>
-         -map_channel 1.0.2 <span class="se">\</span>
-         -map_channel 1.0.3 <span class="se">\</span>
-     -map 0:v,1:a -map 1:a <span class="se">\</span>
+         -map_channel <span class="m">1</span>.0.0 <span class="se">\</span>
+         -map_channel <span class="m">1</span>.0.1 <span class="se">\</span>
+         -map_channel <span class="m">1</span>.0.2 <span class="se">\</span>
+         -map_channel <span class="m">1</span>.0.3 <span class="se">\</span>
+     -map <span class="m">0</span>:v,1:a -map <span class="m">1</span>:a <span class="se">\</span>
      -c:v h264 -preset fast -maxrate <span class="si">${</span><span class="nv">video_kbps</span><span class="si">}</span>k -bufsize $<span class="o">[</span> <span class="nv">$buffer_secs</span> * <span class="nv">$video_kbps</span> <span class="o">]</span>k -vf <span class="nv">scale</span><span class="o">=</span>-2:<span class="nv">$video_height</span> -r <span class="m">30</span> -g <span class="m">60</span> <span class="se">\</span>
      -threads <span class="m">4</span> <span class="se">\</span>
      -c:a aac -b:a <span class="si">${</span><span class="nv">audio_kbps</span><span class="si">}</span>k <span class="se">\</span>
-     -copyts -start_at_zero -af <span class="nv">aresample</span><span class="o">=</span>48000:async<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+     -copyts -start_at_zero -af <span class="nv">aresample</span><span class="o">=</span><span class="m">48000</span>:async<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
      -f flv <span class="s2">&quot;</span><span class="nv">$dst</span><span class="s2">&quot;</span> <span class="se">\</span>
-     &gt;&gt;<span class="s2">&quot;</span><span class="nv">$SPADLIVE_LOG</span><span class="s2">&quot;</span> 2&gt;<span class="p">&amp;</span>1
+     &gt;&gt;<span class="s2">&quot;</span><span class="nv">$SPADLIVE_LOG</span><span class="s2">&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="nginx-vlc">
-<h3><a class="toc-backref" href="#contents">NGINX → VLC</a><a class="headerlink" href="#nginx-vlc" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">NGINX → VLC</a><a class="headerlink" href="#nginx-vlc" title="Permalink to this headline">¶</a></h3>
 <p>Now open the RTMP stream <code class="docutils literal"><span class="pre">rtmp://localhost/landing/$NAME</span></code> in
 <a class="reference external" href="http://www.videolan.org/vlc/index.html">VLC</a> (or other software
 capable of streaming RTMP). <code class="docutils literal"><span class="pre">$NAME</span></code> is the same name used by the
 camera above. Screenshot:</p>
 <p><img alt="vlc.png" src="../_images/spadlive_vlc.png" /></p>
-<p>Synchronize the camera&#8217;s video with the microphone&#8217;s audio, by adjusting
+<p>Synchronize the camera’s video with the microphone’s audio, by adjusting
 the delay plugin. (Clapping or tapping a glass with a pen works well.)
-Once the stream is synchronized, you&#8217;re ready to go live. Note that this
+Once the stream is synchronized, you’re ready to go live. Note that this
 synchronization step is necessary each time you reinitiate a stream from
 the camera, because it depends on the dynamic buffer size the camera
 chooses.</p>
 <p><img alt="delay-plugin.png" src="../_images/Rpr_delay-plugin.png" /></p>
 </div>
 <div class="section" id="ffmpeg-facebook">
-<h3><a class="toc-backref" href="#contents">FFmpeg → Facebook</a><a class="headerlink" href="#ffmpeg-facebook" title="Permalink to this headline">‽</a></h3>
+<h3><a class="toc-backref" href="#contents">FFmpeg → Facebook</a><a class="headerlink" href="#ffmpeg-facebook" title="Permalink to this headline">¶</a></h3>
 <p>To stream to Facebook you need the stream URL. Getting the stream URL is
 beyond the scope of this document, but an example request in the <a class="reference external" href="https://developers.facebook.com/tools/explorer">Graph
 API Explorer</a> would
@@ -489,7 +501,7 @@ Facebook which includes the session key.</p>
 
 <span class="k">function</span> usage <span class="o">{</span>
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2"> \$RTMP_DEST [\$NAME]&quot;</span>
-    <span class="nb">exit</span> 1
+    <span class="nb">exit</span> <span class="m">1</span>
 <span class="o">}</span>
 
 <span class="c1"># $1 is RTMP stream to push</span>
@@ -514,7 +526,7 @@ name you used above, e.g.:</p>
 </div>
 </div>
 <div class="section" id="checklist">
-<h2><a class="toc-backref" href="#contents">Checklist</a><a class="headerlink" href="#checklist" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Checklist</a><a class="headerlink" href="#checklist" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Sound check</li>
 <li>Video check</li>
@@ -529,7 +541,7 @@ name you used above, e.g.:</p>
 </ul>
 </div>
 <div class="section" id="help-and-feedback">
-<h2><a class="toc-backref" href="#contents">Help and Feedback</a><a class="headerlink" href="#help-and-feedback" title="Permalink to this headline">‽</a></h2>
+<h2><a class="toc-backref" href="#contents">Help and Feedback</a><a class="headerlink" href="#help-and-feedback" title="Permalink to this headline">¶</a></h2>
 <p>Look for help from us and the community in the <a class="reference external" href="https://www.facebook.com/groups/1812020965695437/">Facebook 360 Spatial
 Workstation
 group</a>, and let us
@@ -540,15 +552,18 @@ else. Happy live streaming!</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="VideoFormatGuidelines.html" class="btn btn-neutral float-right" title="Video Format Guidelines" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="VideoFormatGuidelines.html" class="btn btn-neutral float-right" title="Video Format Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="UninstallingSWMac.html" class="btn btn-neutral" title="Uninstalling Spatial Workstation on macOS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="UninstallingSWMac.html" class="btn btn-neutral" title="Uninstalling Spatial Workstation on macOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -580,7 +595,8 @@ else. Happy live streaming!</p>
             VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  false
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
