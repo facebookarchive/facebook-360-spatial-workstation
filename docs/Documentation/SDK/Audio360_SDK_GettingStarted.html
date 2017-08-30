@@ -1,0 +1,1560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Facebook Audio 360  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/overrides.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Facebook Audio 360  documentation" href="../../index.html"/>
+        <link rel="next" title="Knowledge Base" href="../../KB.html"/>
+        <link rel="prev" title="Introduction" href="../SpatialWorkstation/SpatialWorkstation.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/fb360.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">SPATIAL WORKSTATION USER GUIDE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#getting-started">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#workflow">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#components">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-pro-tools-hd">Using Pro Tools HD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-nuendo">Using Nuendo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#video-player">Video Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#encoding-assets">Encoding Assets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">AUDIO360 SDK</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#sdk">SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unity">Unity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ios">iOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#android-java">Android (Java)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general-concepts">General Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#object-lifecycle">Object Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#java-android">Java/Android:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-and-pool-allocation">Memory And Pool Allocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-state">Error State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-device-settings">Audio Device Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channel-maps">Channel Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-callbacks">Event Callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#java">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scheduling-transport-events">Scheduling Transport Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mix-focus">Mix Focus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coordinate-system">Coordinate System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-the-app-lifecycle">Managing The App Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listener-orientation">Listener Orientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Java:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spatdecoderqueue">SpatDecoderQueue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enqueueing-buffers">Enqueueing Buffers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuning-buffer-sizes-and-signaling-end-of-stream">Tuning Buffer Sizes And Signaling End Of Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-channel-maps">Changing Channel Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spatdecoderfile">SpatDecoderFile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-paths">File Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-types-and-channel-maps">File Types And Channel Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opening-files">Opening Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synchronisation">Synchronisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">C++:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Java:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-objects">Multiple Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#focus-control">Focus Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#positional-tracking">Positional Tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#integrations">Integrations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unity-integration">Unity Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-engine-settings">Audio Engine Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">SpatDecoderFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asset-management">Asset Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obb-on-android">.obb On Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Synchronisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Object Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-listener">Audio Listener</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#android-exoplayer-2-2">Android ExoPlayer 2.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-setup">Project Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integrate-the-renderer">Integrate The Renderer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">SUPPORT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../KB.html">Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ANNOUNCEMENTS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Announcements.html">Announcements</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Facebook Audio 360</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &gt;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>The Audio360 Audio Engine is a light-weight cross-platform SDK for
+playing back spatial audio.</p>
+<div class="section" id="supported-platforms">
+<span id="id1"></span><h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Windows 7+</li>
+<li>Windows UWP (Windows 10, VS2016 and VS2017)</li>
+<li>macOS 10.7+</li>
+<li>Android 4.3+</li>
+<li>iOS 7.0+</li>
+</ul>
+</div>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<p>The SDK decodes assets that are usually created with the FB360 Spatial
+Workstation. The whole workflow, from design to playback, consists of
+the following components:</p>
+<ol class="arabic">
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="http://facebook360.fb.com/spatial-workstation/">FB360 Spatial
+Workstation</a></div>
+<div class="line">A suite of audio workstation plugins, tools, video playback
+software that helps sound designers author content for cinematic VR
+experiences.</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">FB360 Encoder</div>
+<div class="line">The encoder converts the mix from the sound designer’s audio
+workstation into a variety of spatial audio formats, some of which
+can be decoded by the Audio Engine</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">Audio360 Audio Engine</div>
+<div class="line">The mix designed in the audio workstation is reconstructed
+binaurally with taking head-tracking</div>
+</div>
+</li>
+</ol>
+<p>The workflow for mixing and delivering content can be divided into three
+major stages, as illustrated in the image below.</p>
+<img alt="../../_images/VRTools-Workflow.png" src="../../_images/VRTools-Workflow.png" />
+</div>
+</div>
+<div class="section" id="sdk">
+<h1>SDK<a class="headerlink" href="#sdk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="folder-structure">
+<h2>Folder Structure<a class="headerlink" href="#folder-structure" title="Permalink to this headline">¶</a></h2>
+<p>The release folder you are provided with includes the following folders:</p>
+<ul class="simple">
+<li><em>./Audio360/include</em> : All required header files. This folder would
+need to be included in the “header includes” property of your IDE or
+build system</li>
+<li><em>./Audio360/macOS</em> : Dynamic library (.dylib) for macOS</li>
+<li><em>./Audio360/Windows/</em> : Dynamic library (.dll) and import library (.lib)
+for 32 and 64 bit Windows</li>
+<li><em>./Audio360/WindowsStore</em> : Dynamic library (.dll) and import library (.lib) for
+64 bit Windows UWP compiled for VS toolset v140 (VS2015) and v141 (VS2017)</li>
+<li><em>./Audio360/iOS</em> : Static library (.a) for iOS</li>
+<li><em>./Audio360/Android</em>/ : Dynamic libraries (.so) and static libraries (.a)
+for Android</li>
+<li><em>./Audio360/Android-Java/audio360.aar</em> : Android library (Java + native
+libraries) that exposes the C++ API functionality in Java</li>
+<li><em>./Audio360/Android-Java/audio360-exo2.aar</em> : An Android library for
+ExoPlayer 2.x that allows the Audio360 engine to be used as an audio
+renderer in ExoPlayer, for decoding mkv files with opus audio</li>
+<li><em>./Audio360/Unity</em> : Cross-platform integration for Unity</li>
+<li><em>./Examples/</em> : Example projects ranging from a terminal app
+(for Windows and macOS) to ExoPlayer and FFmpeg that shows basic functionality
+of the SDK</li>
+</ul>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="setup">
+<span id="id2"></span><h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unity">
+<h3>Unity<a class="headerlink" href="#unity" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="#unity-integration"><span class="std std-ref">Unity Integration</span></a>.</p>
+</div>
+<div class="section" id="c">
+<h3>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h3>
+<p>The C++ SDK is compatible with all supported platforms (see <a class="reference internal" href="#supported-platforms"><span class="std std-ref">Supported Platforms</span></a>). Depending on your IDE, platform
+and build system, you would need to:</p>
+<ol class="arabic simple">
+<li>Add <em>Audio360/include</em> to the header include search path</li>
+<li>Add the Audio360 shared or static library to your linker settings. It
+is generally recommended to use the shared libraries when possible.</li>
+</ol>
+</div>
+<div class="section" id="ios">
+<h3>iOS<a class="headerlink" href="#ios" title="Permalink to this headline">¶</a></h3>
+<p>The iOS static libraries provided with the SDK are compatible with the C++ API which can
+be called from Objective-C++.</p>
+</div>
+<div class="section" id="android-java">
+<span id="id3"></span><h3>Android (Java)<a class="headerlink" href="#android-java" title="Permalink to this headline">¶</a></h3>
+<p>The Java bindings for the Audio360 SDK is distributed as a .aar file:
+<em>Audio360/Android-Java/audio360.aar</em>.</p>
+<ol class="arabic">
+<li><p class="first">Open your Android Studio project</p>
+</li>
+<li><p class="first">Go to <span class="menuselection">File ‣ New ‣ New Module..</span></p>
+</li>
+<li><p class="first">Select <em>Import .JAR/.AAR Package</em> from the grid of options and select
+<em>Next</em></p>
+</li>
+<li><p class="first">Load <em>Audio360/Android-Java/audio360.aar</em> into the <em>File name:</em> field
+and select <em>Finish.</em> audio360.aar should be copied to your project.</p>
+</li>
+<li><p class="first">In the Android Studio project window, open the build.gradle file for
+your app (typically <em>Module: app</em>)</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Under the <em>dependencies</em> block, add</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">compile</span> <span class="n">project</span><span class="p">(</span><span class="s2">&quot;:audio360&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Sync your project’s gradle files</p>
+</li>
+</ol>
+<p>You can now setup the audio engine. The Java classes and native
+libraries will be included every time you build your project.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spat</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="cm">/* context */</span><span class="o">);</span>
+        <span class="n">spat</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+        <span class="n">spat</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;file.tbe&quot;</span><span class="o">);</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+        <span class="c1">// Resume all audio processing</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+        <span class="c1">// Suspend all audio processing when the app is paused</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">suspend</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span> <span class="o">(){</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderFile</span><span class="o">(</span><span class="n">spat</span><span class="o">);</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+        <span class="n">spat</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="general-concepts">
+<h2>General Concepts<a class="headerlink" href="#general-concepts" title="Permalink to this headline">¶</a></h2>
+<p>The SDK includes three major components:</p>
+<ol class="arabic simple">
+<li>AudioEngine: Functionality for audio hardware compatibility,
+memory allocation, mixing and controlling global parameters such as
+the orientation and position of the listener</li>
+<li>SpatDecoderQueue: An object for enqueuing and decoding spatial
+audio streams</li>
+<li>SpatDecoderFile: An object for decoding spatial audio files</li>
+</ol>
+<p>Other components (might not be supported in Java/C#):</p>
+<ol class="arabic simple">
+<li>AudioFormatDecoder: An object for decoding audio formats, such as
+opus packets, wav files and .tbe files, to PCM audio.</li>
+<li>IOStream: Abstract interface for implementing your own streams that
+can be used with SpatDecoderFile.</li>
+</ol>
+<div class="section" id="object-lifecycle">
+<h3>Object Lifecycle<a class="headerlink" href="#object-lifecycle" title="Permalink to this headline">¶</a></h3>
+<p>While an instance of the <strong class="command">AudioEngine</strong> must be explicitly created and
+destroyed, <strong class="command">SpatDecoderQueue</strong> and <strong class="command">SpatDecoderFile</strong> objects must be created
+from the <strong class="command">AudioEngine</strong>.</p>
+</div>
+<div class="section" id="id4">
+<h3>C++:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">TBE</span><span class="p">;</span>
+
+<span class="c1">// Create the AudioEngine with default settings</span>
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+
+<span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
+<span class="n">SpatDecoderQueue</span> <span class="o">*</span><span class="n">queue</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+<span class="n">SpatDecoderFile</span> <span class="o">*</span><span class="n">file</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+
+<span class="c1">// Cleanup</span>
+<span class="c1">// These objects can be explicitly destroyed, but will also be</span>
+<span class="c1">// automatically destroyed if they aren&#39;t when TBE_DestroyAudioEngine is called</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">destroySpatDecoderQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">destroySpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+
+<span class="n">TBE_DestroyAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="java-android">
+<h3>Java/Android:<a class="headerlink" href="#java-android" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.twobigears.audio360.*</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomeActivityClass</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spatFile</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// Create the AudioEngine with default settings and sample rate</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
+
+        <span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
+        <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
+        <span class="n">spatFile</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// Cleanup</span>
+        <span class="c1">// These objects can be explicitly destroyed, but will also be</span>
+        <span class="c1">// automatically destroyed if they aren&#39;t when engine.delete() is called</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderQueue</span><span class="o">(</span><span class="n">spatQueue</span><span class="o">);</span>
+        <span class="n">spatQueue</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderFile</span><span class="o">(</span><span class="n">spatFile</span><span class="o">);</span>
+        <span class="n">spatFile</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="n">engine</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="memory-and-pool-allocation">
+<h3>Memory And Pool Allocation<a class="headerlink" href="#memory-and-pool-allocation" title="Permalink to this headline">¶</a></h3>
+<p>The memory pool size and other settings can be specified when the
+AudioEngine is created. The below example is in C++, but similar
+functionality is available in Java.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">TBE</span><span class="p">;</span>
+
+<span class="n">EngineInitSettings</span> <span class="n">initSettings</span> <span class="o">=</span> <span class="n">EngineInitSettings_default</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">memorySettings</span><span class="p">.</span><span class="n">spatDecoderQueuePoolSize</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">memorySettings</span><span class="p">.</span><span class="n">spatDecoderFilePoolSize</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">;</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">initSettings</span><span class="p">);</span>
+
+<span class="n">SpatDecoderQueue</span> <span class="o">*</span><span class="n">queue</span><span class="p">;</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+<span class="n">SpatDecoderFile</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-state">
+<h3>Error State<a class="headerlink" href="#error-state" title="Permalink to this headline">¶</a></h3>
+<p>Most methods return a type <strong class="command">EngineError</strong> to signal the error or success state,
+with <strong class="command">EngineError::OK</strong> signalling success. Certain objects might also signal
+their state through event based callbacks as detailed under <a class="reference internal" href="#event-callbacks"><span class="std std-ref">Event Callbacks</span></a>.</p>
+</div>
+<div class="section" id="audio-device-settings">
+<h3>Audio Device Settings<a class="headerlink" href="#audio-device-settings" title="Permalink to this headline">¶</a></h3>
+<p>By default the <strong class="command">AudioEngine</strong> mixes and enqueues buffers to the system’s default audio
+device using openSL on Android, CoreAudio on iOS/macOS and WASAPI on Windows.</p>
+<p><strong>Custom Audio Device</strong></p>
+<p>A custom audio device name can be specified on initialisation.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">EngineInitSettings</span> <span class="n">initSettings</span> <span class="o">=</span> <span class="n">EngineInitSettings_default</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">audioSettings</span><span class="p">.</span><span class="n">deviceType</span> <span class="o">=</span> <span class="n">AudioDeviceType</span><span class="o">::</span><span class="n">CUSTOM</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">audioSettings</span><span class="p">.</span><span class="n">customAudioDeviceName</span> <span class="o">=</span> <span class="s">&quot;Headphones (Rift Audio)&quot;</span><span class="p">;</span>
+
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">;</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">initSettings</span><span class="p">);</span>
+
+<span class="c1">// You can also query information from the OS:</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">engine</span><span class="o">-&gt;</span><span class="n">getOutputAudioDeviceName</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">numDevices</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">::</span><span class="n">getNumAudioDevices</span><span class="p">();</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">deviceName</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">::</span><span class="n">getAudioDeviceName</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Disabling The Audio Device</strong></p>
+<p>While the default behaviour is recommended, the audio device can be disabled and you can instead
+get buffers from the <strong class="command">AudioEngine’s</strong> mixer to implement within your own
+process. The below example is in C++, but similar functionality is
+available in Java with some penalty in copying a float buffer across the
+JNI boundary.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Disable audio device</span>
+<span class="n">EngineInitSettings</span> <span class="n">initSettings</span> <span class="o">=</span> <span class="n">EngineInitSettings_default</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">audioSettings</span><span class="p">.</span><span class="n">deviceType</span> <span class="o">=</span> <span class="n">AudioDeviceType</span><span class="o">::</span><span class="n">DISABLED</span><span class="p">;</span>
+<span class="c1">// Match the AudioEngine&#39;s sample rate and buffer size to your audio device</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">audioSettings</span><span class="p">.</span><span class="n">sampleRate</span> <span class="o">=</span> <span class="n">sample_rate</span><span class="p">;</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">audioSettings</span><span class="p">.</span><span class="n">bufferSize</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">;</span>
+
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">;</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">initSettings</span><span class="p">);</span>
+
+<span class="c1">// Get interleaved buffers from the mixer</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">getAudioMix</span><span class="p">(</span><span class="n">float_buffer</span><span class="p">,</span> <span class="n">num_samples_in_buffer</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="channel-maps">
+<h3>Channel Maps<a class="headerlink" href="#channel-maps" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="command">SpatDecoderQueue</strong> and <strong class="command">SpatDecoderFile</strong> objects use a ChannelMap
+enumerator to specify the spatial audio format being decoded.</p>
+<ul class="simple">
+<li><strong class="command">ChannelMap::TBE_8_2</strong>: The original .tbe format specification, with 8
+channels of spatial audio and 2 channels of head-locked audio</li>
+<li><strong class="command">ChannelMap::TBE_8</strong>: 8 channels of spatial audio with no head-locked
+audio</li>
+<li><strong class="command">ChannelMap::TBE_6_2</strong>: 6 channels of spatial audio and 2 channels of
+head-locked audio. Compared to TBE_8_2, there will be some loss in
+spatial quality</li>
+<li><strong class="command">ChannelMap::TBE_4_2</strong>: 4 channels of spatial audio and 2 channels of
+head-locked audio. Compared to TBE_8_2, there will be significant
+loss in spatial quality</li>
+<li><strong class="command">ChannelMap::TBE_4</strong>: 4 channels of spatial audio and no head-locked
+audio. Compared to TBE_8, there will be significant loss in
+spatial quality</li>
+<li><strong class="command">ChannelMap::TBE_8_PAIR0</strong>, <strong class="command">ChannelMap::TBE_8_PAIR1</strong>,
+<strong class="command">ChannelMap::TBE_8_PAIR2</strong>, <strong class="command">ChannelMap::TBE_8_PAIR3</strong>: The 8
+channels of spatial audio can be enqueued in pairs. This might be
+useful if you are using a codec or container that allows only for two
+channel tracks</li>
+<li><strong class="command">ChannelMap::TBE_CHANNEL0</strong>, <strong class="command">ChannelMap::TBE_CHANNEL1</strong>,
+<strong class="command">ChannelMap::TBE_CHANNEL2</strong>, <strong class="command">ChannelMap::TBE_CHANNEL3</strong>,
+<strong class="command">ChannelMap::TBE_CHANNEL4</strong>, <strong class="command">ChannelMap::TBE_CHANNEL5</strong>,
+<strong class="command">ChannelMap::TBE_CHANNEL6</strong>, <strong class="command">ChannelMap::TBE_CHANNEL7</strong>: The 8
+channels of spatial audio can be enqueued individually. This might be
+useful if you are using a codec or container that allows only for
+single channel tracks</li>
+<li><strong class="command">ChannelMap::HEADLOCKED_STEREO</strong>: Enqueue only the 2 channels of
+head-locked audio</li>
+<li><strong class="command">ChannelMap::AMBIX_4</strong>: Enqueue first order ambisonics using the
+ambiX convention</li>
+<li><strong class="command">ChannelMap::AMBIX_9</strong>: Enqueue second order ambisonics using the
+ambiX convention</li>
+<li><strong class="command">ChannelMap::AMBIX_9_2</strong>: Enqueue second order ambisonics using the
+ambiX convention with 2 channels of head-locked audio</li>
+</ul>
+</div>
+<div class="section" id="event-callbacks">
+<span id="id5"></span><h3>Event Callbacks<a class="headerlink" href="#event-callbacks" title="Permalink to this headline">¶</a></h3>
+<p><strong class="command">AudioEngine::setEventCallback</strong>, <strong class="command">SpatDecoderQueue::setEventCallback</strong>
+and <strong class="command">SpatDecoderFile::setEventCallback</strong> can be used to listen to events from each
+object. A few events include:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong class="command">Events::ERROR_BUFFER_UNDERRUN</strong>:</dt>
+<dd>Dispatched by AudioEngine when the mixer is unable
+to process audio in time.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong class="command">Events::ERROR_QUEUE_STARVATION</strong>:</dt>
+<dd>Dispatched by SpatDecoderQueue and SpatDecoderFile
+when enqueued audio is not being decoded in time.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong class="command">Events::DECODER_INIT</strong>:</dt>
+<dd>Dispatched by SpatDecoderFile when an opened file is ready
+for playback.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong class="command">Events::END_OF_STREAM</strong>:</dt>
+<dd>Dispatched by SpatDecoderFile when an opened file has
+completed playing.</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">eventCallback</span><span class="p">(</span><span class="n">Event</span> <span class="n">event</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">owner</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">userData</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">::</span><span class="n">ERROR_BUFFER_UNDERRUN</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;Mixer starvation!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">setEventCallback</span><span class="p">(</span><span class="n">eventCallback</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="java">
+<h3>Java:<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">init</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">);</span>
+  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+
+  <span class="n">file</span><span class="o">.</span><span class="na">setEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="na">DECODER_INIT</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">});</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scheduling-transport-events">
+<h3>Scheduling Transport Events<a class="headerlink" href="#scheduling-transport-events" title="Permalink to this headline">¶</a></h3>
+<p>The Audio Engine includes basic functionality for scheduling single events. It is currently
+not possible to schedule multiple events of the same type. For example, a call to <strong class="command">play</strong>
+can overwrite a previous call to <strong class="command">playScheduled</strong>.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Schedule immediate playback</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">play</span><span class="p">();</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">play</span><span class="p">();</span>
+
+<span class="c1">// Schedule playback</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">playScheduled</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">playScheduled</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+
+
+<span class="c1">// Playback with fade</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">playWithFade</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">playWithFade</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+
+<span class="c1">// Schedule immediate pause</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">pause</span><span class="p">();</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">pause</span><span class="p">();</span>
+
+<span class="c1">// Schedule pause</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">pauseScheduled</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">pauseScheduled</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+
+<span class="c1">// Pause with fade</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">pauseWithFade</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+<span class="n">SpatDecoderQueue</span><span class="o">::</span><span class="n">pauseWithFade</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+
+<span class="c1">// Schedule immediate stop</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">stop</span><span class="p">();</span>
+
+<span class="c1">// Schedule stop</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">stopScheduled</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+
+<span class="c1">// Stop with fade</span>
+<span class="n">SpatDecoderFile</span><span class="o">::</span><span class="n">stopWithFade</span><span class="p">(</span><span class="n">timeMs</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mix-focus">
+<span id="id6"></span><h3>Mix Focus<a class="headerlink" href="#mix-focus" title="Permalink to this headline">¶</a></h3>
+<p>Dense and detailed mixes might need a level of clarity to guide the listener
+through the story and a 360 soundfield. The focus feature allows a specific area of the soundfield
+to be brought more in focus, in real-time. By default the focus feature, when enabled,
+follows the listener’s gaze, although it can be setup to work independently.</p>
+</div>
+<div class="section" id="coordinate-system">
+<span id="id7"></span><h3>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h3>
+<p>3D vectors and points are represented through the class <em>TBVector,</em>
+where +x is right, -x is left, +y is up, -y is down, +z is forward (or
+into the screen) and -z is backward.</p>
+</div>
+<div class="section" id="managing-the-app-lifecycle">
+<h3>Managing The App Lifecycle<a class="headerlink" href="#managing-the-app-lifecycle" title="Permalink to this headline">¶</a></h3>
+<p>Typically the audio engine and related objects will be created when your
+app is initialised and destroyed when the app or the process has quit.
+There might be cases (such as with mobile apps) where you might want to
+pause all audio processing if the app is in the background and resume
+processing when the app is focused again. The AudioEngine’s start() and
+suspend() methods can be used to achieve this. The suspend() method
+pauses the main mixer, thereby pausing all audio objects in the app.</p>
+</div>
+<div class="section" id="id8">
+<h3>C++:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourAppPauseCallback</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">engine</span><span class="o">-&gt;</span><span class="n">suspend</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">yourAppResumeCallback</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">engine</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Java:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourAppPauseCallback</span><span class="o">()</span>
+<span class="o">{</span>
+    <span class="n">engine</span><span class="o">.</span><span class="na">suspend</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kt">void</span> <span class="nf">yourAppResumeCallback</span><span class="o">()</span>
+<span class="o">{</span>
+    <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listener-orientation">
+<h3>Listener Orientation<a class="headerlink" href="#listener-orientation" title="Permalink to this headline">¶</a></h3>
+<p>The orientation of the listener/virtual camera can be specified through
+a quaternion, direction vectors or Euler angles. Ensure that you are using the correct coordinate system (see <a class="reference internal" href="#coordinate-system"><span class="std std-ref">Coordinate System</span></a>)</p>
+</div>
+<div class="section" id="id10">
+<h3>C++:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">TBE</span><span class="p">;</span>
+
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+<span class="n">TBQuat</span> <span class="n">quat</span> <span class="o">=</span> <span class="n">someValue</span><span class="p">;</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">setListenerRotation</span><span class="p">(</span><span class="n">quat</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>Java:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
+<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+<span class="n">TBQuat</span> <span class="n">quat</span> <span class="o">=</span> <span class="n">someValue</span><span class="o">;</span>
+<span class="n">engine</span><span class="o">.</span><span class="na">setListenerRotation</span><span class="o">(</span><span class="n">quat</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="spatdecoderqueue">
+<h2>SpatDecoderQueue<a class="headerlink" href="#spatdecoderqueue" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="command">SpatDecoderQueue</strong> allows for PCM audio (either floats or 16 bit
+integers, or a 16 bit ByteBuffer in Java) to be enqueued into a
+lock-free queue, which the audio engine will then dequeue and
+spatialise. The format of the enqueued buffers can be specified using
+the <strong class="command">ChannelMap</strong> enumerator.</p>
+<div class="section" id="enqueueing-buffers">
+<h3>Enqueueing Buffers<a class="headerlink" href="#enqueueing-buffers" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>C++:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">TBE</span><span class="p">;</span>
+
+<span class="c1">// Create the AudioEngine with default settings</span>
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+<span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
+<span class="n">SpatDecoderQueue</span> <span class="o">*</span><span class="n">queue</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+<span class="kt">float</span> <span class="o">*</span> <span class="n">pcm_data</span> <span class="c1">// interleaved buffer of data from source, in TBE_8_2 format</span>
+<span class="kt">int32_t</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">queue</span><span class="o">-&gt;</span><span class="n">getFreeSpaceInQueue</span><span class="p">(</span><span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int32_t</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">&gt;</span><span class="n">enqueueData</span><span class="p">(</span><span class="n">pcm_data</span><span class="p">,</span> <span class="n">numSamplesInBuffer</span><span class="p">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="p">);</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">num_enqueued</span> <span class="o">==</span> <span class="n">numSamplesInBuffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>Java:<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Create the AudioEngine with default settings</span>
+<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
+<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+<span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
+<span class="n">SpatDecoderQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
+
+<span class="n">ByteBuffer</span> <span class="n">buffer</span> <span class="o">...</span> <span class="c1">// pre-populated 16 bit integer audio in a ByteBuffer, in TBE_8_2 format</span>
+<span class="kt">int</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">getFreeSpaceInQueue</span><span class="o">(</span><span class="n">ChannelMap</span><span class="o">.</span><span class="na">TBE_8_2</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">enqueueData</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">numSamplesInBuffer</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuning-buffer-sizes-and-signaling-end-of-stream">
+<h3>Tuning Buffer Sizes And Signaling End Of Stream<a class="headerlink" href="#tuning-buffer-sizes-and-signaling-end-of-stream" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="command">AudioEngine</strong> will dequeue samples only when there are enough to fill
+the audio device’s output buffer size (Eg: 1024 samples per channel, if
+the <strong class="command">AudioEngine</strong> is initialised with that buffer size). It is therefore
+important to ensure that the queue is kept full to avoid starving the
+audio output. The size of the queue can be specified when the
+<strong class="command">AudioEngine</strong> is initialised:</p>
+</div>
+<div class="section" id="id14">
+<h3>C++:<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">EngineInitSettings</span> <span class="n">initSettings</span> <span class="o">=</span> <span class="n">EngineInitSettings_default</span><span class="p">;</span>
+<span class="c1">// Customise the queue size (in samples)</span>
+<span class="n">initSettings</span><span class="p">.</span><span class="n">memorySettings</span><span class="p">.</span><span class="n">spatQueueSizePerChannel</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">;</span> <span class="c1">// default is 4096 samples per channel</span>
+
+<span class="n">AudioEngine</span><span class="o">*</span> <span class="n">engine</span><span class="p">;</span>
+<span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">initSettings</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>It will be likely that the end of the stream might have samples that are
+less than the output buffer size. In such a case, the <em>endOfStream</em> flag
+can be set to <em>true</em> to instruct the SpatDecoderQueue to dequeue all
+samples left in the queue.</p>
+</div>
+<div class="section" id="id15">
+<h3>C++:<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="o">*</span> <span class="n">pcm_data</span> <span class="c1">// interleaved buffer of data from source, in TBE_8_2 format</span>
+<span class="kt">int32_t</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">queue</span><span class="o">-&gt;</span><span class="n">getFreeSpaceInQueue</span><span class="p">(</span><span class="n">map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">endOfStream</span> <span class="o">=</span> <span class="n">someStream</span><span class="p">.</span><span class="n">eof</span><span class="p">();</span>
+  <span class="n">queue</span><span class="o">-&gt;</span><span class="n">setEndOfStream</span><span class="p">(</span><span class="n">endOfStream</span><span class="p">);</span>
+
+  <span class="kt">int32_t</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">-&gt;</span><span class="n">enqueueData</span><span class="p">(</span><span class="n">pcm_data</span><span class="p">,</span> <span class="n">numSamplesInBuffer</span><span class="p">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="p">);</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">num_enqueued</span> <span class="o">==</span> <span class="n">numSamplesInBuffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>Java:<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ByteBuffer</span> <span class="n">buffer</span><span class="o">;</span> <span class="c1">// interleaved buffer of data from source, in TBE_8_2 format</span>
+<span class="kt">int</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">getFreeSpaceInQueue</span><span class="o">(</span><span class="n">map</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">bool</span> <span class="n">endOfStream</span> <span class="o">=</span> <span class="n">someStream</span><span class="o">.</span><span class="na">hasEnded</span><span class="o">();</span>
+  <span class="n">queue</span><span class="o">.</span><span class="na">setEndOfStream</span><span class="o">(</span><span class="n">endOfStream</span><span class="o">);</span>
+
+  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">&gt;</span><span class="n">enqueueData</span><span class="o">(</span><span class="n">pcm_data</span><span class="o">,</span> <span class="n">numSamplesInBuffer</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-channel-maps">
+<h3>Changing Channel Maps<a class="headerlink" href="#changing-channel-maps" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="command">ChannelMap</strong> can be changed during runtime while enqueuing buffers of
+data. This might be useful for cases where you might want to switch to
+TBE_6_2 or TBE_4_2 based on available bandwidth.</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>C++: See the class named <strong class="command">DecoderQueueExample</strong> in <em>main.cpp</em> within the
+<em>EngineExample-C++</em> project.</p>
+</div>
+</div>
+<div class="section" id="spatdecoderfile">
+<h2>SpatDecoderFile<a class="headerlink" href="#spatdecoderfile" title="Permalink to this headline">¶</a></h2>
+<p><strong class="command">SpatDecoderFile</strong> can playback .wav or .tbe spatial audio files and
+optionally synchronise them to an external time source.</p>
+<div class="section" id="file-paths">
+<h3>File Paths<a class="headerlink" href="#file-paths" title="Permalink to this headline">¶</a></h3>
+<p>An Android and iOS, the path can can be prepended with <strong class="command">asset///:</strong>. On Android
+this would load the file from the apps’s Asset folder and iOS this would load the file
+from the root of app’s resource directory. Absolute paths can also be used.</p>
+</div>
+<div class="section" id="file-types-and-channel-maps">
+<h3>File Types And Channel Maps<a class="headerlink" href="#file-types-and-channel-maps" title="Permalink to this headline">¶</a></h3>
+<p><strong class="command">SpatDecoderFile</strong> supports the following file formats:</p>
+<ul class="simple">
+<li>.tbe: A .tbe spatial audio file created with the FB360 Encoder. This
+by default uses the <strong class="command">TBE_8_2 ChannelMap</strong> (8 channels of spatial audio
+and 2 channels of head-locked audio)</li>
+<li>.wav: The files can be of any of the supported ChannelMap types, either 16 or 24 bit.</li>
+</ul>
+</div>
+<div class="section" id="opening-files">
+<h3>Opening Files<a class="headerlink" href="#opening-files" title="Permalink to this headline">¶</a></h3>
+<p>When files are opened for playback, the AudioEngine begins to
+asynchronously decode a small chunk of the audio in a background thread.
+As soon as the buffer is full and ready for playback, an DECODER_INIT
+event is dispatched to the <strong class="command">SpatDecoderFile</strong>’s event callback.
+On Android, you can also load files from the app’s <em>asset</em> folder with the prefix
+<em>asset:///</em> (Eg: <em>“asset:///example.tbe”</em>).</p>
+</div>
+<div class="section" id="id17">
+<h3>C++:<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">TBE</span><span class="p">;</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">callback</span><span class="p">(</span><span class="n">Event</span> <span class="n">event</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">owner</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">userData</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">::</span><span class="n">DECODER_INIT</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">SpatDecoderFile</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">play</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+  <span class="n">engine_</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+  <span class="n">SpatDecoderFile</span> <span class="o">*</span><span class="n">file</span><span class="p">;</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">setEventCallback</span><span class="p">(</span><span class="o">&amp;</span><span class="n">callback</span><span class="p">)</span>
+  <span class="c1">// Playback is triggered from the callback as soon as the file is ready</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;file.tbe&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>Java:<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">init</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">);</span>
+  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+
+  <span class="n">file</span><span class="o">.</span><span class="na">setEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="na">DECODER_INIT</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">});</span>
+
+  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;/full/path/to/file.tbe&quot;</span><span class="o">);</span>
+  <span class="c1">// or load a file from the app&#39;s asset folder</span>
+  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;asset:///file .tbe&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="synchronisation">
+<h3>Synchronisation<a class="headerlink" href="#synchronisation" title="Permalink to this headline">¶</a></h3>
+<p>While you might be able to play an audio asset and a video without any
+synchronisation problems, you wouldn’t be safeguarding the application
+for when the video decoder or audio engine is interrupted.</p>
+<p>For achieving rock-solid audio-visual sync, it is recommended to use
+<strong class="command">SpatDecoderQueue</strong> and synchronise the buffers beforehand. In some cases,
+such an implementation might be difficult as you might not have access
+to the source code of the video playback system or your video codec
+might not allow for fast seeking. You can alternatively slave an
+instance of <strong class="command">SpatDecoderFile</strong> to the video player or any other external
+time source. <strong class="command">SpatDecoderFile</strong> will then try its best to synchronise the
+audio to the video.</p>
+</div>
+<div class="section" id="id19">
+<h3>C++:<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourInitRoutine</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;file.tbe&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Set the decoder to by synchronised to an external source</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">setSyncMode</span><span class="p">(</span><span class="n">SyncMode</span><span class="o">::</span><span class="n">EXTERNAL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Your app&#39;s update loop</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Get the elapsed time/playback position from the</span>
+  <span class="c1">// video player/decoder you are using.</span>
+  <span class="c1">// Make sure the value is in milliseconds!</span>
+  <span class="kt">double</span> <span class="n">videoTimeInMs</span> <span class="o">=</span> <span class="n">VideoPlayer</span><span class="p">.</span><span class="n">getTimeMs</span><span class="p">();</span>
+
+  <span class="c1">// Pass the video time to SpatDecoderFile</span>
+  <span class="c1">// This will automatically force it to synchronise</span>
+  <span class="c1">// with the video (since setSyncMode was set to EXTERNAL)</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">setExternalClockInMs</span><span class="p">(</span><span class="n">videoTimeInMs</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Some event in your application that triggers</span>
+<span class="c1">// playback of the video and audio</span>
+<span class="kt">void</span> <span class="nf">somePlayEvent</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">VideoPlayer</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">play</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>Java:<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourInitFunction</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">)</span>
+  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;asset:///file.tbe&quot;</span><span class="o">);</span>
+
+  <span class="c1">// Set the decoder to by synchronised to an external source</span>
+  <span class="n">file</span><span class="o">.</span><span class="na">setSyncMode</span><span class="o">(</span><span class="n">SyncMode</span><span class="o">.</span><span class="na">EXTERNAL</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// Your app&#39;s update loop</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="c1">// Get the elapsed time/playback position from the</span>
+  <span class="c1">// video player/decoder you are using.</span>
+  <span class="c1">// Make sure the value is in milliseconds!</span>
+  <span class="kt">double</span> <span class="n">videoTimeInMs</span> <span class="o">=</span> <span class="n">VideoPlayer</span><span class="o">.</span><span class="na">getTimeMs</span><span class="o">();</span>
+
+  <span class="c1">// Pass the video time to SpatDecoderFile</span>
+  <span class="c1">// This will automatically force it to synchronise</span>
+  <span class="c1">// with the video (since setSyncMode was set to EXTERNAL)</span>
+  <span class="n">file</span><span class="o">.</span><span class="na">setExternalClockInMs</span><span class="o">(</span><span class="n">videoTimeInMs</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// Some event in your application that triggers</span>
+<span class="c1">// playback of the video and audio</span>
+<span class="kt">void</span> <span class="nf">somePlayEvent</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="n">VideoPlayer</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+  <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>Example<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>C++: See the class named <strong class="command">DecoderFileExample</strong> in <em>main.cpp</em> within the
+<em>EngineExample-C++</em> project.</p>
+<p>Java: See <em>MainActivity.java</em> within the <em>AndroidFileExample</em> project.</p>
+</div>
+</div>
+<div class="section" id="multiple-objects">
+<h2>Multiple Objects<a class="headerlink" href="#multiple-objects" title="Permalink to this headline">¶</a></h2>
+<p>The default initialisation settings of the AudioEngine creates a pool of
+only one <strong class="command">SpatDecoderFile</strong> and one <strong class="command">SpatDecoderQueue</strong>. The size of the
+pool can be increased to whatever works best for your application.
+Multiple objects can be created and played back simultaneously with
+little rendering CPU overhead.</p>
+</div>
+<div class="section" id="focus-control">
+<h2>Focus Control<a class="headerlink" href="#focus-control" title="Permalink to this headline">¶</a></h2>
+<p>Quite often dense and detailed mixes might need a level of clarity to
+guide the listener through the story and a 360 soundfield. The focus
+feature allows a specific area of the soundfield to be brought more in
+focus, in real-time. By default the focus feature, when enabled, follows
+the listener’s gaze, although it can be setup to work independently.
+Focus effects can be applied to both SpatDecoderQueue and
+SpatDecoderFile objects. The focus control consists of four major
+parameters:</p>
+<ol class="arabic">
+<li><p class="first">A toggle control</p>
+</li>
+<li><p class="first">Orientation of the focused area —- either following the listener’s gaze
+or specified via a quaternion</p>
+</li>
+<li><p class="first">The level of the off-focus area. The focus control works by reducing
+the amplitude of the areas that aren’t in focus.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">The width of the focus area, specified in degrees</div>
+</div>
+<p>C++:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">someFunction</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// All focus parameters can be changed during runtime.</span>
+
+  <span class="c1">// Enable focus control and get it to follow</span>
+  <span class="c1">// the listener&#39;s orientation.</span>
+  <span class="n">spat</span><span class="o">-&gt;</span><span class="n">enableFocus</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+  <span class="c1">// Set the off-focus level (range of -24dB to 0dB) and the focus area (range of 40 to 120 degrees)</span>
+  <span class="c1">// An off-focus level of 0 equals no focus effect.</span>
+  <span class="c1">// Default off-focus level = 0dB</span>
+  <span class="c1">// Default width = 90.0f</span>
+  <span class="n">spat</span><span class="o">-&gt;</span><span class="n">setOffFocusLeveldB</span><span class="p">(</span><span class="o">-</span><span class="mf">6.f</span><span class="p">);</span>
+  <span class="n">spat</span><span class="o">-&gt;</span><span class="n">setFocusWidthDegrees</span><span class="p">(</span><span class="mf">100.f</span><span class="p">);</span>
+
+  <span class="c1">// Alternatively, you can set the focus area to be in any direction you want.</span>
+  <span class="n">spat</span><span class="o">-&gt;</span><span class="n">enableFocus</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="n">spat</span><span class="o">-&gt;</span><span class="n">setFocusOrientationQuat</span><span class="p">(</span><span class="n">someQuaternion</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Java:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">someFunction</span><span class="o">()</span>
+<span class="o">{</span>
+  <span class="c1">// All focus parameters can be changed during runtime.</span>
+
+  <span class="c1">// Enable focus control and get it to follow</span>
+  <span class="c1">// the listener&#39;s orientation.</span>
+  <span class="n">spat</span><span class="o">.</span><span class="na">enableFocus</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+
+  <span class="c1">// Set the off-focus level (range of -24dB to 0dB) and the focus area (range of 40 to 120 degrees)</span>
+  <span class="c1">// An off-focus level of 0 equals no focus effect.</span>
+  <span class="c1">// Default off-focus level = 0dB</span>
+  <span class="c1">// Default width = 90.0f</span>
+  <span class="n">spat</span><span class="o">.</span><span class="na">setOffFocusLeveldB</span><span class="o">(-</span><span class="mf">6.f</span><span class="o">);</span>
+  <span class="n">spat</span><span class="o">.</span><span class="na">setFocusWidthDegrees</span><span class="o">(</span><span class="mf">100.f</span><span class="o">);</span>
+
+  <span class="c1">// Alternatively, you can set the focus area to be in any direction you want.</span>
+  <span class="n">spat</span><span class="o">.</span><span class="na">enableFocus</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+  <span class="n">spat</span><span class="o">.</span><span class="na">setFocusOrientationQuat</span><span class="o">(</span><span class="n">someQuaternion</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="positional-tracking">
+<h2>Positional Tracking<a class="headerlink" href="#positional-tracking" title="Permalink to this headline">¶</a></h2>
+<p>If you are working with content that allows for 6 degrees of freedom,
+the audio engine can also create a parallax effect with existing spatial
+audio streams or files. This generally works well when movement is
+constrained to about a metre on each side of the listener. While the
+example below is in C++, the APIs in Java are similar.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">TBE_CreateAudioEngine</span><span class="p">(</span><span class="n">engine</span><span class="p">);</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+
+  <span class="c1">// Enable positional tracking and specify the root/initial position of the listener from which they will be tracked</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">enablePositionalTracking</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="n">TBVector</span><span class="o">::</span><span class="n">zero</span><span class="p">());</span>
+
+  <span class="c1">// Positional tracking will work both with SpatDecoderQueue and SpatDecoderFile</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">createSpatDecoderFile</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;file.tbe&quot;</span><span class="p">);</span>
+
+  <span class="n">file</span><span class="o">-&gt;</span><span class="n">play</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">setListenerRotation</span><span class="p">(</span><span class="n">rotation</span><span class="p">);</span>
+  <span class="c1">// Also specify the listener&#39;s position in space</span>
+  <span class="n">engine</span><span class="o">-&gt;</span><span class="n">setListenerPosition</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="integrations">
+<h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="unity-integration">
+<span id="id22"></span><h2>Unity Integration<a class="headerlink" href="#unity-integration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id23">
+<h3>Setup<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Open your Unity project</li>
+<li>Import Audio360_x.x.x.unitypackge by double-clicking the package</li>
+<li>In your main/primary scene go to <strong class="command">Edit &gt; Audio360 &gt; Setup</strong> in the menu bar</li>
+<li>Click on <strong class="command">Setup Scene</strong> to add an object called <strong class="command">[TBE.AudioEngineSettings]</strong> to your scene</li>
+<li>The engine’s settings can now be customized</li>
+<li>Done!</li>
+</ol>
+</div>
+<div class="section" id="audio-engine-settings">
+<h3>Audio Engine Settings<a class="headerlink" href="#audio-engine-settings" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/AudioEngineSettingsUnity.png" src="../../_images/AudioEngineSettingsUnity.png" />
+<p>Customize the audio engine’s settings. These settings are applied as the engine is initialized,
+typically before any API of the engine is called.</p>
+<ul class="simple">
+<li><strong class="command">Sample Rate</strong>: Either 44100kHz or 48000kHz. Audio assets at a different sample rate are usually resampled, at an increase in CPU cost</li>
+<li><strong class="command">Object Pool Size</strong>: The number of expected audio objects (Eg: SpatDecoderFile) to be used in the scene</li>
+<li><strong class="command">Audio Device</strong>: Output audio device<ul>
+<li><strong class="command">DEFAULT</strong>: Default audio device</li>
+<li><strong class="command">CUSTOM</strong>: Custom audio device, the name of which can be specified in the text box</li>
+<li><strong class="command">DISABLED</strong>: Disable the audio device</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h3>SpatDecoderFile<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/SpatDecoderFileUnity.png" src="../../_images/SpatDecoderFileUnity.png" />
+<p>SpatDecoderFile is the primary component you will be working with to playback spatial audio files
+created with Spatial Workstation and other tools.</p>
+<ul class="simple">
+<li><strong class="command">File</strong>: The name of the asset file, including extension. If no path is specified, the file will be loaded from the Assets/StreamingAssets folder in your project.</li>
+<li><strong class="command">Play On Start</strong>: Load and play the file on Start, i.e, when the scene loads up or the object is created/activated.</li>
+<li><strong class="command">Volume</strong>: Playback volume in linear gain</li>
+<li><strong class="command">Sync Mode</strong>: If synchronisation must be via the internal audio clock or an external source. See TBE.SpatDecoderFile.setExternalClockInMs(..)</li>
+<li><strong class="command">Focus</strong>: Enable focus control. See <a class="reference internal" href="#mix-focus"><span class="std std-ref">Mix Focus</span></a><ul>
+<li><strong class="command">Off-focus Level</strong>: Level of the area that isn’t in focus, between 0 and -24dB</li>
+<li><strong class="command">Focus Width</strong>: Width of the focus area in degrees</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="asset-management">
+<h3>Asset Management<a class="headerlink" href="#asset-management" title="Permalink to this headline">¶</a></h3>
+<p><strong class="command">SpatDecoderFile</strong> supports .tbe and .wav formats. These files must typically be placed in <strong class="command">Assets/StreamingAssets</strong>. The <strong class="command">StreamingAssets</strong>
+folder can be created if it does not already exist in your project. Files can also exist elsewhere on the file system and can be opened by specifying an absolute
+path to the file either in the editor to the SpatDecoderFile component or via a script through SpatDecoderFile.open.</p>
+</div>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<p>The audio engine can dispatch various events via callbacks on a dedicated event thread. A minimal number of events are supported in the Unity integration. <strong>Events and
+event listeners are currently unsupported in the iOS unity integration</strong>.</p>
+<p>The following events are supported when using <strong class="command">SpatDecoderFile</strong>.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong class="command">Events.ERROR_QUEUE_STARVATION</strong>:</dt>
+<dd>Dispatched when internal audio queues are being starved.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong class="command">Events.DECODER_INIT</strong>:</dt>
+<dd>Dispatched when an opened file is ready for playback.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong class="command">Events.END_OF_STREAM</strong>:</dt>
+<dd>Dispatched by when an opened file has completed playing.</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">spat</span><span class="p">;</span>
+
+<span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">spat</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">SpatDecoderFile</span><span class="p">&gt;();</span>
+
+    <span class="c1">// Listen to events from SpatDecoderFile.</span>
+    <span class="c1">// Events are currently unsupported on iOS.</span>
+<span class="cp">#if !UNITY_IOS</span>
+    <span class="n">spat</span><span class="p">.</span><span class="n">events</span><span class="p">.</span><span class="n">newEvent</span> <span class="p">+=</span> <span class="n">newEvent</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+    <span class="c1">// Specifying no path name results in the file being</span>
+    <span class="c1">// opened from Assets/StreamingAssets</span>
+    <span class="n">spat</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;Test.tbe&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">newEvent</span><span class="p">(</span><span class="n">TBE</span><span class="p">.</span><span class="n">Event</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Begin playback when ready and then loop</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">DECODER_INIT</span> <span class="p">||</span> <span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">END_OF_STREAM</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">spat</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obb-on-android">
+<h3>.obb On Android<a class="headerlink" href="#obb-on-android" title="Permalink to this headline">¶</a></h3>
+<p>Large Android projects are usually split into a .apk application and a .obb file that includes the assets in your Unity project. Audio assets
+in the <strong class="command">Assets/StreamingAssets</strong> directory are typically included in the .obb file.</p>
+<p>.obb files are similar to .zip archives. The cost of reading and decompressing these archives during runtime can be high. It is recommended
+that the .tbe files are extracted from the .obb file on initialisation of your app. <strong class="command">Assets/Audio360/Utils/ObbExtractor.cs</strong> can help with this.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Extract</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="n">IEnumerator</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">string</span><span class="p">[]</span> <span class="n">files</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span> <span class="s">&quot;file1.tbe&quot;</span><span class="p">,</span> <span class="s">&quot;file2.tbe&quot;</span> <span class="p">};</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">TBE</span><span class="p">.</span><span class="n">ObbExtractor</span><span class="p">.</span><span class="n">streamingAssetsAreInObb</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">yield</span> <span class="k">return</span> <span class="n">TBE</span><span class="p">.</span><span class="n">ObbExtractor</span><span class="p">.</span><span class="n">extractFromObb</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="k">false</span> <span class="cm">/* don&#39;t replace */</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="kt">string</span> <span class="n">file1Path</span> <span class="p">=</span> <span class="n">TBE</span><span class="p">.</span><span class="n">ObbExtractor</span><span class="p">.</span><span class="n">getStreamingAssetsPath</span><span class="p">()</span> <span class="p">+</span> <span class="n">files</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+        <span class="kt">string</span> <span class="n">file2Path</span> <span class="p">=</span> <span class="n">TBE</span><span class="p">.</span><span class="n">ObbExtractor</span><span class="p">.</span><span class="n">getStreamingAssetsPath</span><span class="p">()</span> <span class="p">+</span> <span class="n">files</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;File1 path &quot;</span> <span class="p">+</span> <span class="n">file1Path</span><span class="p">);</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;File2 path &quot;</span> <span class="p">+</span> <span class="n">file2Path</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>Synchronisation<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>While you might be able to play an audio asset and a video without any synchronisation problems, you wouldn’t be safeguarding the application for when the video decoder or audio engine is interrupted.
+For achieving good audio-visual sync, it is recommended that the video decoder is slaved to SpatDecoderFile (using the getTimeInMs method).</p>
+<p>In some cases, such an implementation might be difficult as you might not have low level access to the video playback system. You can alternatively slave an instance of SpatDecoderFile to the video player or any other external time source. SpatDecoderFile will then try its best to synchronise the audio to the video.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="n">TBE</span><span class="p">.</span><span class="n">SpatDecoderFile</span> <span class="n">spat</span><span class="p">;</span>
+<span class="k">void</span> <span class="nf">Awake</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Get the instance of SpatDecoderFile from the game object</span>
+    <span class="n">spat</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">TBE</span><span class="p">.</span><span class="n">SpatDecoderFile</span><span class="p">&gt;();</span>
+    <span class="c1">// Set the decoder to by synchronised to an external source</span>
+    <span class="n">spat</span><span class="p">.</span><span class="n">syncMode</span> <span class="p">=</span> <span class="n">TBE</span><span class="p">.</span><span class="n">SyncMode</span><span class="p">.</span><span class="n">EXTERNAL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Called every frame</span>
+<span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Get the elapsed time/playback position from the video player/decoder.</span>
+    <span class="c1">// Make sure the value is in milliseconds!</span>
+    <span class="kt">float</span> <span class="n">videoTime</span> <span class="p">=</span> <span class="n">videoPlayer</span><span class="p">.</span><span class="n">getTimeMs</span><span class="p">();</span>
+
+    <span class="c1">// Pass the video time to SpatDecoderFile. This will automatically force it to synchronise</span>
+    <span class="c1">// with the video (since the syncMode in Awake() was changed to EXTERNAL)</span>
+    <span class="n">spat</span><span class="p">.</span><span class="n">setExternalClockInMs</span><span class="p">(</span><span class="n">videoTime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Some event in your application that triggers</span>
+<span class="c1">// playback of the video and audio</span>
+<span class="k">void</span> <span class="nf">somePlayEvent</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">spat</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
+    <span class="n">videoPlayer</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>Object Lifecycle<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>The lifecycle of SpatDecoderFile and other components are typically tied to the GameObject that owns them. The Audio Engine is instantiated as a singleton
+and is retained across scenes. The engine is instantiated before any of its child objects are initialised and it is destroyed only when the Unity application
+quits.</p>
+</div>
+<div class="section" id="audio-listener">
+<h3>Audio Listener<a class="headerlink" href="#audio-listener" title="Permalink to this headline">¶</a></h3>
+<p>Unity’s default audio listener is used to query the position and orientation of the listener/main camera in the scene. Ensure Unity’s audio listener is present and
+active in the scene for spatialisation to work correctly.</p>
+</div>
+</div>
+<div class="section" id="android-exoplayer-2-2">
+<h2>Android ExoPlayer 2.2<a class="headerlink" href="#android-exoplayer-2-2" title="Permalink to this headline">¶</a></h2>
+<p>It is likely that you might want to not only playback local spatial
+audio files, but also stream remote or local video files that have
+spatial audio muxed in or alternatively use an adaptive streaming
+protocol. ExoPlayer is an open source media player developed by Google
+for Android. It is easy to extend and customise.</p>
+<p>While codecs and standards are fast evolving in this space, the Audio360
+ExoPlayer extension provides functionality similar to what is used in
+the Facebook and Oculus apps (for details, see <a class="reference external" href="https://code.facebook.com/posts/412047759146896/spatial-audio-bringing-realistic-sound-to-360-video/">this blog
+post</a>).
+The extension can decode 10 channels of audio muxed into a .mkv file.
+These 10 channels of audio can be created with the Facebook 360 Spatial
+Workstation. The 10 channels (8 channels of spatial audio and 2 channels
+of head-locked audio) is described through the TBE_8_2 ChannelMap in
+the SDK. Alternatively, you can also playback 4 channel opus files in
+the ambiX ambisonic convention using the AMBIX_4 ChannelMap.</p>
+<div class="section" id="project-setup">
+<h3>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Ensure your Android Studio project already has ExoPlayer 2.x
+integrated (the latest integration has been tested with 2.2)</p>
+</li>
+<li><p class="first">Follow the steps in <a class="reference internal" href="#android-java"><span class="std std-ref">Android (Java)</span></a> to integrate the Audio360 Java SDK</p>
+</li>
+<li><p class="first">In your Android Studio project window, go to <span class="menuselection">File ‣ New ‣ New
+Module..</span></p>
+</li>
+<li><p class="first">Select <em>Import .JAR/.AAR Package</em> from the grid of options and select
+<em>Next</em></p>
+</li>
+<li><p class="first">Load Audio360/Android-Java/audio360-exo2.aar into the <em>File name:</em>
+field and select <em>Finish.</em> audio360-exo2.aar should be copied to your
+project.</p>
+</li>
+<li><p class="first">In the Android Studio project window, open the build.gradle file for
+your app (typically <em>Module: app</em>)</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Under the <em>dependencies</em> block, add</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">compile</span> <span class="n">project</span><span class="p">(</span><span class="s2">&quot;:audio360-exo2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Sync your project’s gradle files</p>
+</li>
+</ol>
+</div>
+<div class="section" id="integrate-the-renderer">
+<h3>Integrate The Renderer<a class="headerlink" href="#integrate-the-renderer" title="Permalink to this headline">¶</a></h3>
+<p>The Audio360 ExoPlayer integration is exposed as a <em>Renderer</em> (named
+<em>OpusRenderer</em> that requires a <em>SpatialAudioTrack)</em> for ExoPlayer.
+Customising the <em>Renderer</em> requires the use of <em>ExoPlayer</em> and not
+<em>SimpleExoPlayer.</em> A working example is provided in
+<em>Examples/ExoExample</em>.</p>
+<p>The ExoPlayer factory constructor can be used to customise the renderer
+used by the player:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Setup the Audio360 engine</span>
+<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="mf">48000.f</span><span class="o">);</span> <span class="c1">// spatial audio + opus is at 48000 Hz</span>
+<span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
+<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+<span class="c1">// Default video renderer. ExoPlayer will pick whatever suits the codec</span>
+<span class="n">MediaCodecVideoRenderer</span> <span class="n">videoRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaCodecVideoRenderer</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MediaCodecSelector</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">);</span>
+
+<span class="c1">// Audio: opus codec with the spatial audio engine</span>
+<span class="n">SpatialAudioTrack</span> <span class="n">spatialTrack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SpatialAudioTrack</span><span class="o">(</span><span class="n">spatQueue</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">.</span><span class="na">TBE_8_2</span><span class="o">);</span>
+<span class="n">OpusRenderer</span> <span class="n">audioRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OpusRenderer</span><span class="o">(</span><span class="n">spatialTrack</span><span class="o">);</span>
+
+<span class="c1">// This is pretty much it. ExoPlayer will now be created with the custom audio renderer</span>
+<span class="n">ExoPlayer</span> <span class="n">player</span> <span class="o">=</span> <span class="n">ExoPlayerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Renderer</span><span class="o">[]{</span><span class="n">videoRenderer</span><span class="o">,</span> <span class="n">audioRenderer</span><span class="o">},</span> <span class="k">new</span> <span class="n">DefaultTrackSelector</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>All other functionality of the audio engine (object pools, updating the
+orientation of the listener, etc), as described elsewhere in the
+documentation, applies.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../KB.html" class="btn btn-neutral float-right" title="Knowledge Base" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../SpatialWorkstation/SpatialWorkstation.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
