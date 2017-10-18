@@ -38,7 +38,7 @@
     <link rel="top" title="Facebook Audio 360  documentation" href="../index.html"/>
         <link rel="up" title="Knowledge Base" href="../KB.html"/>
         <link rel="next" title="Encoding a Quad-Binaural Mix" href="EncodingQuadBinauralMix.html"/>
-        <link rel="prev" title="Add Spatial Audio To Oculus Video (Gear VR)" href="AddSpatialAudioToOculusVideo.html"/> 
+        <link rel="prev" title="Creating A New Project In Pro Tools 10 and 11" href="CreatingANewProjectInProTools.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -98,9 +98,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#components">Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-pro-tools-hd">Using Pro Tools HD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#using-nuendo">Using Nuendo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#video-player">Video Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#encoding-assets">Encoding Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation/SpatialWorkstation/SpatialWorkstation.html#encoder">Encoder</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AUDIO360 SDK</span></p>
 <ul>
@@ -111,9 +110,10 @@
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../KB.html">Knowledge Base</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="3DMixPT2Reaper.html">Importing Pro Tools’ 8 Channel 3D Mix Into Reaper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AddOnDownload.html">Add On Installer for AAX Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioForYoutube.html">Add Spatial Audio to a Video for YouTube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreatingANewProjectInProTools.html">Creating A New Project In Pro Tools 10 and 11</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Videos with Spatial Audio for Facebook 360</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#installation-macos">Installation (macOS)</a></li>
@@ -126,7 +126,6 @@
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UninstallingSWMac.html">Uninstalling Spatial Workstation on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UsingAnAmbisonicMicrophone.html">Using an Ambisonic Microphone With Your Live 360 Video on Facebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="VideoFormatGuidelines.html">Video Format Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WhatToIncludeWhenReportingIssue.html">What To Include When Reporting an Issue</a></li>
@@ -209,10 +208,10 @@
 <span id="id1"></span><h1>Creating Videos with Spatial Audio for Facebook 360<a class="headerlink" href="#creating-videos-with-spatial-audio-for-facebook-360" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#supported-platforms" id="id2">Supported Platforms</a></li>
-<li><a class="reference internal" href="#installation-macos" id="id3">Installation (macOS)</a></li>
-<li><a class="reference internal" href="#installation-windows" id="id4">Installation (Windows)</a></li>
-<li><a class="reference internal" href="#encoding-for-facebook-360" id="id5">Encoding For Facebook 360</a></li>
+<li><a class="reference internal" href="#supported-platforms" id="id3">Supported Platforms</a></li>
+<li><a class="reference internal" href="#installation-macos" id="id4">Installation (macOS)</a></li>
+<li><a class="reference internal" href="#installation-windows" id="id5">Installation (Windows)</a></li>
+<li><a class="reference internal" href="#encoding-for-facebook-360" id="id6">Encoding For Facebook 360</a></li>
 </ul>
 </div>
 <p>Preparing videos with spatial audio for upload to Facebook requires the
@@ -229,7 +228,6 @@ platforms:</p>
 <li>Facebook app on iOS</li>
 <li>Facebook app on Android</li>
 <li>Facebook on Chrome (desktop)</li>
-<li>Facebook on Firefox (desktop)</li>
 <li>Facebook 360 app on Gear VR</li>
 <li>Oculus Video app on Gear VR</li>
 </ul>
@@ -238,39 +236,33 @@ platforms:</p>
 <h2><a class="toc-backref" href="#contents">Installation (macOS)</a><a class="headerlink" href="#installation-macos" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Download the Spatial Workstation installer from
-<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">here.</a></li>
-<li>Once downloaded, unzip FB360_SpatialWorkstation_OSX.zip and run
-SpatialWorkstation_x.x.x_OSX.mpkg, where x.x.x would be the current
-version number. Ensure you are using v1.2 or greater</li>
+<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">here.</a>.
+The Encoder is included with the AAXAddon and the VST installers.</li>
+<li>Once downloaded, unzip and run
+the .pkg file. Ensure you are using v1.3 or greater</li>
 <li>Follow the prompts on your screen to complete the installation</li>
 </ol>
 </div>
 <div class="section" id="installation-windows">
 <h2><a class="toc-backref" href="#contents">Installation (Windows)</a><a class="headerlink" href="#installation-windows" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">The Encoder requires Mp4Box and Python 2.7 installed on your Windows
-computer.</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
+<li>The Encoder requires Mp4Box and Python 2.7 installed on your Windows
+computer<ol class="arabic">
 <li>The Python 2.7 installer can be downloaded from
 <a class="reference external" href="https://www.python.org/downloads/release/python-2712/">here</a>.
 Follow the instructions with the installer.</li>
 <li>Mp4Box can be installed using the GPAC installer from
 <a class="reference external" href="https://gpac.wp.mines-telecom.fr/downloads/">here</a>. The GPAC
 installer includes Mp4Box and other components. Installing the
-additional components is optional.</li>
+additional components is optional</li>
 </ol>
-</div></blockquote>
 </li>
-<li><p class="first">Download the Spatial Workstation installer for Windows from
-<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">here</a> (choose
-<em>Spatial Workstation - Windows</em> from the dropdown menu)</p>
-</li>
-<li><p class="first">Unzip FB360_SpatialWorkstation_WIN_x.x.x.zip and run
-SpatialWorkstation-x.x.x-Win64</p>
-</li>
-<li><p class="first">Follow the prompts on your screen to complete the installation</p>
-</li>
+<li>Download the Spatial Workstation installer for Windows from
+<a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">here.</a>
+(choose <em>Spatial Workstation - Windows</em> from the dropdown menu).
+The Encoder is included with the AAXAddon and the VST installers.</li>
+<li>Once downloaded, unzip and run the .exe file.</li>
+<li>Follow the prompts on your screen to complete the installation</li>
 </ol>
 </div>
 <div class="section" id="encoding-for-facebook-360">
@@ -301,25 +293,28 @@ samples per second.</p>
 <p><a class="reference internal" href="../_images/SpatialAudioOptions1.png"><img alt="image1" src="../_images/SpatialAudioOptions1.png" style="width: 407px; height: 207px;" /></a></p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Spatial Workstation 8 Channel: If you have used the <a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">Spatial
-Workstation</a> to
+<li>Spatial Workstation 8 Channel: If you have used a version of the <a class="reference external" href="https://facebook360.fb.com/spatial-workstation/">Spatial
+Workstation</a> before 3.0.0 to
 design your audio mix, this would be the output of the 3D master from
 your audio session</li>
-<li>B-format ambiX 1st order: First order ambisonics with ACN ordering
+<li>B-format (1st order ambiX): First order ambisonics with ACN ordering
 and SN3D normalization, from any other mix or tool (4 channels)</li>
-<li>B-format FuMa 1st order: First order ambisonics with Furse-Malham
+<li>B-format (1st order FuMa): First order ambisonics with Furse-Malham
 ordering, typically the B-format audio from ambisonic microphones (4
 channels)</li>
-<li>B-format ambiX 2nd order: Second order ambisonics with ACN ordering
-and SN3D normalization, from any other mix or tool (9 channels)</li>
-<li>B-format FuMa 2nd order: Second order ambisonics with Furse-Malham
+<li>B-format (2nd order ambiX): Second order Ambisonics with ACN ordering and
+SN3D normalisation (9 channels), when using version 3.0.0 or later of
+the Spatial Workstation this would be the output of the 3D master
+from your audio session This will be converted to first order ambiX,
+at a loss of quality.</li>
+<li>B-format (2nd order FuMa): Second order ambisonics with Furse-Malham
 ordering, typically the B-format audio from ambisonic microphones (9
 channels)</li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Ensure the <em>From Pro Tools</em> checkbox is ticked if the 8 channel spatial
-audio file is from Pro Tools</p>
+<li><p class="first">If using a Spatial Workstation 8 Channel file, ensure the <em>From Pro Tools</em>
+checkbox is ticked if the spatial audio file was exported from Pro Tools.</p>
 </li>
 <li><p class="first">Optionally, you can also drop or load a stereo file for head-locked
 audio. This is audio that will not rotate when looking around a 360
@@ -366,7 +361,7 @@ the video will be displayed to the right eye when viewing in 3D</li>
         <a href="EncodingQuadBinauralMix.html" class="btn btn-neutral float-right" title="Encoding a Quad-Binaural Mix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="AddSpatialAudioToOculusVideo.html" class="btn btn-neutral" title="Add Spatial Audio To Oculus Video (Gear VR)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="CreatingANewProjectInProTools.html" class="btn btn-neutral" title="Creating A New Project In Pro Tools 10 and 11" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
