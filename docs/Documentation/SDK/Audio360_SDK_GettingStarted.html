@@ -1319,7 +1319,7 @@ event listeners are currently unsupported in the iOS unity integration</strong>.
 <span class="k">void</span> <span class="nf">newEvent</span><span class="p">(</span><span class="n">TBE</span><span class="p">.</span><span class="n">Event</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Begin playback when ready and then loop</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">DECODER_INIT</span> <span class="p">||</span> <span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">END_OF_STREAM</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">DECODER_INIT</span> <span class="p">||</span> <span class="n">e</span> <span class="p">==</span> <span class="n">TBE</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">END_OF_STREAM</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">spat</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
     <span class="p">}</span>
