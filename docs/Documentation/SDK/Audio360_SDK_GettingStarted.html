@@ -170,6 +170,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#unity-integration">Unity Integration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id23">Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#audio-engine-settings">Audio Engine Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audio-device-for-oculus-rift">Audio Device For Oculus Rift</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id24">SpatDecoderFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asset-management">Asset Management</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
@@ -179,9 +180,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#audio-listener">Audio Listener</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#android-exoplayer-2-2">Android ExoPlayer 2.2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#android-exoplayer">Android ExoPlayer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-versions">Supported Versions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#project-setup">Project Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#integrate-the-renderer">Integrate The Renderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-exoplayer-v2-6">Example: ExoPlayer v2.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-exoplayer-v2-2-and-v2-5">Example: ExoPlayer v2.2 and v2.5</a></li>
 </ul>
 </li>
 </ul>
@@ -327,7 +331,7 @@ for 32 and 64 bit Windows</li>
 for Android</li>
 <li><em>./Audio360/Android-Java/audio360.aar</em> : Android library (Java + native
 libraries) that exposes the C++ API functionality in Java</li>
-<li><em>./Audio360/Android-Java/audio360-exo2.aar</em> : An Android library for
+<li><em>./Audio360/Android-Java/audio360-exo..</em> : Android libraries for
 ExoPlayer 2.x that allows the Audio360 engine to be used as an audio
 renderer in ExoPlayer, for decoding mkv files with opus audio</li>
 <li><em>./Audio360/Unity</em> : Cross-platform integration for Unity</li>
@@ -941,8 +945,8 @@ optionally synchronise them to an external time source.</p>
 <div class="section" id="file-paths">
 <h3>File Paths<a class="headerlink" href="#file-paths" title="Permalink to this headline">¶</a></h3>
 <p>An Android and iOS, the path can can be prepended with <strong class="command">asset///:</strong>. On Android
-this would load the file from the apps’s Asset folder and iOS this would load the file
-from the root of app’s resource directory. Absolute paths can also be used.</p>
+this would load the file from the apps&#8217;s Asset folder and iOS this would load the file
+from the root of app&#8217;s resource directory. Absolute paths can also be used.</p>
 </div>
 <div class="section" id="file-types-and-channel-maps">
 <h3>File Types And Channel Maps<a class="headerlink" href="#file-types-and-channel-maps" title="Permalink to this headline">¶</a></h3>
@@ -959,7 +963,7 @@ and 2 channels of head-locked audio)</li>
 <p>When files are opened for playback, the AudioEngine begins to
 asynchronously decode a small chunk of the audio in a background thread.
 As soon as the buffer is full and ready for playback, an DECODER_INIT
-event is dispatched to the <strong class="command">SpatDecoderFile</strong>’s event callback.
+event is dispatched to the <strong class="command">SpatDecoderFile</strong>&#8216;s event callback.
 On Android, you can also load files from the app’s <em>asset</em> folder with the prefix
 <em>asset:///</em> (Eg: <em>“asset:///example.tbe”</em>).</p>
 </div>
@@ -1135,7 +1139,7 @@ parameters:</p>
 <ol class="arabic">
 <li><p class="first">A toggle control</p>
 </li>
-<li><p class="first">Orientation of the focused area —- either following the listener’s gaze
+<li><p class="first">Orientation of the focused area &#8212;- either following the listener’s gaze
 or specified via a quaternion</p>
 </li>
 <li><p class="first">The level of the off-focus area. The focus control works by reducing
@@ -1234,14 +1238,14 @@ example below is in C++, the APIs in Java are similar.</p>
 <li>Import Audio360_x.x.x.unitypackge by double-clicking the package</li>
 <li>In your main/primary scene go to <strong class="command">Edit &gt; Audio360 &gt; Setup</strong> in the menu bar</li>
 <li>Click on <strong class="command">Setup Scene</strong> to add an object called <strong class="command">[TBE.AudioEngineSettings]</strong> to your scene</li>
-<li>The engine’s settings can now be customized</li>
+<li>The engine&#8217;s settings can now be customized</li>
 <li>Done!</li>
 </ol>
 </div>
 <div class="section" id="audio-engine-settings">
 <h3>Audio Engine Settings<a class="headerlink" href="#audio-engine-settings" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/AudioEngineSettingsUnity.png" src="../../_images/AudioEngineSettingsUnity.png" />
-<p>Customize the audio engine’s settings. These settings are applied as the engine is initialized,
+<p>Customize the audio engine&#8217;s settings. These settings are applied as the engine is initialized,
 typically before any API of the engine is called.</p>
 <ul class="simple">
 <li><strong class="command">Sample Rate</strong>: Either 44100kHz or 48000kHz. Audio assets at a different sample rate are usually resampled, at an increase in CPU cost</li>
@@ -1253,6 +1257,19 @@ typically before any API of the engine is called.</p>
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="audio-device-for-oculus-rift">
+<h3>Audio Device For Oculus Rift<a class="headerlink" href="#audio-device-for-oculus-rift" title="Permalink to this headline">¶</a></h3>
+<p>If you are publishing your Rift app to the Oculus Store, you would need to use the audio device specified by the user in the Oculus app. The Audio360 Unity integration can automatically query this.</p>
+<ol class="arabic simple">
+<li>Ensure you have the Oculus Utilities unitypackage included in your project. The package is available from the Oculus developer website</li>
+<li>In your Unity project, go to <strong class="command">File &gt; Build Settings..</strong> in the file menu</li>
+<li>Select your platform, i.e PC, in the <strong class="command">Build Settings</strong> window</li>
+<li>Click on <strong class="command">Player Settings...</strong></li>
+<li>In the <strong class="command">Player Settings</strong> tab, navigate to <strong class="command">Other Settings</strong></li>
+<li>Add the following definition to the <strong class="command">Scripting Define Symbols</strong> text box: <strong class="command">AUDIO360_USE_OVR_AUDIO_OUT</strong></li>
+</ol>
+<p>The audio engine will now use the preferred audio device from OVRManager on initialisation.</p>
 </div>
 <div class="section" id="id24">
 <h3>SpatDecoderFile<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
@@ -1401,12 +1418,12 @@ quits.</p>
 </div>
 <div class="section" id="audio-listener">
 <h3>Audio Listener<a class="headerlink" href="#audio-listener" title="Permalink to this headline">¶</a></h3>
-<p>Unity’s default audio listener is used to query the position and orientation of the listener/main camera in the scene. Ensure Unity’s audio listener is present and
+<p>Unity&#8217;s default audio listener is used to query the position and orientation of the listener/main camera in the scene. Ensure Unity&#8217;s audio listener is present and
 active in the scene for spatialisation to work correctly.</p>
 </div>
 </div>
-<div class="section" id="android-exoplayer-2-2">
-<h2>Android ExoPlayer 2.2<a class="headerlink" href="#android-exoplayer-2-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="android-exoplayer">
+<h2>Android ExoPlayer<a class="headerlink" href="#android-exoplayer" title="Permalink to this headline">¶</a></h2>
 <p>It is likely that you might want to not only playback local spatial
 audio files, but also stream remote or local video files that have
 spatial audio muxed in or alternatively use an adaptive streaming
@@ -1422,11 +1439,16 @@ Workstation. The 10 channels (8 channels of spatial audio and 2 channels
 of head-locked audio) is described through the TBE_8_2 ChannelMap in
 the SDK. Alternatively, you can also playback 4 channel opus files in
 the ambiX ambisonic convention using the AMBIX_4 ChannelMap.</p>
+<div class="section" id="supported-versions">
+<h3>Supported Versions<a class="headerlink" href="#supported-versions" title="Permalink to this headline">¶</a></h3>
+<p>ExoPlayer versions 2.6.0, 2.5.0 and 2.2.0 are supported through different libraries available in
+<em>./Audio360/Android-Java</em>. v2.6.0 is recommended.</p>
+</div>
 <div class="section" id="project-setup">
 <h3>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Ensure your Android Studio project already has ExoPlayer 2.x
-integrated (the latest integration has been tested with 2.2)</p>
+integrated</p>
 </li>
 <li><p class="first">Follow the steps in <a class="reference internal" href="#android-java"><span class="std std-ref">Android (Java)</span></a> to integrate the Audio360 Java SDK</p>
 </li>
@@ -1436,33 +1458,63 @@ Module..</span></p>
 <li><p class="first">Select <em>Import .JAR/.AAR Package</em> from the grid of options and select
 <em>Next</em></p>
 </li>
-<li><p class="first">Load Audio360/Android-Java/audio360-exo2.aar into the <em>File name:</em>
-field and select <em>Finish.</em> audio360-exo2.aar should be copied to your
-project.</p>
+<li><p class="first">Load the relevant Audio360 ExoPlayer library from Audio360/Android-Java/
+into the <em>File name:</em> field and select <em>Finish.</em> audio360-exo2.aar is ExoPlayer v2.2.
+audio360-exo25.aar is for ExoPlayer v2.5 and audio360-exo26.aar is for ExoPlayer v2.6.</p>
 </li>
 <li><p class="first">In the Android Studio project window, open the build.gradle file for
 your app (typically <em>Module: app</em>)</p>
 </li>
 <li><div class="first line-block">
-<div class="line">Under the <em>dependencies</em> block, add</div>
+<div class="line">Under the <em>dependencies</em> block, add one of the following</div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">compile</span> <span class="n">project</span><span class="p">(</span><span class="s2">&quot;:audio360-exo2&quot;</span><span class="p">)</span>
+</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// For ExoPlayer v2.2</span>
+<span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s">&quot;:audio360-exo2&quot;</span><span class="o">)</span>
+<span class="c1">// Or for ExoPlayer v2.5</span>
+<span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s">&quot;:audio360-exo25&quot;</span><span class="o">)</span>
+<span class="c1">// Or for ExoPlayer v2.6</span>
+<span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s">&quot;:audio360-exo26&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">Sync your project’s gradle files</p>
-</li>
+<ol class="arabic simple">
+<li>Sync your project’s gradle files</li>
 </ol>
 </div>
 <div class="section" id="integrate-the-renderer">
 <h3>Integrate The Renderer<a class="headerlink" href="#integrate-the-renderer" title="Permalink to this headline">¶</a></h3>
 <p>The Audio360 ExoPlayer integration is exposed as a <em>Renderer</em> (named
-<em>OpusRenderer</em> that requires a <em>SpatialAudioTrack)</em> for ExoPlayer.
+<em>OpusRenderer</em>)* for ExoPlayer.
 Customising the <em>Renderer</em> requires the use of <em>ExoPlayer</em> and not
-<em>SimpleExoPlayer.</em> A working example is provided in
-<em>Examples/ExoExample</em>.</p>
+<em>SimpleExoPlayer.</em> An example project for each version is provided in
+<em>Examples/</em>.</p>
+</div>
+<div class="section" id="example-exoplayer-v2-6">
+<h3>Example: ExoPlayer v2.6<a class="headerlink" href="#example-exoplayer-v2-6" title="Permalink to this headline">¶</a></h3>
 <p>The ExoPlayer factory constructor can be used to customise the renderer
-used by the player:</p>
+used by the player in ExoPlayer v2.6</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Setup the Audio360 engine</span>
+<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="mf">48000.f</span><span class="o">);</span> <span class="c1">// spatial audio + opus is at 48000 Hz</span>
+<span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
+<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+<span class="c1">// Default video renderer. ExoPlayer will pick whatever suits the codec</span>
+<span class="n">MediaCodecVideoRenderer</span> <span class="n">videoRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaCodecVideoRenderer</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MediaCodecSelector</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">);</span>
+
+<span class="c1">// Audio: opus codec with the spatial audio engine</span>
+<span class="n">AudioSink</span> <span class="n">audio360Sink</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio360Sink</span><span class="o">(</span><span class="n">spat</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">.</span><span class="na">TBE_8_2</span><span class="o">);</span>
+<span class="n">OpusRenderer</span> <span class="n">audioRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OpusRenderer</span><span class="o">(</span><span class="n">audio360Sink</span><span class="o">);</span>
+
+<span class="c1">// This is pretty much it. ExoPlayer will now be created with the custom audio renderer</span>
+<span class="n">ExoPlayer</span> <span class="n">player</span> <span class="o">=</span> <span class="n">ExoPlayerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Renderer</span><span class="o">[]{</span><span class="n">videoRenderer</span><span class="o">,</span> <span class="n">audioRenderer</span><span class="o">},</span> <span class="k">new</span> <span class="n">DefaultTrackSelector</span><span class="o">());</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-exoplayer-v2-2-and-v2-5">
+<h3>Example: ExoPlayer v2.2 and v2.5<a class="headerlink" href="#example-exoplayer-v2-2-and-v2-5" title="Permalink to this headline">¶</a></h3>
+<p>The ExoPlayer factory constructor can be used to customise the renderer
+used by the player in ExoPlayer v2.2 and v2.5:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Setup the Audio360 engine</span>
 <span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="mf">48000.f</span><span class="o">);</span> <span class="c1">// spatial audio + opus is at 48000 Hz</span>
 <span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>

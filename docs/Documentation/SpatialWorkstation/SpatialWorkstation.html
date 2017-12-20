@@ -458,7 +458,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-.pkg)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process<ol class="arabic">
 <li>VR Video Player in <em>Applications/FB360 Spatial Workstation/Video
@@ -472,7 +472,7 @@ Player</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#vst" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-.pkg)</li>
+(SpatialWorkstation-VST-3.1.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST 2.x Plugins in <em>Mac HD/Library/Audio/Plug-Ins/Audio/VST</em></li>
@@ -510,7 +510,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon--Win64.exe)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VR Video Player in <em>C:\Program Files\FB360 Spatial
@@ -525,7 +525,7 @@ Workstation\Encoder</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST--Win64.exe)</li>
+(SpatialWorkstation-VST-3.1-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST3 Plugins in <em>C:\Program Files\Common Files\VST3</em></li>
@@ -801,7 +801,7 @@ accurately position sounds in 3D space.</p>
 <p>The equirect panner mirrors what is displayed in the FB360 Video Player. When a video is loaded
 in the FB360 Video Player, it will be automatically shown in the equirect panner.</p>
 <p>Typically most 360 videos are stored in an equirectangular projection (similar to how
-panoramic photos are saved). This is a “flattened” projection of a 360 video where
+panoramic photos are saved). This is a &#8220;flattened&#8221; projection of a 360 video where
 typically the horizontal axis maps to azimuth and the vertical axis maps to elevation,
 with the centre of the scene at the centre of the equirect display.</p>
 <p>The 2D panner on the other hand shows a top-down view of the scene. While the equirect panner
@@ -979,7 +979,7 @@ API</li>
 when focus size is set to 45°. Any parts of the mix that are in the clear
 cone will continue to be played back at full volume whereas all the areas that are
 greyed will be attenuated.
-As the focus area moves with the listener’s gaze (unless ‘Follow Head’ is disabled)
+As the focus area moves with the listener&#8217;s gaze (unless &#8216;Follow Head&#8217; is disabled)
 it means the region of the video that the listener is looking at becomes more prevalent
 in the mix.</p>
 </div>
@@ -992,9 +992,9 @@ cannot be determined at the mixing or mastering stage. There are two loudness pl
 the Spatial Workstation which work together on the 3D master track and the head-locked
 stereo track to approximate the overall loudness of your mix. The Loudness plugins provided
 here give a guideline for the maximum possible loudness and true peak value in your mix, as
-if the listener were always looking in the “loudest” direction. The loudness plugins follow
+if the listener were always looking in the &#8220;loudest&#8221; direction. The loudness plugins follow
 a similar methodology to the EBU-128 technical specification which details a method for
-measuring perceived loudness using the units ‘Loudness Units Full Scale’ (LUFS).</p>
+measuring perceived loudness using the units &#8216;Loudness Units Full Scale&#8217; (LUFS).</p>
 <a class="reference internal image-reference" href="../../_images/MixLoudness.png"><img alt="../../_images/MixLoudness.png" src="../../_images/MixLoudness.png" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../../_images/StereoLoudness.png"><img alt="../../_images/StereoLoudness.png" src="../../_images/StereoLoudness.png" style="width: 50%;" /></a>
 <p>The FB360 Mix Loudness plugin will function on its own if your mix only uses the
@@ -1017,7 +1017,7 @@ the loudness was calculated. A shorter window means that the loudness value
 responds quickly to the audio, whereas a longer window responds more slowly and can
 be thought of as closer to an average loudness value. The integrated loudness is
 calculated for all time (since it was last reset) and can be thought of as the overall
-loudness of the audio. In this sense, an entire mix’s loudness can be identified
+loudness of the audio. In this sense, an entire mix&#8217;s loudness can be identified
 by this single integrated loudness number. The following table shows the window
 size for each type of loudness:</p>
 <blockquote>
@@ -1045,9 +1045,9 @@ size for each type of loudness:</p>
 </table>
 </div></blockquote>
 <p>The two bars show momentary loudness (LUFS) and true peak (dBFS) approximations for your mix. Along the right these measurements are repeated with text read-offs in addition to the short term loudness and integrated loudness. Clicking on the true peak or integrated loudness boxes will reset those measurements. The loudness bar on the left hand side also has a marker which can be dragged to a particular position to be used as a guide. This marker can also be set by clicking the number text.</p>
-<p>The ‘True Peak’ value shows a maximum theoretical true peak value for the mix; it doesn’t mean that you will always hit that peak during playback because it depends on where the listener is looking. But it should be treated as if it were the peak value for your mix and you should avoid clipping as usual. The peak read-off box on the right will always stick to the highest peak value that has been measured since the peak meter was last reset. If the peak level goes above 0 dBFS then the clip indicator at the top of the peak meter and the read-off text will turn red. The peak metering is reset by clicking on the red indicator or on the read-off text.</p>
+<p>The &#8216;True Peak&#8217; value shows a maximum theoretical true peak value for the mix; it doesn&#8217;t mean that you will always hit that peak during playback because it depends on where the listener is looking. But it should be treated as if it were the peak value for your mix and you should avoid clipping as usual. The peak read-off box on the right will always stick to the highest peak value that has been measured since the peak meter was last reset. If the peak level goes above 0 dBFS then the clip indicator at the top of the peak meter and the read-off text will turn red. The peak metering is reset by clicking on the red indicator or on the read-off text.</p>
 <p>Integrated loudness is measured following a similar method as the EBU-128 specification. It displays a theoretical maximum integrated loudness for your mix. The integrated loudness can be reset by clicking on the read-off text.</p>
-<p>Note that for Pro Tools it is necessary for the Mix Loudness plugin to disable the ‘dynamic processing’ feature. This will disable the dynamic processing for the entire signal path into and out of the Mix Loudness plugin, which in some cases may cause Pro Tools to be more CPU intensive.</p>
+<p>Note that for Pro Tools it is necessary for the Mix Loudness plugin to disable the &#8216;dynamic processing&#8217; feature. This will disable the dynamic processing for the entire signal path into and out of the Mix Loudness plugin, which in some cases may cause Pro Tools to be more CPU intensive.</p>
 </div>
 <div class="section" id="vr-video-player">
 <span id="id19"></span><h2><a class="toc-backref" href="#id10">VR Video Player</a><a class="headerlink" href="#vr-video-player" title="Permalink to this headline">¶</a></h2>
@@ -1651,7 +1651,7 @@ of the video will be displayed to the left eye and the right half
 of the video will be displayed to the right eye when viewing in 3D</li>
 </ol>
 </li>
-<li><p class="first">For videos encoded in Facebook 360 format, you can optionally enable Focus for the video which will give more prominence to the audio objects in the viewer’s field of view and will attenuate objects outside of it:</p>
+<li><p class="first">For videos encoded in Facebook 360 format, you can optionally enable Focus for the video which will give more prominence to the audio objects in the viewer&#8217;s field of view and will attenuate objects outside of it:</p>
 <a class="reference internal image-reference" href="../../_images/Focus.png"><img alt="../../_images/Focus.png" src="../../_images/Focus.png" style="width: 50%;" /></a>
 <ul class="simple">
 <li>Focus: Enables the focus feature</li>
