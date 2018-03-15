@@ -245,7 +245,7 @@ terminal window</td>
 </td>
 <td><p class="first">Resolution and aspect ratio can be specified in
 FFmpeg with</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">s</span> <span class="n">WIDTHxHEIGHT</span> <span class="o">-</span><span class="n">aspect</span> <span class="n">HORIZONTAL</span><span class="p">:</span><span class="n">VERTICAL</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">s</span> <span class="n">WIDTHxHEIGHT</span> <span class="o">-</span><span class="n">aspect</span> <span class="n">HORIZONTAL</span><span class="p">:</span><span class="n">VERTICAL</span>
 </pre></div>
 </div>
 </td>
@@ -254,7 +254,7 @@ FFmpeg with</p>
 <strong>(Frames Per Second)</strong></td>
 <td>Up to 30 fps (higher frame rates may be possible, depending on your computer)</td>
 <td><p class="first">Frame rate can be specified in FFmpeg with:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">r</span> <span class="mi">30</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">r</span> <span class="mi">30</span>
 </pre></div>
 </div>
 </td>
@@ -272,7 +272,7 @@ FFmpeg with</p>
 <p>The following FFmpeg command would take a video and convert it to the
 recommended format without affecting the resolution of the original
 video:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUTFILE</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="n">an</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhd</span> <span class="o">-</span><span class="n">pix_fmt</span> <span class="n">yuv422p</span> <span class="o">-</span><span class="n">trellis</span> <span class="mi">0</span> <span class="o">-</span><span class="n">profile</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhr_lb</span> <span class="o">-</span><span class="n">y</span> <span class="n">OUTPUTFILE</span><span class="o">.</span><span class="n">mov</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUTFILE</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="n">an</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhd</span> <span class="o">-</span><span class="n">pix_fmt</span> <span class="n">yuv422p</span> <span class="o">-</span><span class="n">trellis</span> <span class="mi">0</span> <span class="o">-</span><span class="n">profile</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhr_lb</span> <span class="o">-</span><span class="n">y</span> <span class="n">OUTPUTFILE</span><span class="o">.</span><span class="n">mov</span>
 </pre></div>
 </div>
 <div class="section" id="converting-videos-to-dnxhd-with-iffmpeg">
@@ -303,14 +303,14 @@ the downloaded preset there</p>
 preset you just downloaded)</p>
 <p><a class="reference internal" href="../_images/iFFmpegSelectPreset.png"><img alt="iFFmpegSelectPreset" src="../_images/iFFmpegSelectPreset.png" style="width: 451px; height: 280px;" /></a></p>
 </li>
-<li><p class="first">Click on &#8220;Edit&#8221; under &#8220;Video (DNxHD)&#8221; in the right column. Set the
+<li><p class="first">Click on “Edit” under “Video (DNxHD)” in the right column. Set the
 video size or other settings beyond what the preset offers. We
 recommend a maximum resolution of 3840x2160 and a maximum frame rate
 of 30FPS (higher frame rates and resolutions might work depending on
 your computer).</p>
 <p><a class="reference internal" href="../_images/iFFmpegVideoSettingsEdit.png"><img alt="iFFmpegVideoSettingsEdit" src="../_images/iFFmpegVideoSettingsEdit.png" style="width: 450px; height: 281px;" /></a></p>
 </li>
-<li><p class="first">Click on &#8220;General&#8221; to confirm that the &#8216;Custom Encode options&#8217; have
+<li><p class="first">Click on “General” to confirm that the ‘Custom Encode options’ have
 this value:-profile:v dnxhr_lb</p>
 <p><a class="reference internal" href="../_images/iFFmpegCustomEncode.png"><img alt="iFFmpegCustomEncode" src="../_images/iFFmpegCustomEncode.png" style="width: 451px; height: 281px;" /></a></p>
 </li>
@@ -324,11 +324,11 @@ around resolution, scaling and frame rate options.</p>
 <p>The simplest way to convert stereoscopic video to mono is to use the
 video for a single eye and crop the other half of the video.</p>
 <p>The bottom portion of a top bottom video can be cropped with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">vf</span> <span class="n">crop</span><span class="o">=</span><span class="n">iw</span><span class="p">:</span><span class="n">ih</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">vf</span> <span class="n">crop</span><span class="o">=</span><span class="n">iw</span><span class="p">:</span><span class="n">ih</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span>
 </pre></div>
 </div>
 <p>The right portion of a side by side video can be cropped with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">vf</span> <span class="n">crop</span><span class="o">=</span><span class="n">iw</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="n">ih</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">vf</span> <span class="n">crop</span><span class="o">=</span><span class="n">iw</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="n">ih</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span>
 </pre></div>
 </div>
 <table border="1" class="docutils">

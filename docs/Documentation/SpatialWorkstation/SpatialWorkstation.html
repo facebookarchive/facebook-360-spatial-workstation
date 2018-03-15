@@ -166,14 +166,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#using-reaper">Using Reaper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id25">Project Structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Creating New Tracks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id26">Project Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reaper-creating-new-tracks">Creating New Tracks</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id27">Mastering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id28">Mixing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id29">Ambisonics/B-Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id30">Working With Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id28">Mastering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id29">Mixing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id30">Ambisonics/B-Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id31">Working With Video</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exporting-bouncing-a-mix">Exporting/Bouncing A Mix</a></li>
 </ul>
 </li>
@@ -289,13 +289,13 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#what-did-you-download" id="id39">What did you download?</a></li>
-<li><a class="reference internal" href="#binaural-audio" id="id40">Binaural Audio</a></li>
-<li><a class="reference internal" href="#ambisonics-and-b-format-audio" id="id41">Ambisonics and B-format Audio</a><ul>
-<li><a class="reference internal" href="#technical-details" id="id42">Technical details</a></li>
+<li><a class="reference internal" href="#what-did-you-download" id="id40">What did you download?</a></li>
+<li><a class="reference internal" href="#binaural-audio" id="id41">Binaural Audio</a></li>
+<li><a class="reference internal" href="#ambisonics-and-b-format-audio" id="id42">Ambisonics and B-format Audio</a><ul>
+<li><a class="reference internal" href="#technical-details" id="id43">Technical details</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#room-modelling" id="id43">Room Modelling</a></li>
+<li><a class="reference internal" href="#room-modelling" id="id44">Room Modelling</a></li>
 </ul>
 </div>
 <div class="section" id="what-did-you-download">
@@ -350,6 +350,7 @@ B-format (ambiX). The Spatial Workstation uses 2nd order ambiX as
 the output of the Spatialiser plugin and for exporting the spatial
 audio mix.</li>
 </ol>
+<p>Using first order Ambisonic signals within a higher order Ambisonic field can result in the lower order signal sounding more smeared out and diffuse. To counteract this, a gain adjustment is required to optimise the FOA signal for playback as part of a second order Ambisonic field. When using the spatialiser plugin in first order B-format mode an additional gain boost is applied to the XYZ channels of the first order signal. This gain is automatically applied when the Envelopment value is set to its default of 0.1. If you require no gain adjustment, e.g. if the main output of your project is to be in first order, then you can undo this gain by setting the envelopment slider to 0.27.</p>
 <p>Depending on how your recorded your B-format audio you may need to
 rotate it: see <a class="reference internal" href="#rotating-the-ambisonic-field"><span class="std std-ref">Rotating the Ambisonic field</span></a> for details.</p>
 <div class="section" id="technical-details">
@@ -399,16 +400,16 @@ reflections to stand out and greatly enhance the spatialisation effect.</p>
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id4">
 <ul class="simple">
-<li><a class="reference internal" href="#requirements" id="id44">Requirements</a></li>
-<li><a class="reference internal" href="#setup-macos" id="id45">Setup (macOS)</a><ul>
-<li><a class="reference internal" href="#aax" id="id46">AAX</a></li>
-<li><a class="reference internal" href="#vst" id="id47">VST</a></li>
+<li><a class="reference internal" href="#requirements" id="id45">Requirements</a></li>
+<li><a class="reference internal" href="#setup-macos" id="id46">Setup (macOS)</a><ul>
+<li><a class="reference internal" href="#aax" id="id47">AAX</a></li>
+<li><a class="reference internal" href="#vst" id="id48">VST</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#setup-windows" id="id48">Setup (Windows)</a><ul>
-<li><a class="reference internal" href="#id5" id="id49">AAX</a></li>
-<li><a class="reference internal" href="#id7" id="id50">VST</a></li>
-<li><a class="reference internal" href="#working-with-the-tools" id="id51">Working With The Tools</a></li>
+<li><a class="reference internal" href="#setup-windows" id="id49">Setup (Windows)</a><ul>
+<li><a class="reference internal" href="#id5" id="id50">AAX</a></li>
+<li><a class="reference internal" href="#id7" id="id51">VST</a></li>
+<li><a class="reference internal" href="#working-with-the-tools" id="id52">Working With The Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -458,7 +459,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1.pkg)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1.1.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process<ol class="arabic">
 <li>VR Video Player in <em>Applications/FB360 Spatial Workstation/Video
@@ -472,10 +473,9 @@ Player</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#vst" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.1.pkg)</li>
+(SpatialWorkstation-VST-3.1.1.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
-<li>VST 2.x Plugins in <em>Mac HD/Library/Audio/Plug-Ins/Audio/VST</em></li>
 <li>VST 3 Plugins in <em>Mac HD/Library/Audio/Plug-Ins/Audio/VST3</em></li>
 <li>VR Video Player in <em>Applications/FB360 Spatial Workstation/Video
 Player</em></li>
@@ -510,7 +510,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1-Win64.exe)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.1.1-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VR Video Player in <em>C:\Program Files\FB360 Spatial
@@ -525,7 +525,7 @@ Workstation\Encoder</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.1-Win64.exe)</li>
+(SpatialWorkstation-VST-3.1.1-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST3 Plugins in <em>C:\Program Files\Common Files\VST3</em></li>
@@ -553,9 +553,9 @@ your DAW.</p>
 <span id="id8"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id9">
 <ul class="simple">
-<li><a class="reference internal" href="#design" id="id52">Design</a></li>
-<li><a class="reference internal" href="#delivery" id="id53">Delivery</a></li>
-<li><a class="reference internal" href="#playback" id="id54">Playback</a></li>
+<li><a class="reference internal" href="#design" id="id53">Design</a></li>
+<li><a class="reference internal" href="#delivery" id="id54">Delivery</a></li>
+<li><a class="reference internal" href="#playback" id="id55">Playback</a></li>
 </ul>
 </div>
 <p>The FB360 Spatial Workstation is divided into five major components:</p>
@@ -643,27 +643,27 @@ native apps and game engines.</p>
 <h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id10">
 <ul class="simple">
-<li><a class="reference internal" href="#fb360-spatialiser" id="id55">FB360 Spatialiser</a><ul>
-<li><a class="reference internal" href="#parameters" id="id56">Parameters</a></li>
-<li><a class="reference internal" href="#panning" id="id57">Panning</a></li>
-<li><a class="reference internal" href="#rotating-the-ambisonic-field" id="id58">Rotating the Ambisonic field</a></li>
-<li><a class="reference internal" href="#using-multiple-input-channels" id="id59">Using Multiple Input Channels</a></li>
+<li><a class="reference internal" href="#fb360-spatialiser" id="id56">FB360 Spatialiser</a><ul>
+<li><a class="reference internal" href="#parameters" id="id57">Parameters</a></li>
+<li><a class="reference internal" href="#panning" id="id58">Panning</a></li>
+<li><a class="reference internal" href="#rotating-the-ambisonic-field" id="id59">Rotating the Ambisonic field</a></li>
+<li><a class="reference internal" href="#using-multiple-input-channels" id="id60">Using Multiple Input Channels</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-converter" id="id60">FB360 Converter</a><ul>
-<li><a class="reference internal" href="#id15" id="id61">Parameters</a></li>
+<li><a class="reference internal" href="#fb360-converter" id="id61">FB360 Converter</a><ul>
+<li><a class="reference internal" href="#id15" id="id62">Parameters</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-control" id="id62">FB360 Control</a><ul>
-<li><a class="reference internal" href="#id17" id="id63">Parameters</a></li>
-<li><a class="reference internal" href="#using-focus-control" id="id64">Using Focus Control</a></li>
+<li><a class="reference internal" href="#fb360-control" id="id63">FB360 Control</a><ul>
+<li><a class="reference internal" href="#id17" id="id64">Parameters</a></li>
+<li><a class="reference internal" href="#using-focus-control" id="id65">Using Focus Control</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-loudness" id="id65">FB360 Loudness</a></li>
-<li><a class="reference internal" href="#vr-video-player" id="id66">VR Video Player</a><ul>
-<li><a class="reference internal" href="#slave-mode" id="id67">Slave Mode</a></li>
-<li><a class="reference internal" href="#remote-daw-connection" id="id68">Remote DAW Connection</a></li>
-<li><a class="reference internal" href="#standalone-mode" id="id69">Standalone Mode</a></li>
+<li><a class="reference internal" href="#fb360-loudness" id="id66">FB360 Loudness</a></li>
+<li><a class="reference internal" href="#vr-video-player" id="id67">VR Video Player</a><ul>
+<li><a class="reference internal" href="#slave-mode" id="id68">Slave Mode</a></li>
+<li><a class="reference internal" href="#remote-daw-connection" id="id69">Remote DAW Connection</a></li>
+<li><a class="reference internal" href="#standalone-mode" id="id70">Standalone Mode</a></li>
 </ul>
 </li>
 </ul>
@@ -703,7 +703,7 @@ value is up, while a negative value is down.</li>
 B-Format recording in the horizontal plane or left-right. A
 positive value is right, while a negative value is left.</li>
 <li><em>Envelopment</em>: (visible only with B-Format input) Control the
-diffuse field of the sound.</li>
+diffuse field of the sound. This controls the gain weighting of the omnidirectional component against the directional harmonics. For an FOA signal input setting this to 0.27 will give an equal gain to all channels.</li>
 </ul>
 </li>
 <li><em>B-format (ambiX)</em>: For processing pre-recorded 4 channel, 1st
@@ -719,7 +719,7 @@ value is up, while a negative value is down.</li>
 B-Format recording in the horizontal plane or left-right. A
 positive value is right, while a negative value is left.</li>
 <li><em>Envelopment</em>: (visible only with B-Format input) Control the
-diffuse field of the sound.</li>
+diffuse field of the sound. This controls the gain weighting of the omnidirectional component against the directional harmonics. For an FOA signal input setting this to 0.27 will give an equal gain to all channels.</li>
 </ul>
 </li>
 <li><em>Stereo</em>: For positioning both channels of a stereo file
@@ -777,6 +777,8 @@ reflections.</li>
 <li>Reflection Level: The level of the reflections.</li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
 <li><em>Panners</em>: The Spatialiser includes an equirect video panner and a 2D (top-down view) panner.<ul>
 <li><em>Equirect Panner</em>: The equirectangular video panner displays a video frames
 from the FB360 Video Player. Any video that is loaded into the FB360
@@ -801,7 +803,7 @@ accurately position sounds in 3D space.</p>
 <p>The equirect panner mirrors what is displayed in the FB360 Video Player. When a video is loaded
 in the FB360 Video Player, it will be automatically shown in the equirect panner.</p>
 <p>Typically most 360 videos are stored in an equirectangular projection (similar to how
-panoramic photos are saved). This is a &#8220;flattened&#8221; projection of a 360 video where
+panoramic photos are saved). This is a “flattened” projection of a 360 video where
 typically the horizontal axis maps to azimuth and the vertical axis maps to elevation,
 with the centre of the scene at the centre of the equirect display.</p>
 <p>The 2D panner on the other hand shows a top-down view of the scene. While the equirect panner
@@ -809,24 +811,20 @@ does not show distance, the 2D panner can be used to automate distance effects. 
 of the 2D panner is where the camera is in the scene.</p>
 <p><strong>Toolbar And Key Commands</strong></p>
 <p>The toolbar to the right of the equirect panner has the following options:</p>
-<ul>
-<li><p class="first"><em>Toggle Size</em>: The size of the plugin can be toggled to show a larger view. This is useful
-for more precise panning. Key Command: S.</p>
-</li>
-<li><p class="first"><em>Opacity</em>: The equirect panner draws a darkened overlay of the video to help make the sound
-objects more visible. The opacity of this overlay can be controlled with the Opacity slider.</p>
-</li>
-<li><p class="first"><em>Grid</em>: The grid overlay can be toggled on and off. Key Command: G.</p>
+<ul class="simple">
+<li><em>Toggle Size</em>: The size of the plugin can be toggled to show a larger view. This is useful
+for more precise panning. Key Command: S.</li>
+<li><em>Opacity</em>: The equirect panner draws a darkened overlay of the video to help make the sound
+objects more visible. The opacity of this overlay can be controlled with the Opacity slider.</li>
+<li><em>Grid</em>: The grid overlay can be toggled on and off. Key Command: G.</li>
+</ul>
 <p>The toolbar to the right of the 2D panner has the following options:</p>
-</li>
-<li><p class="first"><em>Zoom In/Out</em>: The top-down view can be thought of as a map. The zoom buttons can be used to
-zoom in and out.</p>
-</li>
-<li><p class="first"><em>Grid</em>: The grid overlay can be toggled on and off. Key Command: G.</p>
-</li>
-<li><p class="first"><em>Arrange</em>: When working with multichannel material, the Arrange button can be used to arrange
-the sound sources as virtual speakers.</p>
-</li>
+<ul class="simple">
+<li><em>Zoom In/Out</em>: The top-down view can be thought of as a map. The zoom buttons can be used to
+zoom in and out.</li>
+<li><em>Grid</em>: The grid overlay can be toggled on and off. Key Command: G.</li>
+<li><em>Arrange</em>: When working with multichannel material, the Arrange button can be used to arrange
+the sound sources as virtual speakers.</li>
 </ul>
 </div>
 <div class="section" id="rotating-the-ambisonic-field">
@@ -853,7 +851,7 @@ Spatialiser plugin on an aux channel.</p>
 multichannel audio behaves differently depending on your DAW:<ul>
 <li>Pro Tools: make sure the number of track channels matches the
 audio file you wish to use (e.g. 5.0 track for 5.0 audio file)</li>
-<li>Reaper: set the number channels for the track to 10, regardless of
+<li>Reaper: set the number of channels for the track to 10, regardless of
 the number of channels in your input audio</li>
 </ul>
 </li>
@@ -871,8 +869,8 @@ configuration as determined by the Input setting</li>
 <div class="section" id="fb360-converter">
 <span id="id14"></span><h2><a class="toc-backref" href="#id10">FB360 Converter</a><a class="headerlink" href="#fb360-converter" title="Permalink to this headline">¶</a></h2>
 <p>Occasions may arise where a spatial mix or sub-mix needs to rotate to follow what is happening in a scene, or perhaps a 2nd order Ambisonics (ambiX) or 8 channel spatial mix already exists but is incorrectly oriented relative to the video and needs to be corrected.
-The Converter plugin is a simple utility which can be inserted between the FB360 Spatialiser plugin and the FB360 Control plugin to allow yaw rotation of the FB360 Spatialiser output.
-Input to the FB360 Converter plugin can either be B-format ambiX 2nd order or Spatial Workstation 8 channel spatial audio.
+The Converter plugin is a simple utility which can be inserted between the FB360 Spatialiser plugin and the FB360 Control plugin to allow rotation of the FB360 Spatialiser output.
+Input to the FB360 Converter plugin can either be B-format ambiX 2nd order or Spatial Workstation 8 channel spatial audio. Note however that the Spatial Workstation 8 channel hybrid format can only undergo yaw rotation.
 The output can be set to Binaural, B-Format ambiX (1st order), Spatial Workstation 8 channel (if the input is Spatial Workstation 8 channel) or kept as B-format ambiX 2nd order.
 The audio output will be rotated by the specified number of degrees. You can locate the plugin in various places in the signal chain, or a combination thereof:</p>
 <ul class="simple">
@@ -880,14 +878,16 @@ The audio output will be rotated by the specified number of degrees. You can loc
 <li>on a 9 or 10 channel Ambisonics 2nd order bus receiving the output from multiple FB360 Spatialiser plugin tracks. This would rotate the spatial mix for all of these tracks;</li>
 <li>on the same track as the FB360 Control plugin (must be located before the FB360 Control plugin) to rotate the entire spatial mix and pass the spatial audio on to the Control plugin.</li>
 </ul>
-<p>The FB360 Converter plugin can also be used to convert a Spatial Workstation 8 channel mix to B-Format ambiX 2nd order. This is useful for cases where you might want to include spatial audio stems mixed with an older version of Spatial Workstation.</p>
+<p>The FB360 Converter plugin can also be used to convert a Spatial Workstation 8 channel mix to B-Format ambiX 2nd order. This is useful for cases where you might want to include spatial audio stems mixed with an older version of the Spatial Workstation.</p>
 <a class="reference internal image-reference" href="../../_images/Converter.png"><img alt="../../_images/Converter.png" src="../../_images/Converter.png" style="width: 50%;" /></a>
 <div class="section" id="id15">
 <h3><a class="toc-backref" href="#id10">Parameters</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li>Roll Rotation: Set the number of degrees to rotate the spatial mix input by.</li>
+<li>Pitch Rotation: Set the number of degrees to rotate the spatial mix input by.</li>
 <li>Yaw Rotation: Set the number of degrees to rotate the spatial mix input by.</li>
 </ul>
-<p>The Yaw Rotation parameter in the FB360 Converter plugin can be automated and controlled via a control surface.</p>
+<p>The rotation parameters in the FB360 Converter plugin can be automated and controlled via a control surface.</p>
 </div>
 </div>
 <div class="section" id="fb360-control">
@@ -960,7 +960,7 @@ as a timecode.</li>
 </ul>
 </div>
 <div class="section" id="using-focus-control">
-<h3><a class="toc-backref" href="#id10">Using Focus Control</a><a class="headerlink" href="#using-focus-control" title="Permalink to this headline">¶</a></h3>
+<span id="id18"></span><h3><a class="toc-backref" href="#id10">Using Focus Control</a><a class="headerlink" href="#using-focus-control" title="Permalink to this headline">¶</a></h3>
 <p>The focus effect is <strong>not</strong> baked into the mix and can be enabled on Facebook 360
 videos or used in real-time within your VR application. The parameters available
 in the Control plugin are only for preview. To enable the focus effect on
@@ -978,23 +978,23 @@ API</li>
 <p>The image above of the spatialiser plugin illustrates the result of the focus effect
 when focus size is set to 45°. Any parts of the mix that are in the clear
 cone will continue to be played back at full volume whereas all the areas that are
-greyed will be attenuated.
-As the focus area moves with the listener&#8217;s gaze (unless &#8216;Follow Head&#8217; is disabled)
+greyed out will be attenuated.
+As the focus area moves with the listener’s gaze (unless ‘Follow Head’ is disabled)
 it means the region of the video that the listener is looking at becomes more prevalent
 in the mix.</p>
 </div>
 </div>
 <div class="section" id="fb360-loudness">
-<span id="id18"></span><h2><a class="toc-backref" href="#id10">FB360 Loudness</a><a class="headerlink" href="#fb360-loudness" title="Permalink to this headline">¶</a></h2>
+<span id="id19"></span><h2><a class="toc-backref" href="#id10">FB360 Loudness</a><a class="headerlink" href="#fb360-loudness" title="Permalink to this headline">¶</a></h2>
 <p>An important facet of spatial audio is that it is impossible to predict where the listener
 will be looking, and therefore the precise loudness of a mix as heard by the listener
 cannot be determined at the mixing or mastering stage. There are two loudness plugins in
 the Spatial Workstation which work together on the 3D master track and the head-locked
 stereo track to approximate the overall loudness of your mix. The Loudness plugins provided
 here give a guideline for the maximum possible loudness and true peak value in your mix, as
-if the listener were always looking in the &#8220;loudest&#8221; direction. The loudness plugins follow
+if the listener were always looking in the “loudest” direction. The loudness plugins follow
 a similar methodology to the EBU-128 technical specification which details a method for
-measuring perceived loudness using the units &#8216;Loudness Units Full Scale&#8217; (LUFS).</p>
+measuring perceived loudness using the units ‘Loudness Units Full Scale’ (LUFS).</p>
 <a class="reference internal image-reference" href="../../_images/MixLoudness.png"><img alt="../../_images/MixLoudness.png" src="../../_images/MixLoudness.png" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../../_images/StereoLoudness.png"><img alt="../../_images/StereoLoudness.png" src="../../_images/StereoLoudness.png" style="width: 50%;" /></a>
 <p>The FB360 Mix Loudness plugin will function on its own if your mix only uses the
@@ -1017,7 +1017,7 @@ the loudness was calculated. A shorter window means that the loudness value
 responds quickly to the audio, whereas a longer window responds more slowly and can
 be thought of as closer to an average loudness value. The integrated loudness is
 calculated for all time (since it was last reset) and can be thought of as the overall
-loudness of the audio. In this sense, an entire mix&#8217;s loudness can be identified
+loudness of the audio. In this sense, an entire mix’s loudness can be identified
 by this single integrated loudness number. The following table shows the window
 size for each type of loudness:</p>
 <blockquote>
@@ -1045,12 +1045,12 @@ size for each type of loudness:</p>
 </table>
 </div></blockquote>
 <p>The two bars show momentary loudness (LUFS) and true peak (dBFS) approximations for your mix. Along the right these measurements are repeated with text read-offs in addition to the short term loudness and integrated loudness. Clicking on the true peak or integrated loudness boxes will reset those measurements. The loudness bar on the left hand side also has a marker which can be dragged to a particular position to be used as a guide. This marker can also be set by clicking the number text.</p>
-<p>The &#8216;True Peak&#8217; value shows a maximum theoretical true peak value for the mix; it doesn&#8217;t mean that you will always hit that peak during playback because it depends on where the listener is looking. But it should be treated as if it were the peak value for your mix and you should avoid clipping as usual. The peak read-off box on the right will always stick to the highest peak value that has been measured since the peak meter was last reset. If the peak level goes above 0 dBFS then the clip indicator at the top of the peak meter and the read-off text will turn red. The peak metering is reset by clicking on the red indicator or on the read-off text.</p>
+<p>The ‘True Peak’ value shows a maximum theoretical true peak value for the mix; it doesn’t mean that you will always hit that peak during playback because it depends on where the listener is looking. But it should be treated as if it were the peak value for your mix and you should avoid clipping as usual. The peak read-off box on the right will always stick to the highest peak value that has been measured since the peak meter was last reset. If the peak level goes above 0 dBFS then the clip indicator at the top of the peak meter and the read-off text will turn red. The peak metering is reset by clicking on the red indicator or on the read-off text.</p>
 <p>Integrated loudness is measured following a similar method as the EBU-128 specification. It displays a theoretical maximum integrated loudness for your mix. The integrated loudness can be reset by clicking on the read-off text.</p>
-<p>Note that for Pro Tools it is necessary for the Mix Loudness plugin to disable the &#8216;dynamic processing&#8217; feature. This will disable the dynamic processing for the entire signal path into and out of the Mix Loudness plugin, which in some cases may cause Pro Tools to be more CPU intensive.</p>
+<p>Note that for Pro Tools it is necessary for the Mix Loudness plugin to disable the ‘dynamic processing’ feature. This will disable the dynamic processing for the entire signal path into and out of the Mix Loudness plugin, which in some cases may cause Pro Tools to be more CPU intensive.</p>
 </div>
 <div class="section" id="vr-video-player">
-<span id="id19"></span><h2><a class="toc-backref" href="#id10">VR Video Player</a><a class="headerlink" href="#vr-video-player" title="Permalink to this headline">¶</a></h2>
+<span id="id20"></span><h2><a class="toc-backref" href="#id10">VR Video Player</a><a class="headerlink" href="#vr-video-player" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/videoPlayer_Slave.png"><img alt="../../_images/videoPlayer_Slave.png" src="../../_images/videoPlayer_Slave.png" style="width: 40%;" /></a>
 <p>The Video Player is installed in <em>Applications/FB360 Spatial
 Workstation/Video Player</em> on macOS and <em>C:\Program Files\FB360 Spatial
@@ -1061,9 +1061,9 @@ on setting up the player.</p>
 <h3><a class="toc-backref" href="#id10">Slave Mode</a><a class="headerlink" href="#slave-mode" title="Permalink to this headline">¶</a></h3>
 <p>Slave mode synchronises video playback with your DAW.</p>
 <ul class="simple">
-<li>Load or drop video file: Browse for or drop the video file that
+<li>Load video file: Browse for or drop the video file that
 needs to be opened</li>
-<li>Select Format<ul>
+<li>Video Format<ul>
 <li><em>Mono</em>: Non-stereoscopic video. This is usually a video that has a
 single display</li>
 <li><em>Over-under</em>: Stereoscopic video, where the video for the left eye
@@ -1120,14 +1120,13 @@ Apple</a>.</li>
 </div>
 <div class="section" id="standalone-mode">
 <h3><a class="toc-backref" href="#id10">Standalone Mode</a><a class="headerlink" href="#standalone-mode" title="Permalink to this headline">¶</a></h3>
-<p>Standalone mode is independent of a DAW and is to preview an encoded
-.tbe file with a video.</p>
+<p>Standalone mode is independent of a DAW and is to preview an encoded .tbe file with a video or to play back videos encoded in the experimental FB360 Matroska format (see <a class="reference internal" href="#encoding-assets"><span class="std std-ref">Encoding Assets</span></a>).</p>
+<ul>
+<li><p class="first"><em>Load or drop video file</em>: Browse for the video file that needs to be
+opened</p>
+</li>
+<li><p class="first">Video Format</p>
 <ul class="simple">
-<li><em>Load or drop video file</em>: Browse for the video file that needs to be
-opened</li>
-<li><em>Load or drop .tbe file</em>: Browse for the .tbe file that needs to be
-opened</li>
-<li>Video Format<ul>
 <li><em>Mono</em>: Non-stereoscopic video. This is usually a video that has a
 single display</li>
 <li><em>Over-under</em>: Stereoscopic video, where the video for the left eye
@@ -1138,7 +1137,8 @@ eye is displayed in the left-half and the video for the right eye
 is displayed in the right-half</li>
 </ul>
 </li>
-<li>Display Mode<ul>
+<li><p class="first">Display Mode</p>
+<ul class="simple">
 <li><em>Desktop</em>: The video will be played back in a format that can be
 viewed on a regular computer display</li>
 <li><em>VR</em>: The video will be displayed in a format that is compatible
@@ -1146,29 +1146,42 @@ with Oculus Rift DK1/DK2 on macOS or Oculus Rift/HTC Vive on
 Windows</li>
 </ul>
 </li>
-<li><em>Open</em>: Opens the video in a new window.</li>
+<li><p class="first"><em>Load .tbe file</em>: Browse for the .tbe file to be
+opened</p>
+</li>
+<li><p class="first"><em>Focus</em>: Enable the focus effect (see <a class="reference internal" href="#using-focus-control"><span class="std std-ref">Using Focus Control</span></a>). When loading a FB360 Matroska video file
+that has focus enabled the focus parameters will automatically be set to match the video’s metadata.</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Focus Size</em>: Angle controlling the size of the area included within the focus.</li>
+<li><em>Off-focus Level</em>: Attenuation level of the mix outside of the the focus area.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><em>Open</em>: Opens the video in a new window.</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="section" id="using-pro-tools-hd">
-<span id="id20"></span><h1>Using Pro Tools HD<a class="headerlink" href="#using-pro-tools-hd" title="Permalink to this headline">¶</a></h1>
-<div class="contents h1-local-toc local topic" id="id21">
+<span id="id21"></span><h1>Using Pro Tools HD<a class="headerlink" href="#using-pro-tools-hd" title="Permalink to this headline">¶</a></h1>
+<div class="contents h1-local-toc local topic" id="id22">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-a-new-project" id="id70">Creating A New Project</a></li>
-<li><a class="reference internal" href="#project-structure" id="id71">Project Structure</a><ul>
-<li><a class="reference internal" href="#mastering" id="id72">Mastering</a></li>
-<li><a class="reference internal" href="#d-and-head-locked-stereo" id="id73">3D And Head-locked Stereo</a></li>
-<li><a class="reference internal" href="#mixing" id="id74">Mixing</a></li>
-<li><a class="reference internal" href="#sub-mixes" id="id75">Sub-Mixes</a></li>
-<li><a class="reference internal" href="#previewing-your-mix" id="id76">Previewing Your Mix</a></li>
-<li><a class="reference internal" href="#creating-new-tracks" id="id77">Creating New Tracks</a></li>
+<li><a class="reference internal" href="#creating-a-new-project" id="id71">Creating A New Project</a></li>
+<li><a class="reference internal" href="#project-structure" id="id72">Project Structure</a><ul>
+<li><a class="reference internal" href="#mastering" id="id73">Mastering</a></li>
+<li><a class="reference internal" href="#d-and-head-locked-stereo" id="id74">3D And Head-locked Stereo</a></li>
+<li><a class="reference internal" href="#mixing" id="id75">Mixing</a></li>
+<li><a class="reference internal" href="#sub-mixes" id="id76">Sub-Mixes</a></li>
+<li><a class="reference internal" href="#previewing-your-mix" id="id77">Previewing Your Mix</a></li>
+<li><a class="reference internal" href="#creating-new-tracks" id="id78">Creating New Tracks</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#sample-rate-considerations" id="id78">Sample Rate Considerations</a></li>
-<li><a class="reference internal" href="#ambisonics-b-format" id="id79">Ambisonics/B-format</a></li>
-<li><a class="reference internal" href="#working-with-video" id="id80">Working With Video</a></li>
-<li><a class="reference internal" href="#exporting-a-mix" id="id81">Exporting A Mix</a></li>
+<li><a class="reference internal" href="#sample-rate-considerations" id="id79">Sample Rate Considerations</a></li>
+<li><a class="reference internal" href="#ambisonics-b-format" id="id80">Ambisonics/B-format</a></li>
+<li><a class="reference internal" href="#working-with-video" id="id81">Working With Video</a></li>
+<li><a class="reference internal" href="#exporting-a-mix" id="id82">Exporting A Mix</a></li>
 </ul>
 </div>
 <p>An example Pro Tools HD project and template are automatically installed
@@ -1177,9 +1190,9 @@ folder, along with a backup copy of the Pro Tools HD template and
 I/O settings. Use the example project to familiarise yourself with
 the FB360 Spatial Workstation.</p>
 <div class="section" id="creating-a-new-project">
-<h2><a class="toc-backref" href="#id21">Creating A New Project</a><a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Creating A New Project</a><a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">¶</a></h2>
 <p>To create a new project with the provided template and I/O options with Pro Tools 12.
-See the Knowledge Base for creating a new project in Pro Tools 10 and 11 using version
+See <a class="reference external" href="https://facebookincubator.github.io/facebook-360-spatial-workstation/KB/CreatingANewProjectInProTools.html">this Knowledge Base article</a> for creating a new project in Pro Tools 10 and 11 using version
 2.2 of the Spatial Workstation.</p>
 <ol class="arabic simple">
 <li>Open Pro Tools HD</li>
@@ -1195,7 +1208,7 @@ information about target sample rates)</li>
 <a class="reference internal image-reference" href="../../_images/pt_routing.png"><img alt="../../_images/pt_routing.png" src="../../_images/pt_routing.png" style="width: 80%;" /></a>
 </div>
 <div class="section" id="project-structure">
-<h2><a class="toc-backref" href="#id21">Project Structure</a><a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Project Structure</a><a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
 <p>The FB360 Spatialiser plugin accepts mono, stereo or multi-channel
 inputs and outputs a 9 channel 2nd order Ambisonics (ambiX) signal. These 9 channels of audio must
 be routed to the FB360 Control plugin for further processing. Make
@@ -1216,7 +1229,7 @@ structure as it makes it easier to export, debug and deliver mixes. Any
 audio track in your project must either be routed to <em>3D Master</em> or
 <em>Head-locked Master</em>.</p>
 <div class="section" id="mastering">
-<h3><a class="toc-backref" href="#id21">Mastering</a><a class="headerlink" href="#mastering" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Mastering</a><a class="headerlink" href="#mastering" title="Permalink to this headline">¶</a></h3>
 <p>The template project includes two master channels: <em>3D Master</em> for all
 3D elements in the mix and <em>Head-locked Master</em> for all non-spatialised
 elements in the mix. The <em>3D Master</em> channel is a master auxiliary
@@ -1227,7 +1240,7 @@ but receives audio from all head-locked stereo tracks. Your mastering
 chain would need to be applied separately on both masters.</p>
 </div>
 <div class="section" id="d-and-head-locked-stereo">
-<h3><a class="toc-backref" href="#id21">3D And Head-locked Stereo</a><a class="headerlink" href="#d-and-head-locked-stereo" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">3D And Head-locked Stereo</a><a class="headerlink" href="#d-and-head-locked-stereo" title="Permalink to this headline">¶</a></h3>
 <p>It is quite common that some elements in the mix such as the background
 score or voice overs might not need to be spatialised in 3D or react to
 head-tracking. The two masters, <em>3D Master</em> and <em>Head-locked Master</em>
@@ -1235,7 +1248,7 @@ facilitate this workflow. <strong>Note: some spatial audio formats do not
 support head-locked stereo/non-spatialised audio.</strong></p>
 </div>
 <div class="section" id="mixing">
-<h3><a class="toc-backref" href="#id21">Mixing</a><a class="headerlink" href="#mixing" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Mixing</a><a class="headerlink" href="#mixing" title="Permalink to this headline">¶</a></h3>
 <p>For the spatialised tracks, make sure that the FB360 Spatialiser is
 the last plugin in the chain (except if you use the FB360 Converter plugin,
 which must be located in the signal chain after the FB360 Spatialiser plugin,
@@ -1245,13 +1258,13 @@ Spatialiser plugin can be automated and controlled via a control
 surface.</p>
 </div>
 <div class="section" id="sub-mixes">
-<h3><a class="toc-backref" href="#id21">Sub-Mixes</a><a class="headerlink" href="#sub-mixes" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Sub-Mixes</a><a class="headerlink" href="#sub-mixes" title="Permalink to this headline">¶</a></h3>
 <p>You can create sub-mixes by routing audio from FB360 Spatialiser
 channels to an Ambisonics (2nd Order) aux channel. This aux channel would then
 need to be routed to <em>3D Master.</em></p>
 </div>
 <div class="section" id="previewing-your-mix">
-<h3><a class="toc-backref" href="#id21">Previewing Your Mix</a><a class="headerlink" href="#previewing-your-mix" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Previewing Your Mix</a><a class="headerlink" href="#previewing-your-mix" title="Permalink to this headline">¶</a></h3>
 <p>The audio from the <em>3D Master</em> aux is routed to the <em>Control Plugin</em> aux
 which has the FB360 Control plugin instantiated on it. The Control
 plugin is used for setting global parameters (such as room modelling)
@@ -1259,7 +1272,7 @@ and for communicating with the video player. See <a class="reference internal" h
 information.</p>
 </div>
 <div class="section" id="creating-new-tracks">
-<h3><a class="toc-backref" href="#id21">Creating New Tracks</a><a class="headerlink" href="#creating-new-tracks" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Creating New Tracks</a><a class="headerlink" href="#creating-new-tracks" title="Permalink to this headline">¶</a></h3>
 <p>To create a new spatialised or head-locked stereo track, duplicate one
 of the existing tracks in the project. If you need to manually create
 and setup a spatialised track:</p>
@@ -1275,23 +1288,34 @@ channels matches the number of channels on the audio file.</p>
 </div>
 </div>
 <div class="section" id="sample-rate-considerations">
-<span id="id22"></span><h2><a class="toc-backref" href="#id21">Sample Rate Considerations</a><a class="headerlink" href="#sample-rate-considerations" title="Permalink to this headline">¶</a></h2>
+<span id="id23"></span><h2><a class="toc-backref" href="#id22">Sample Rate Considerations</a><a class="headerlink" href="#sample-rate-considerations" title="Permalink to this headline">¶</a></h2>
 <p>You can create your Pro Tools HD project with any sample rate of your
 choice, although, 48000Hz is recommended.</p>
 </div>
 <div class="section" id="ambisonics-b-format">
-<h2><a class="toc-backref" href="#id21">Ambisonics/B-format</a><a class="headerlink" href="#ambisonics-b-format" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Ambisonics/B-format</a><a class="headerlink" href="#ambisonics-b-format" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/b-format.png"><img alt="../../_images/b-format.png" src="../../_images/b-format.png" style="width: 60%;" /></a>
 <p>The FB360 Spatialiser plugin can also handle and decode 1st order Ambisonics
 material in either the B-Format (FuMa) or B-format (ambiX) formats.
 Here’s how you get it working:</p>
 <ol class="arabic simple">
-<li>Create a a new quad track</li>
+<li>Create a new 1st Order Ambisonics track</li>
 <li>Insert the FB360 Spatialiser plugin</li>
 <li>Set the track’s output to the <em>To 3D Master</em> bus</li>
 <li>In FB360 Spatialiser, set the Input drop-down menu to B-format
-(FuMa) or B-format (ambiX) depending on your source material</li>
+(1st Order FuMa) or B-format (1st Order ambiX) depending on your source material</li>
 <li>Import your 4 channel B-format recording onto the track</li>
+<li>The B-format data will automatically be spatialised to binaural by
+the FB360 Control plugin</li>
+</ol>
+<p>The FB360 Spatialiser plugin can also handle 2nd order Ambisonics material in the B-Format (ambiX) format:</p>
+<ol class="arabic simple">
+<li>Create a new 2nd Order Ambisonics track</li>
+<li>Insert the FB360 Spatialiser plugin</li>
+<li>Set the track’s output to the <em>To 3D Master</em> bus</li>
+<li>In FB360 Spatialiser, set the Input drop-down menu to B-format
+(2nd Order ambiX)</li>
+<li>Import your 9 channel B-format recording onto the track</li>
 <li>The B-format data will automatically be spatialised to binaural by
 the FB360 Control plugin</li>
 </ol>
@@ -1299,7 +1323,7 @@ the FB360 Control plugin</li>
 for information on rotating the B-format recording, see <a class="reference internal" href="#rotating-the-ambisonic-field"><span class="std std-ref">Rotating the Ambisonic field</span></a>.</p>
 </div>
 <div class="section" id="working-with-video">
-<h2><a class="toc-backref" href="#id21">Working With Video</a><a class="headerlink" href="#working-with-video" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Working With Video</a><a class="headerlink" href="#working-with-video" title="Permalink to this headline">¶</a></h2>
 <p>Once you have the video opened and loaded in the VR Video Player,
 playing back your session in Pro Tools HD should automatically
 synchronise playback of the video. Pro Tools HD is always master and the
@@ -1307,7 +1331,7 @@ video player is slave. Make sure your project or your first frame of
 action starts at 00:00:00:00. See <a class="reference internal" href="#opening-a-video"><span class="std std-ref">Opening A Video</span></a> and <a class="reference internal" href="#navigating-a-360-video"><span class="std std-ref">Navigating A 360 Video</span></a> for more information.</p>
 </div>
 <div class="section" id="exporting-a-mix">
-<h2><a class="toc-backref" href="#id21">Exporting A Mix</a><a class="headerlink" href="#exporting-a-mix" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Exporting A Mix</a><a class="headerlink" href="#exporting-a-mix" title="Permalink to this headline">¶</a></h2>
 <p>To export your spatialised and head-locked stereo mix stems:</p>
 <ol class="arabic simple">
 <li>Record enable the <em>3D Stem</em> and <em>Head-locked Stem</em> tracks. Make sure
@@ -1322,18 +1346,18 @@ to the app using the external encoder application. See <a class="reference inter
 </div>
 </div>
 <div class="section" id="using-reaper">
-<span id="id23"></span><h1>Using Reaper<a class="headerlink" href="#using-reaper" title="Permalink to this headline">¶</a></h1>
-<div class="contents h1-local-toc local topic" id="id24">
+<span id="id24"></span><h1>Using Reaper<a class="headerlink" href="#using-reaper" title="Permalink to this headline">¶</a></h1>
+<div class="contents h1-local-toc local topic" id="id25">
 <ul class="simple">
-<li><a class="reference internal" href="#id25" id="id82">Project Structure</a><ul>
-<li><a class="reference internal" href="#id26" id="id83">Creating New Tracks</a></li>
+<li><a class="reference internal" href="#id26" id="id83">Project Structure</a><ul>
+<li><a class="reference internal" href="#reaper-creating-new-tracks" id="id84">Creating New Tracks</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id27" id="id84">Mastering</a></li>
-<li><a class="reference internal" href="#id28" id="id85">Mixing</a></li>
-<li><a class="reference internal" href="#id29" id="id86">Ambisonics/B-Format</a></li>
-<li><a class="reference internal" href="#id30" id="id87">Working With Video</a></li>
-<li><a class="reference internal" href="#exporting-bouncing-a-mix" id="id88">Exporting/Bouncing A Mix</a></li>
+<li><a class="reference internal" href="#id28" id="id85">Mastering</a></li>
+<li><a class="reference internal" href="#id29" id="id86">Mixing</a></li>
+<li><a class="reference internal" href="#id30" id="id87">Ambisonics/B-Format</a></li>
+<li><a class="reference internal" href="#id31" id="id88">Working With Video</a></li>
+<li><a class="reference internal" href="#exporting-bouncing-a-mix" id="id89">Exporting/Bouncing A Mix</a></li>
 </ul>
 </div>
 <img alt="../../_images/ReaperProject.png" src="../../_images/ReaperProject.png" />
@@ -1342,8 +1366,8 @@ the FB360 Spatial Workstation installation folder. Go to <span class="menuselect
 Project As..</span> in the menu bar. Specify a name and location for your
 project. It is recommended that you use <em>SpatialWorkstation.RPP</em> as a
 template for all projects that use the Spatial Workstation plugins.</p>
-<div class="section" id="id25">
-<h2><a class="toc-backref" href="#id24">Project Structure</a><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id26">
+<h2><a class="toc-backref" href="#id25">Project Structure</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
 <p>The project consists of spatialised tracks that have the FB360
 Spatialiser plugin inserted and ’normal’ stereo audio tracks. The
 spatialised tracks are meant for full binaural panning and are routed to
@@ -1357,8 +1381,8 @@ the FB360 Control plugin inserted. Make sure you have only one
 master channel and instance of the FB360 Control plugin in your
 project! No additional plugins should be added to the <em>CONTROL PLUGIN</em>
 channel!</p>
-<div class="section" id="id26">
-<h3><a class="toc-backref" href="#id24">Creating New Tracks</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reaper-creating-new-tracks">
+<span id="id27"></span><h3><a class="toc-backref" href="#id25">Creating New Tracks</a><a class="headerlink" href="#reaper-creating-new-tracks" title="Permalink to this headline">¶</a></h3>
 <p>To create a new spatialised or head-locked stereo track, duplicate one
 of the existing tracks in the project. If you need to manually create
 and setup a spatialised track:</p>
@@ -1375,8 +1399,8 @@ the window</li>
 <a class="reference internal image-reference" href="../../_images/SpatTrackOptions.png"><img alt="../../_images/SpatTrackOptions.png" src="../../_images/SpatTrackOptions.png" style="width: 40%;" /></a>
 </div>
 </div>
-<div class="section" id="id27">
-<h2><a class="toc-backref" href="#id24">Mastering</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h2><a class="toc-backref" href="#id25">Mastering</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
 <p>The template project includes two master channels: <em>3D MASTER</em> for all
 3D elements in the mix and <em>HL MASTER</em> for all non-spatialised elements
 in the mix. The <em>3D MASTER</em> channel is a master auxiliary channel that
@@ -1386,8 +1410,8 @@ The <em>HL MASTER</em> channel functions in a similar way, but receives audio
 from all head-locked stereo. Your mastering chain would need to be
 applied separately on both masters.</p>
 </div>
-<div class="section" id="id28">
-<h2><a class="toc-backref" href="#id24">Mixing</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h2><a class="toc-backref" href="#id25">Mixing</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
 <p>For the spatialised tracks, make sure that the FB360 Spatialiser is
 the last plugin in the chain (except if you use the FB360 Converter plugin,
 which must be located in the signal chain after the FB360 Spatialiser plugin,
@@ -1396,29 +1420,42 @@ through either the sliders or the 2D panner. All parameters in the FB360
 Spatialiser plugin can be automated and controlled via a control
 surface.</p>
 </div>
-<div class="section" id="id29">
-<h2><a class="toc-backref" href="#id24">Ambisonics/B-Format</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id30">
+<h2><a class="toc-backref" href="#id25">Ambisonics/B-Format</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/b-format.png"><img alt="../../_images/b-format.png" src="../../_images/b-format.png" style="width: 70%;" /></a>
 <p>The FB360 Spatialiser plugin can also handle and decode 1st order Ambisonics
 material in either the B-Format (FuMa) or B-format (ambiX) formats.
 Here’s how you get it working:</p>
 <ol class="arabic simple">
-<li>Create a a new track with the settings specified in or duplicate an
+<li>Create a a new track with the settings specified in <a class="reference internal" href="#reaper-creating-new-tracks"><span class="std std-ref">Creating New Tracks</span></a> or duplicate an
 existing track (ensure the track has 10 channels, even though only
 four channels will have audio)</li>
 <li>Insert an instance of the FB360 Spatialiser plugin, if one isn’t
 present already</li>
 <li>In FB360 Spatialiser, set the Input drop-down menu to B-format
-(FuMa) or B-format (ambiX) depending on your source material</li>
+(1st Order FuMa) or B-format (1st Order ambiX) depending on your source material</li>
 <li>Import your 4 channel B-format recording into the track</li>
+<li>The B-format data will automatically be spatialised to binaural by
+the FB360 Control plugin</li>
+</ol>
+<p>The FB360 Spatialiser plugin can also handle 2nd order Ambisonics material in the B-Format (ambiX) format:</p>
+<ol class="arabic simple">
+<li>Create a a new track with the settings specified in <a class="reference internal" href="#reaper-creating-new-tracks"><span class="std std-ref">Creating New Tracks</span></a> or duplicate an
+existing track (ensure the track has 10 channels, even though only
+nine channels will have audio)</li>
+<li>Insert an instance of the FB360 Spatialiser plugin, if one isn’t
+present already</li>
+<li>In FB360 Spatialiser, set the Input drop-down menu to B-format
+(2nd Order ambiX)</li>
+<li>Import your 9 channel B-format recording onto the track</li>
 <li>The B-format data will automatically be spatialised to binaural by
 the FB360 Control plugin</li>
 </ol>
 <p>For more information about Ambisonics and B-formats see the <a class="reference internal" href="#ambisonics-and-b-format-audio"><span class="std std-ref">Ambisonics and B-format Audio</span></a> section or
 for information on rotating the B-format recording, see <a class="reference internal" href="#rotating-the-ambisonic-field"><span class="std std-ref">Rotating the Ambisonic field</span></a>.</p>
 </div>
-<div class="section" id="id30">
-<h2><a class="toc-backref" href="#id24">Working With Video</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h2><a class="toc-backref" href="#id25">Working With Video</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
 <p>Once you have the video opened and loaded in the VR Video Player,
 playing back your session in Reaper should automatically synchronise
 playback of the video. Reaper is always master and the video player is
@@ -1426,7 +1463,7 @@ slave. Make sure your project starts at 00:00:00:00. See <a class="reference int
 information.</p>
 </div>
 <div class="section" id="exporting-bouncing-a-mix">
-<h2><a class="toc-backref" href="#id24">Exporting/Bouncing A Mix</a><a class="headerlink" href="#exporting-bouncing-a-mix" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id25">Exporting/Bouncing A Mix</a><a class="headerlink" href="#exporting-bouncing-a-mix" title="Permalink to this headline">¶</a></h2>
 <p>To export your spatialised mix:</p>
 <ol class="arabic simple">
 <li>Use Reaper’s <em>Time Selection</em> to specify the area you would like to
@@ -1466,19 +1503,19 @@ to the app.</p>
 </div>
 <div class="section" id="video-player">
 <h1>Video Player<a class="headerlink" href="#video-player" title="Permalink to this headline">¶</a></h1>
-<div class="contents h1-local-toc local topic" id="id31">
+<div class="contents h1-local-toc local topic" id="id32">
 <ul class="simple">
-<li><a class="reference internal" href="#video-format-and-codec" id="id89">Video Format And Codec</a><ul>
-<li><a class="reference internal" href="#encoding-with-ffmpeg-and-command-line" id="id90">Encoding With FFmpeg And Command Line</a></li>
+<li><a class="reference internal" href="#video-format-and-codec" id="id90">Video Format And Codec</a><ul>
+<li><a class="reference internal" href="#encoding-with-ffmpeg-and-command-line" id="id91">Encoding With FFmpeg And Command Line</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#opening-a-video" id="id91">Opening A Video</a><ul>
-<li><a class="reference internal" href="#slave-video-playback" id="id92">Slave Video Playback</a></li>
-<li><a class="reference internal" href="#standalone-video-playback" id="id93">Standalone Video Playback</a></li>
+<li><a class="reference internal" href="#opening-a-video" id="id92">Opening A Video</a><ul>
+<li><a class="reference internal" href="#slave-video-playback" id="id93">Slave Video Playback</a></li>
+<li><a class="reference internal" href="#standalone-video-playback" id="id94">Standalone Video Playback</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#navigating-a-360-video" id="id94">Navigating A 360 Video</a><ul>
-<li><a class="reference internal" href="#key-commands" id="id95">Key Commands</a></li>
+<li><a class="reference internal" href="#navigating-a-360-video" id="id95">Navigating A 360 Video</a><ul>
+<li><a class="reference internal" href="#key-commands" id="id96">Key Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -1490,7 +1527,7 @@ your DAW.</p>
 found
 <a class="reference external" href="https://facebookincubator.github.io/facebook-360-spatial-workstation/Troubleshooting.html#video-player-known-issues">here</a>.</p>
 <div class="section" id="video-format-and-codec">
-<span id="id32"></span><h2><a class="toc-backref" href="#id31">Video Format And Codec</a><a class="headerlink" href="#video-format-and-codec" title="Permalink to this headline">¶</a></h2>
+<span id="id33"></span><h2><a class="toc-backref" href="#id32">Video Format And Codec</a><a class="headerlink" href="#video-format-and-codec" title="Permalink to this headline">¶</a></h2>
 <p>While the video player can load and playback a variety of formats, the
 following is recommended:</p>
 <ul class="simple">
@@ -1505,13 +1542,13 @@ when editing or synchronising edit points). Refer to
 Knowledge Base article for details on the recommended frame rate and
 resolution.</p>
 <div class="section" id="encoding-with-ffmpeg-and-command-line">
-<h3><a class="toc-backref" href="#id31">Encoding With FFmpeg And Command Line</a><a class="headerlink" href="#encoding-with-ffmpeg-and-command-line" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Encoding With FFmpeg And Command Line</a><a class="headerlink" href="#encoding-with-ffmpeg-and-command-line" title="Permalink to this headline">¶</a></h3>
 <p>We recommend using FFmpeg (<a class="reference external" href="http://ffmpegmac.net/">http://ffmpegmac.net/</a>) with the settings
 specified below. FFmpeg is usually used as a command line utility using
-the <em>Terminal</em> application on a Mac. For instructions on converting videos to DNxHR using iFFmpeg see the instructions in the <a class="reference external" href="https://facebookincubator.github.io/facebook-360-spatial-workstation/KB/VideoFormatGuidelines.html">Video Format Guidelines article</a>.</p>
+the <em>Terminal</em> application on a Mac. For instructions on converting videos to DNxHR using iFFmpeg see the <a class="reference external" href="https://facebookincubator.github.io/facebook-360-spatial-workstation/KB/VideoFormatGuidelines.html">Video Format Guidelines article</a>.</p>
 <ul>
 <li><p class="first">DNxHR LB:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUTFILE</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="n">an</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhd</span> <span class="o">-</span><span class="n">pix_fmt</span> <span class="n">yuv422p</span> <span class="o">-</span><span class="n">trellis</span> <span class="mi">0</span> <span class="o">-</span><span class="n">profile</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhr_lb</span> <span class="o">-</span><span class="n">y</span> <span class="n">OUTPUTFILE</span><span class="o">.</span><span class="n">mov</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUTFILE</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="n">an</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhd</span> <span class="o">-</span><span class="n">pix_fmt</span> <span class="n">yuv422p</span> <span class="o">-</span><span class="n">trellis</span> <span class="mi">0</span> <span class="o">-</span><span class="n">profile</span><span class="p">:</span><span class="n">v</span> <span class="n">dnxhr_lb</span> <span class="o">-</span><span class="n">y</span> <span class="n">OUTPUTFILE</span><span class="o">.</span><span class="n">mov</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1527,23 +1564,23 @@ track in the video file (if present)</li>
 </div>
 </div>
 <div class="section" id="opening-a-video">
-<span id="id33"></span><h2><a class="toc-backref" href="#id31">Opening A Video</a><a class="headerlink" href="#opening-a-video" title="Permalink to this headline">¶</a></h2>
+<span id="id34"></span><h2><a class="toc-backref" href="#id32">Opening A Video</a><a class="headerlink" href="#opening-a-video" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="slave-video-playback">
-<h3><a class="toc-backref" href="#id31">Slave Video Playback</a><a class="headerlink" href="#slave-video-playback" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Slave Video Playback</a><a class="headerlink" href="#slave-video-playback" title="Permalink to this headline">¶</a></h3>
 <p>Open the Video Player app from the installation folder. Load the
 video file, specify the playback options and click <em>Open.</em> For more
 information about the options, see <a class="reference internal" href="#vr-video-player"><span class="std std-ref">VR Video Player</span></a>. If Slave is selected playback
 will automatically be controlled from your DAW.</p>
 </div>
 <div class="section" id="standalone-video-playback">
-<h3><a class="toc-backref" href="#id31">Standalone Video Playback</a><a class="headerlink" href="#standalone-video-playback" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Standalone Video Playback</a><a class="headerlink" href="#standalone-video-playback" title="Permalink to this headline">¶</a></h3>
 <p>Open the Video Player app from the installation folder. Load the
 video file and the .tbe file. Select the playback options and click
 <em>Open.</em></p>
 </div>
 </div>
 <div class="section" id="navigating-a-360-video">
-<span id="id34"></span><h2><a class="toc-backref" href="#id31">Navigating A 360 Video</a><a class="headerlink" href="#navigating-a-360-video" title="Permalink to this headline">¶</a></h2>
+<span id="id35"></span><h2><a class="toc-backref" href="#id32">Navigating A 360 Video</a><a class="headerlink" href="#navigating-a-360-video" title="Permalink to this headline">¶</a></h2>
 <p>If <em>VR</em> is selected as the <em>Display Mode</em>, you will need a VR headset
 connected to your computer. The video will be displayed on the
 device (provided it is setup correctly) and the information from the
@@ -1551,7 +1588,7 @@ head-tracker will automatically be sent to the video player and the
 FB360 Control plugin. If you have chosen the <em>Desktop</em> display mode,
 you can use your keyboard and mouse to navigate the video.</p>
 <div class="section" id="key-commands">
-<h3><a class="toc-backref" href="#id31">Key Commands</a><a class="headerlink" href="#key-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Key Commands</a><a class="headerlink" href="#key-commands" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Left-click and drag your mouse to change orientation (Desktop Mode)</li>
 <li>Use <em>W, A, S or D</em> keys to change orientation. Additionally holding
@@ -1563,16 +1600,16 @@ Desktop Mode)</li>
 </div>
 </div>
 <div class="section" id="encoder">
-<span id="id35"></span><h1>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">¶</a></h1>
-<div class="contents h1-local-toc local topic" id="id36">
+<span id="id36"></span><h1>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">¶</a></h1>
+<div class="contents h1-local-toc local topic" id="id37">
 <ul class="simple">
-<li><a class="reference internal" href="#encoding-assets" id="id96">Encoding Assets</a><ul>
-<li><a class="reference internal" href="#additional-requirements-windows-only" id="id97">Additional Requirements (Windows Only)</a></li>
-<li><a class="reference internal" href="#encoding-for-facebook-360" id="id98">Encoding For Facebook 360</a></li>
-<li><a class="reference internal" href="#encoding-to-other-formats" id="id99">Encoding To Other Formats</a></li>
+<li><a class="reference internal" href="#encoding-assets" id="id97">Encoding Assets</a><ul>
+<li><a class="reference internal" href="#additional-requirements-windows-only" id="id98">Additional Requirements (Windows Only)</a></li>
+<li><a class="reference internal" href="#encoding-for-facebook-360" id="id99">Encoding For Facebook 360</a></li>
+<li><a class="reference internal" href="#encoding-to-other-formats" id="id100">Encoding To Other Formats</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#running-the-encoder-from-the-command-line" id="id100">Running the Encoder from the Command Line</a></li>
+<li><a class="reference internal" href="#running-the-encoder-from-the-command-line" id="id101">Running the Encoder from the Command Line</a></li>
 </ul>
 </div>
 <p>The Encoder application is installed in <em>Mac HD/Applications/FB360
@@ -1581,9 +1618,9 @@ Spatial Workstation/Encoder</em> on Windows. It can be used to convert your
 mix to a variety of formats or create a file that can be uploaded to
 Facebook 360.</p>
 <div class="section" id="encoding-assets">
-<span id="id37"></span><h2><a class="toc-backref" href="#id36">Encoding Assets</a><a class="headerlink" href="#encoding-assets" title="Permalink to this headline">¶</a></h2>
+<span id="id38"></span><h2><a class="toc-backref" href="#id37">Encoding Assets</a><a class="headerlink" href="#encoding-assets" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="additional-requirements-windows-only">
-<h3><a class="toc-backref" href="#id36">Additional Requirements (Windows Only)</a><a class="headerlink" href="#additional-requirements-windows-only" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">Additional Requirements (Windows Only)</a><a class="headerlink" href="#additional-requirements-windows-only" title="Permalink to this headline">¶</a></h3>
 <p>The Encoder requires Mp4Box and Python 2.7 installed on your Windows
 computer.</p>
 <ol class="arabic simple">
@@ -1597,7 +1634,7 @@ additional components is optional</li>
 </ol>
 </div>
 <div class="section" id="encoding-for-facebook-360">
-<span id="id38"></span><h3><a class="toc-backref" href="#id36">Encoding For Facebook 360</a><a class="headerlink" href="#encoding-for-facebook-360" title="Permalink to this headline">¶</a></h3>
+<span id="id39"></span><h3><a class="toc-backref" href="#id37">Encoding For Facebook 360</a><a class="headerlink" href="#encoding-for-facebook-360" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Open <em>FB360 Encoder</em></p>
 <a class="reference internal image-reference" href="../../_images/Encoder-FB360_Output.png"><img alt="../../_images/Encoder-FB360_Output.png" src="../../_images/Encoder-FB360_Output.png" style="width: 50%;" /></a>
@@ -1651,7 +1688,7 @@ of the video will be displayed to the left eye and the right half
 of the video will be displayed to the right eye when viewing in 3D</li>
 </ol>
 </li>
-<li><p class="first">For videos encoded in Facebook 360 format, you can optionally enable Focus for the video which will give more prominence to the audio objects in the viewer&#8217;s field of view and will attenuate objects outside of it:</p>
+<li><p class="first">For videos encoded in Facebook 360 format, you can optionally enable Focus for the video which will give more prominence to the audio objects in the viewer’s field of view and will attenuate objects outside of it:</p>
 <a class="reference internal image-reference" href="../../_images/Focus.png"><img alt="../../_images/Focus.png" src="../../_images/Focus.png" style="width: 50%;" /></a>
 <ul class="simple">
 <li>Focus: Enables the focus feature</li>
@@ -1666,7 +1703,7 @@ of the video will be displayed to the right eye when viewing in 3D</li>
 </ol>
 </div>
 <div class="section" id="encoding-to-other-formats">
-<h3><a class="toc-backref" href="#id36">Encoding To Other Formats</a><a class="headerlink" href="#encoding-to-other-formats" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">Encoding To Other Formats</a><a class="headerlink" href="#encoding-to-other-formats" title="Permalink to this headline">¶</a></h3>
 <p>The Encoder app can also be used to convert an existing mix from the
 Spatial Workstation to other formats.</p>
 <a class="reference internal image-reference" href="../../_images/OutputFormatOptions.png"><img alt="../../_images/OutputFormatOptions.png" src="../../_images/OutputFormatOptions.png" style="width: 60%;" /></a>
@@ -1676,40 +1713,46 @@ above</li>
 <li>Rift: Oculus Video: Encoding audio and video for side-loading on Oculus Video on the Rift.
 See <a class="reference external" href="https://facebookincubator.github.io/facebook-360-spatial-workstation/KB/OculusVideoOnRift.html">here</a>
 for side-loading instructions.</li>
-<li>.tbe: Encode the eight channel spatial audio mix from the Spatial
+<li>.tbe (44.1kHz): Encode the spatial audio mix from the Spatial
 Workstation (the output from 3D Master) and head-locked audio for the
-Facebook 360 Audio Rendering SDK. Note: the video is not used.</li>
-<li>B-format (FuMa): Convert your mix B-format FuMa. Note: the
+Facebook 360 Audio Rendering SDK using a sampling frequency of 44.1kHz.
+Note: the video is not used.</li>
+<li>.tbe (48kHz): Encode the spatial audio mix from the Spatial
+Workstation (the output from 3D Master) and head-locked audio for the
+Facebook 360 Audio Rendering SDK using a sampling frequency of 48kHz.
+Note: the video is not used.</li>
+<li>B-format (FuMa): Convert your mix to B-format FuMa. Note: the
 head-locked audio is ignored and the video is not used</li>
-<li>B-format (ambiX): Convert your mix B-format ambiX. Note: the
+<li>B-format (ambiX): Convert your mix to B-format ambiX. Note: the
 head-locked audio is ignored and the video is not used</li>
 <li>Quad-binaural: Convert your mix to quad-binaural (four binaural
 mixdowns at 0, 90, 180 and 270 degrees). Note: the head-locked audio
 is ignored and the video is not used</li>
 <li>YouTube Video (with 1st order ambiX): Encoding audio and video for uploading
 to either YouTube or Facebook 360. Supports first-order ambiX.
-For your convenience you can also choose Spatial Workstation 8-channel
-input which will be converted to first order ambiX, at a loss of quality.</li>
+For your convenience you can also choose any of the other supported spatial audio formats
+which will be converted to first order ambiX, potentially with a loss of quality.</li>
+<li>FB360 Matroska (Spatial Workstation 8 Channel): Encoding audio and video for use with the standalone video player. See <a class="reference internal" href="#opening-a-video"><span class="std std-ref">Opening A Video</span></a>.</li>
 </ul>
 <ol class="arabic simple">
 <li>Open <em>FB360 Encoder</em></li>
 <li>Select the output format</li>
-<li>Drop or load the 8 channel spatial audio wav file from the Spatial
+<li>Drop or load the spatial audio wav file from the Spatial
 Workstation</li>
-<li>Ensure the <em>From Pro Tools</em> checkbox is ticked if the 8 channel
-spatial audio file is from Pro Tools</li>
+<li>Ensure the <em>From Pro Tools</em> checkbox is ticked if using a Spatial Workstation 8 channel
+spatial audio file that has been exported from Pro Tools</li>
 <li>Click the <em>Encode</em> button and save your file</li>
 </ol>
 </div>
 </div>
 <div class="section" id="running-the-encoder-from-the-command-line">
-<h2><a class="toc-backref" href="#id36">Running the Encoder from the Command Line</a><a class="headerlink" href="#running-the-encoder-from-the-command-line" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">Running the Encoder from the Command Line</a><a class="headerlink" href="#running-the-encoder-from-the-command-line" title="Permalink to this headline">¶</a></h2>
 <p>The Encoder can be run from the command line, enabling scripting
 automation. Currently this works on macOS and Linux only, but we plan to
 add Windows support as well.</p>
-<p>When you run the Encoder binary directly, and pass <code class="docutils literal"><span class="pre">-h</span></code>, you will get
+<p>When you run the Encoder binary directly, and pass <code class="docutils literal notranslate"><span class="pre">-h</span></code>, you will get
 help output like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ &quot;./FB360 Encoder.app/Contents/MacOS/FB360 Encoder&quot; -h
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ &quot;./FB360 Encoder.app/Contents/MacOS/FB360 Encoder&quot; -h
 fb360-encoder \
     [--help] [--version] \
     --spatial SPATIAL.wav --spatial-format SPATIAL_FORMAT [--from-protools] \
@@ -1747,7 +1790,7 @@ If things don&#39;t seem to work then check there.
 <p>So for example, to encode a top-bottom stereoscopic video with Spatial
 Workstation 8-channel audio (exported from Pro Tools) and headlocked
 audio, you would run this command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;./FB360 Encoder.app/Contents/MacOS/FB360 Encoder&quot;</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;./FB360 Encoder.app/Contents/MacOS/FB360 Encoder&quot;</span> <span class="se">\</span>
     --spatial spat.wav --spatial-format hhoa --from-protools --headlocked headlocked.wav <span class="se">\</span>
     --video video.mp4 --video-layout top-bottom <span class="se">\</span>
     --output encoded-video.mp4 --output-format fb360-hhoa
@@ -1755,9 +1798,9 @@ audio, you would run this command:</p>
 </div>
 <p>You may need to install ffmpeg, MP4Box, and Python 2.7 and ensure they
 are in your execution path, or provide the paths to them with the
-options <code class="docutils literal"><span class="pre">--ffmpeg-path</span></code>, <code class="docutils literal"><span class="pre">--mp4box-path</span></code>, and <code class="docutils literal"><span class="pre">--python-path</span></code>.
+options <code class="docutils literal notranslate"><span class="pre">--ffmpeg-path</span></code>, <code class="docutils literal notranslate"><span class="pre">--mp4box-path</span></code>, and <code class="docutils literal notranslate"><span class="pre">--python-path</span></code>.
 e.g. on macOS with <a class="reference external" href="https://brew.sh/">Homebrew</a>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>brew install ffmpeg
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install ffmpeg
 brew install mp4box
 <span class="c1"># python2.7 is already installed in /usr/bin/ by the operating system</span>
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/bin

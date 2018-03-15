@@ -273,7 +273,7 @@ RTMP proxy.</li>
 </ul>
 <p>If you use <a class="reference external" href="https://brew.sh/">Homebrew</a>, the following commands will
 take care of Soundflower, NGINX, and FFmpeg:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">tap</span> <span class="n">homebrew</span><span class="o">/</span><span class="n">nginx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">tap</span> <span class="n">homebrew</span><span class="o">/</span><span class="n">nginx</span>
 <span class="n">brew</span> <span class="n">install</span> <span class="n">nginx</span><span class="o">-</span><span class="n">full</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">rtmp</span><span class="o">-</span><span class="n">module</span>
 <span class="n">brew</span> <span class="n">install</span> <span class="n">ffmpeg</span>
 <span class="n">brew</span> <span class="n">cask</span> <span class="n">install</span> <span class="n">soundflower</span>
@@ -313,7 +313,7 @@ enough, synchronization seems to be stable once established, but it
 needs to be reestablished for each live stream. This <a class="reference external" href="http://www.reaper.fm/sdk/js/js.php">Reaper
 JS</a> effect provides a simple
 slider for adjusting delay:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">install</span> <span class="ow">in</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span> <span class="n">Support</span><span class="o">/</span><span class="n">REAPER</span><span class="o">/</span><span class="n">Effects</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">install</span> <span class="ow">in</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span> <span class="n">Support</span><span class="o">/</span><span class="n">REAPER</span><span class="o">/</span><span class="n">Effects</span>
 <span class="n">desc</span><span class="p">:</span><span class="n">Simple</span> <span class="n">multichannel</span> <span class="n">delay</span>
 <span class="n">desc</span><span class="p">:</span><span class="n">Simple</span> <span class="n">multichannel</span> <span class="n">delay</span> <span class="p">[</span><span class="n">FB360</span><span class="p">]</span>
 
@@ -359,7 +359,7 @@ in the Control plugin.</p>
 <p>NGINX is the hub of RTMP activity on the computer. It calls out to
 FFmpeg for transcoding, and is pulled from by VLC for preview and FFmpeg
 for streaming to Facebook. Sample NGINX configuration:</p>
-<div class="highlight-nginx"><div class="highlight"><pre><span></span><span class="c1"># nginx clears environment, except what we pass through. Pass through PATH</span>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="c1"># nginx clears environment, except what we pass through. Pass through PATH</span>
 <span class="k">env</span> <span class="s">PATH</span><span class="p">;</span>
 
 <span class="c1"># nginx insists on this existing</span>
@@ -418,15 +418,15 @@ for streaming to Facebook. Sample NGINX configuration:</p>
 </pre></div>
 </div>
 <p>Once NGINX is running, stream RTMP from the camera to
-<code class="docutils literal"><span class="pre">rtmp://$HOST/live/$NAME</span></code> where <code class="docutils literal"><span class="pre">$HOST</span></code> and <code class="docutils literal"><span class="pre">$NAME</span></code> are the
+<code class="docutils literal notranslate"><span class="pre">rtmp://$HOST/live/$NAME</span></code> where <code class="docutils literal notranslate"><span class="pre">$HOST</span></code> and <code class="docutils literal notranslate"><span class="pre">$NAME</span></code> are the
 hostname (or IP address) of your computer and some simple name to
 identify this session (e.g. “foo” above).</p>
 </div>
 <div class="section" id="nginx-ffmpeg-soundflower">
 <h3><a class="toc-backref" href="#contents">NGINX → FFmpeg ← Soundflower</a><a class="headerlink" href="#nginx-ffmpeg-soundflower" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">transcode.sh</span></code> is a wrapper around FFmpeg that transcodes the video
+<p><code class="docutils literal notranslate"><span class="pre">transcode.sh</span></code> is a wrapper around FFmpeg that transcodes the video
 and muxes it with the audio.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
  <span class="c1"># This script is executed by nginx. It must be in your PATH (as seen by nginx).</span>
 
  <span class="nv">SPADLIVE_LOG</span><span class="o">=</span><span class="si">${</span><span class="nv">SPADLIVE_LOG</span><span class="k">:-</span><span class="p">/usr/local/var/log/spadlive.log</span><span class="si">}</span>
@@ -477,14 +477,14 @@ and muxes it with the audio.</p>
 </div>
 <div class="section" id="nginx-vlc">
 <h3><a class="toc-backref" href="#contents">NGINX → VLC</a><a class="headerlink" href="#nginx-vlc" title="Permalink to this headline">¶</a></h3>
-<p>Now open the RTMP stream <code class="docutils literal"><span class="pre">rtmp://localhost/landing/$NAME</span></code> in
+<p>Now open the RTMP stream <code class="docutils literal notranslate"><span class="pre">rtmp://localhost/landing/$NAME</span></code> in
 <a class="reference external" href="http://www.videolan.org/vlc/index.html">VLC</a> (or other software
-capable of streaming RTMP). <code class="docutils literal"><span class="pre">$NAME</span></code> is the same name used by the
+capable of streaming RTMP). <code class="docutils literal notranslate"><span class="pre">$NAME</span></code> is the same name used by the
 camera above. Screenshot:</p>
 <p><img alt="vlc.png" src="../_images/spadlive_vlc.png" /></p>
-<p>Synchronize the camera&#8217;s video with the microphone&#8217;s audio, by adjusting
+<p>Synchronize the camera’s video with the microphone’s audio, by adjusting
 the delay plugin. (Clapping or tapping a glass with a pen works well.)
-Once the stream is synchronized, you&#8217;re ready to go live. Note that this
+Once the stream is synchronized, you’re ready to go live. Note that this
 synchronization step is necessary each time you reinitiate a stream from
 the camera, because it depends on the dynamic buffer size the camera
 chooses.</p>
@@ -497,10 +497,10 @@ beyond the scope of this document, but an example request in the <a class="refer
 API Explorer</a> would
 look like this:</p>
 <p><img alt="graph-explorer.png" src="../_images/graph-explorer.png" /></p>
-<p><code class="docutils literal"><span class="pre">fblive.sh</span></code> is a script that pulls the RTMP stream from NGINX and
+<p><code class="docutils literal notranslate"><span class="pre">fblive.sh</span></code> is a script that pulls the RTMP stream from NGINX and
 forwards it to Facebook. We pass it the RTMP stream URL that we get from
 Facebook which includes the session key.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Execute this script once you have a stream feeding to nginx on rtmp://localhost/live/$name</span>
 <span class="c1"># Before running this script, you can run e.g. VLC to preview and synchronize audio at rtmp://localhost/landing/$name</span>
 <span class="c1"># NB only one program can pull from the landing RTMP stream at a time, so stop VLC before running this.</span>
@@ -524,9 +524,9 @@ Facebook which includes the session key.</p>
 </pre></div>
 </div>
 <p>When you are ready to go live on Facebook, first close VLC, then run
-<code class="docutils literal"><span class="pre">fblive.sh</span></code> with the RTMP stream URL you got from Facebook, and the
+<code class="docutils literal notranslate"><span class="pre">fblive.sh</span></code> with the RTMP stream URL you got from Facebook, and the
 name you used above, e.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fblive</span><span class="o">.</span><span class="n">sh</span> <span class="s2">&quot;rtmp://rtmp-api.facebook.com:80/rtmp/123456789012345?ds=1&amp;s_l=1&amp;a=oVmK4kAThV2vwg8YEIR&quot;</span> <span class="n">foo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fblive</span><span class="o">.</span><span class="n">sh</span> <span class="s2">&quot;rtmp://rtmp-api.facebook.com:80/rtmp/123456789012345?ds=1&amp;s_l=1&amp;a=oVmK4kAThV2vwg8YEIR&quot;</span> <span class="n">foo</span>
 </pre></div>
 </div>
 </div>
@@ -538,12 +538,12 @@ name you used above, e.g.:</p>
 <li>Video check</li>
 <li>Orientation check</li>
 <li>Get Facebook Live 360 stream URL</li>
-<li>Camera to <code class="docutils literal"><span class="pre">rtmp://$HOST/live/$NAME</span></code></li>
-<li>VLC to <code class="docutils literal"><span class="pre">rtmp://localhost/landing/$NAME</span></code></li>
+<li>Camera to <code class="docutils literal notranslate"><span class="pre">rtmp://$HOST/live/$NAME</span></code></li>
+<li>VLC to <code class="docutils literal notranslate"><span class="pre">rtmp://localhost/landing/$NAME</span></code></li>
 <li>Audio synchronization</li>
 <li>Preview check</li>
 <li>Close VLC</li>
-<li><code class="docutils literal"><span class="pre">fblive.sh</span> <span class="pre">$RTMP_URL</span> <span class="pre">$NAME</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">fblive.sh</span> <span class="pre">$RTMP_URL</span> <span class="pre">$NAME</span></code></li>
 </ul>
 </div>
 <div class="section" id="help-and-feedback">
