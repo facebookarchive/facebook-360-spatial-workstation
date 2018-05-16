@@ -209,6 +209,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../SDK/Audio360_SDK_GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SDK/Audio360_SDK_GettingStarted.html#sdk">SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SDK/Audio360_SDK_GettingStarted.html#file-formats-codecs-and-asset-management">File Formats, Codecs, And Asset Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SDK/Audio360_SDK_GettingStarted.html#integrations">Integrations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">SUPPORT</span></p>
@@ -460,7 +461,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.2.pkg)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.3.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process<ol class="arabic">
 <li>VR Video Player in <em>Applications/FB360 Spatial Workstation/Video
@@ -474,7 +475,7 @@ Player</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#vst" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.2.pkg)</li>
+(SpatialWorkstation-VST-3.3.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST 3 Plugins in <em>Mac HD/Library/Audio/Plug-Ins/Audio/VST3</em></li>
@@ -511,7 +512,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.2-Win64.exe)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.3-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VR Video Player in <em>C:\Program Files\FB360 Spatial
@@ -526,7 +527,7 @@ Workstation\Encoder</em></li>
 <h3><a class="toc-backref" href="#id4">VST</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.2-Win64.exe)</li>
+(SpatialWorkstation-VST-3.3-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST3 Plugins in <em>C:\Program Files\Common Files\VST3</em></li>
@@ -1181,7 +1182,7 @@ Windows</li>
 </ul>
 </li>
 <li><p class="first"><em>Load .tbe file</em>: Browse for the .tbe file to be
-opened</p>
+opened. Note that this is not required when opening a FB Matroska encoded video.</p>
 </li>
 <li><p class="first"><em>Focus</em>: Enable the focus effect (see <a class="reference internal" href="#using-focus-control"><span class="std std-ref">Using Focus Control</span></a>). When loading a FB360 Matroska video file
 that has focus enabled the focus parameters will automatically be set to match the video’s metadata.</p>
@@ -1609,8 +1610,8 @@ will automatically be controlled from your DAW.</p>
 <div class="section" id="standalone-video-playback">
 <h3><a class="toc-backref" href="#id33">Standalone Video Playback</a><a class="headerlink" href="#standalone-video-playback" title="Permalink to this headline">¶</a></h3>
 <p>Open the Video Player app from the installation folder. Load the
-video file and the .tbe file. Select the playback options and click
-<em>Open.</em></p>
+video file and the file. Select the playback options and click
+<em>Open.</em> Note that a .tbe file is not needed when the video is encoded to the FB Matroska format with the audio file already muxed into the mkv container. See <a class="reference internal" href="#vr-video-player"><span class="std std-ref">VR Video Player</span></a>.</p>
 </div>
 </div>
 <div class="section" id="navigating-a-360-video">
