@@ -91,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-pro-tools-hd">Using Pro Tools HD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-nuendo">Using Nuendo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#video-player">Video Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#video-format-and-codec">Video Format And Codec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#encoder">Encoder</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AUDIO360 SDK</span></p>
@@ -108,6 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#c">C++</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ios">iOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#android-java">Android (Java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#www-javascript">WWW (JavaScript)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#general-concepts">General Concepts</a><ul>
@@ -466,6 +467,87 @@ libraries will be included every time you build your project.</p>
         <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="www-javascript">
+<h3>WWW (JavaScript)<a class="headerlink" href="#www-javascript" title="Permalink to this headline">¶</a></h3>
+<p>The Javascript SDK allows web applications to play webm+opus encoded video files that contain
+spatial audio in the following formats:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Facebook TBE 8 (8 channels hybrid higher order ambisonic)</li>
+<li>Facebook TBE 8.2 (8 channels ambisonic plus a stereo track)</li>
+<li>AmbiX 1st order</li>
+<li>AmbiX 2nd order</li>
+<li>Ambix 9.2 (ambiX 2nd order plus a stereo track)</li>
+</ol>
+</div></blockquote>
+<p>The Javascript SDK is packed in the FBAudio.js file and a demo index.html
+is provided in the Audio360/www folder for reference.</p>
+<p>To view the demo application:</p>
+<ol class="arabic simple">
+<li>cd to Audio360/www</li>
+<li>Run a local http server in this folder (python -m SimpleHTTPServer, for example)</li>
+<li>Open localhost:[local server port] in either Chrome or Firefox</li>
+</ol>
+<p>The WWW SDK API consists of the following objects:</p>
+<ol class="arabic simple">
+<li>FBAudio - the main library object</li>
+<li>FBAudio.Audio360 - the spatial audio renderer object</li>
+<li>FBAudio.Format - format enumeration object</li>
+</ol>
+<p>Supported formats are described by the FBAudio.Format object:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Format</span> <span class="o">=</span>
+<span class="p">{</span>
+   <span class="nx">AMBIX_FOA</span><span class="o">:</span>  <span class="mi">0</span><span class="p">,</span>
+   <span class="nx">AMBIX_SOA</span><span class="o">:</span>  <span class="mi">1</span><span class="p">,</span>
+   <span class="nx">TBE_6</span><span class="o">:</span>      <span class="mi">2</span><span class="p">,</span>
+   <span class="nx">TBE_6_2</span><span class="o">:</span>    <span class="mi">3</span><span class="p">,</span>
+   <span class="nx">TBE_8</span><span class="o">:</span>      <span class="mi">4</span><span class="p">,</span>
+   <span class="nx">TBE_8_2</span><span class="o">:</span>    <span class="mi">5</span><span class="p">,</span>
+   <span class="nx">AMBIX_9_2</span><span class="o">:</span>  <span class="mi">6</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The Audio360 API is described below:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* Call this method to construct a new Audio360 renderer, where:</span>
+<span class="cm">*   element: The HTMLMediaElement for the video containing spatial audio</span>
+<span class="cm">*   context: A WebAudio API AudioContext object</span>
+<span class="cm">*   Format: one of the FBAudio.Format enumeration values</span>
+<span class="cm">*/</span>
+<span class="nx">Audio360</span><span class="p">(</span><span class="nx">element</span><span class="o">:</span> <span class="nx">HTMLMediaElement</span><span class="p">,</span> <span class="nx">context</span><span class="o">:</span> <span class="nx">AudioContext</span><span class="p">,</span> <span class="nx">format</span><span class="o">:</span> <span class="nx">Format</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">* Call this method to set the listener orientation when the viewport changes.</span>
+<span class="cm">*   yaw:    from -180 (left) to +180 (right). Center is 0</span>
+<span class="cm">*   pitch:  from -180 (down) to +180 (up). Center is 0</span>
+<span class="cm">*   roll:   from -180 (roll left) to +180 (roll right). Center is 0</span>
+<span class="cm">*/</span>
+<span class="nx">Audio360</span><span class="p">.</span><span class="nx">setListenerOrientation</span><span class="p">(</span><span class="nx">yaw</span><span class="o">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pitch</span><span class="o">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">roll</span><span class="o">:</span> <span class="nx">number</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">* Call this method to set the focus of the field.</span>
+<span class="cm">*   width: The width of the focus area in degrees (40 min / 120 max)</span>
+<span class="cm">*   level: The attenuation in decibels of the off-focus area (-24.0 min / 0.0 max)</span>
+<span class="cm">*/</span>
+<span class="nx">Audio360</span><span class="p">.</span><span class="nx">setFocus</span><span class="p">(</span><span class="nx">width</span><span class="o">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">level</span><span class="o">:</span> <span class="nx">number</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">* Call this method whenever you are destroying an Audio360 object</span>
+<span class="cm">* to release internally used resources.</span>
+<span class="cm">*/</span>
+<span class="nx">Audio360</span><span class="p">.</span><span class="nx">cleanup</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The provided index.html under Audio360/www contains an example of setting up renderers for the different
+audio formats. Here is a simple example usage:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">audioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AudioContext</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;ambix_9_2&#39;</span><span class="p">);</span> <span class="c1">// ambix_9_2 is an html media element that holds the video</span>
+<span class="kd">var</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FBAudio</span><span class="p">.</span><span class="nx">Audio360</span><span class="p">(</span><span class="nx">video</span><span class="p">,</span> <span class="nx">audioContext</span><span class="p">,</span> <span class="nx">FBAudio</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">AMBIX_9_2</span><span class="p">);</span>
+
+<span class="c1">// All done. Don&#39;t forget to call FBAudio.Audio360.cleanup() to release resources</span>
 </pre></div>
 </div>
 </div>
@@ -1916,9 +1998,7 @@ documentation, applies.</p>
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script> 
 
