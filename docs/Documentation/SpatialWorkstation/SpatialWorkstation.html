@@ -845,13 +845,20 @@ plugin. Click the “X” on the tag to unload the video.</p>
 <ul>
 <li><p class="first"><em>Projection</em>: The first drop down menu sets the projection used for the video.</p>
 <ul class="simple">
-<li><em>360 View</em>: Shows a 360/spherical projection of the video as you would see on a VR headset</li>
+<li><em>360 View</em>: Shows a 360/spherical projection of the video as you would see on a VR headset
+or 360 video player. Click and drag with the mouse (or use the WASD keys)to look around the video.</li>
+<li><em>Global Equirect</em>: Shows an equirectangular projection of the video and all instances of the Spatialiser plugin in a single view.
+Automation can be written normally in Pro Tools HD or Nuendo from this view.
+To write automation from this view in Reaper, follow the steps outlined below:<ol class="arabic">
+<li>When adding a new instance of the Spatialiser FX from the FX window, right click on the
+Spatialiser plugin -&gt; Automation Notification -&gt; Process all notifications</li>
+<li>This needs to be done only once. If however, you already have spatialiser plugins in the project,
+you will need to remove them and add new instances of the plugin after making the change above.</li>
+<li>This should enable automation for multiple tracks from the global equirect window. If for some reason,
+in a new project, or after a fresh Reaper installation, this doesn’t seem to be working, please revisit Step 1</li>
+</ol>
+</li>
 </ul>
-<p>or 360 video player. Click and drag with the mouse (or use the WASD keys)to look around the video.</p>
-<ul class="simple">
-<li><em>Global Equirect</em>: Shows an equirectangular projection of the video and all instances of the Spatialiser</li>
-</ul>
-<p>plugin in a single view. Automation can be written from this view when using Pro Tools or Nuendo. Automation cannot be written from this view for Reaper projects - you must write automation from within each Spatialiser plugin.</p>
 </li>
 <li><p class="first"><em>Rotation Source</em>:</p>
 <ul class="simple">
