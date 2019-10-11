@@ -2,6 +2,6 @@ The [Facebook 360 Spatial Workstation](https://facebook360.fb.com/spatial-workst
 
 Please post issues and general questions or comments on our Facebook group: [Spatial Workstation Facebook Group](https://www.facebook.com/groups/1812020965695437/)
 
-We will be maintaining a list of known issues on GitHub. Browse open issues from the [issues page](https://github.com/facebookincubator/facebook-360-spatial-workstation/issues)
-
 [Download the latest version for OSX or Windows here](https://facebook360.fb.com/spatial-workstation/) 
+
+This is licensed under the license found in the LICENSE file in the root directory of this source tree.
