@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,39 +11,43 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../../_static/overrides.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Getting Started" href="../SDK/Audio360_SDK_GettingStarted.html" />
     <link rel="prev" title="Facebook Audio 360" href="../../index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -74,6 +77,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -203,6 +207,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#running-the-encoder-from-the-command-line">Running the Encoder from the Command Line</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#osc-protocol">OSC Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discovery">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subscription">Subscription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#protocol">Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clock">Clock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orientation">Orientation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zeroconf">Zeroconf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spatial-workstation">Spatial Workstation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">AUDIO360 SDK</span></p>
 <ul>
@@ -225,6 +245,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -291,13 +312,13 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#what-did-you-download" id="id53">What did you download?</a></li>
-<li><a class="reference internal" href="#binaural-audio" id="id54">Binaural Audio</a></li>
-<li><a class="reference internal" href="#ambisonics-and-b-format-audio" id="id55">Ambisonics and B-format Audio</a><ul>
-<li><a class="reference internal" href="#technical-details" id="id56">Technical details</a></li>
+<li><a class="reference internal" href="#what-did-you-download" id="id54">What did you download?</a></li>
+<li><a class="reference internal" href="#binaural-audio" id="id55">Binaural Audio</a></li>
+<li><a class="reference internal" href="#ambisonics-and-b-format-audio" id="id56">Ambisonics and B-format Audio</a><ul>
+<li><a class="reference internal" href="#technical-details" id="id57">Technical details</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#room-modelling" id="id57">Room Modelling</a></li>
+<li><a class="reference internal" href="#room-modelling" id="id58">Room Modelling</a></li>
 </ul>
 </div>
 <div class="section" id="what-did-you-download">
@@ -404,16 +425,16 @@ reflections to stand out and greatly enhance the spatialisation effect.</p>
 <span id="id4"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id5">
 <ul class="simple">
-<li><a class="reference internal" href="#requirements" id="id58">Requirements</a></li>
-<li><a class="reference internal" href="#setup-macos" id="id59">Setup (macOS)</a><ul>
-<li><a class="reference internal" href="#aax" id="id60">AAX</a></li>
-<li><a class="reference internal" href="#vst" id="id61">VST</a></li>
+<li><a class="reference internal" href="#requirements" id="id59">Requirements</a></li>
+<li><a class="reference internal" href="#setup-macos" id="id60">Setup (macOS)</a><ul>
+<li><a class="reference internal" href="#aax" id="id61">AAX</a></li>
+<li><a class="reference internal" href="#vst" id="id62">VST</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#setup-windows" id="id62">Setup (Windows)</a><ul>
-<li><a class="reference internal" href="#id6" id="id63">AAX</a></li>
-<li><a class="reference internal" href="#id8" id="id64">VST</a></li>
-<li><a class="reference internal" href="#working-with-the-tools" id="id65">Working With The Tools</a></li>
+<li><a class="reference internal" href="#setup-windows" id="id63">Setup (Windows)</a><ul>
+<li><a class="reference internal" href="#id6" id="id64">AAX</a></li>
+<li><a class="reference internal" href="#id8" id="id65">VST</a></li>
+<li><a class="reference internal" href="#working-with-the-tools" id="id66">Working With The Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -463,7 +484,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.3.pkg)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.4.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process<ol class="arabic">
 <li>VR Video Player in <em>Applications/FB360 Spatial Workstation/Video
@@ -477,7 +498,7 @@ Player</em></li>
 <h3><a class="toc-backref" href="#id5">VST</a><a class="headerlink" href="#vst" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.3.pkg)</li>
+(SpatialWorkstation-VST-3.4.pkg)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST 3 Plugins in <em>Mac HD/Library/Audio/Plug-Ins/Audio/VST3</em></li>
@@ -513,7 +534,7 @@ Workstation</em></li>
 <p>Additional components need to be installed in order to use all the features of the Spatial Workstation:</p>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://facebook360.fb.com/spatial-workstation/#s2">Download</a> and
-run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.3-Win64.exe)</li>
+run the <em>FB360 Spatial Workstation AAX Addon</em> installer (SpatialWorkstation-AAXAddon-3.4-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VR Video Player in <em>C:\Program Files\FB360 Spatial
@@ -528,7 +549,7 @@ Workstation\Encoder</em></li>
 <h3><a class="toc-backref" href="#id5">VST</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Run the <em>FB360 Spatial Workstation VST</em> installer
-(SpatialWorkstation-VST-3.3-Win64.exe)</li>
+(SpatialWorkstation-VST-3.4-Win64.exe)</li>
 <li>The following user files are installed, depending on your choices
 during the installation process:<ol class="arabic">
 <li>VST3 Plugins in <em>C:\Program Files\Common Files\VST3</em></li>
@@ -555,9 +576,9 @@ your DAW.</p>
 <span id="id9"></span><h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id10">
 <ul class="simple">
-<li><a class="reference internal" href="#design" id="id66">Design</a></li>
-<li><a class="reference internal" href="#delivery" id="id67">Delivery</a></li>
-<li><a class="reference internal" href="#playback" id="id68">Playback</a></li>
+<li><a class="reference internal" href="#design" id="id67">Design</a></li>
+<li><a class="reference internal" href="#delivery" id="id68">Delivery</a></li>
+<li><a class="reference internal" href="#playback" id="id69">Playback</a></li>
 </ul>
 </div>
 <p>The FB360 Spatial Workstation is divided into five major components:</p>
@@ -646,29 +667,29 @@ native apps and game engines.</p>
 <h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id11">
 <ul class="simple">
-<li><a class="reference internal" href="#fb360-spatialiser" id="id69">FB360 Spatialiser</a><ul>
-<li><a class="reference internal" href="#parameters" id="id70">Parameters</a></li>
-<li><a class="reference internal" href="#panning" id="id71">Panning</a></li>
-<li><a class="reference internal" href="#working-with-video" id="id72">Working With Video</a></li>
-<li><a class="reference internal" href="#object-tracker" id="id73">Object Tracker</a></li>
-<li><a class="reference internal" href="#using-multiple-input-channels" id="id74">Using Multiple Input Channels</a></li>
-<li><a class="reference internal" href="#ambisonic-input-controls" id="id75">Ambisonic Input Controls</a></li>
+<li><a class="reference internal" href="#fb360-spatialiser" id="id70">FB360 Spatialiser</a><ul>
+<li><a class="reference internal" href="#parameters" id="id71">Parameters</a></li>
+<li><a class="reference internal" href="#panning" id="id72">Panning</a></li>
+<li><a class="reference internal" href="#working-with-video" id="id73">Working With Video</a></li>
+<li><a class="reference internal" href="#object-tracker" id="id74">Object Tracker</a></li>
+<li><a class="reference internal" href="#using-multiple-input-channels" id="id75">Using Multiple Input Channels</a></li>
+<li><a class="reference internal" href="#ambisonic-input-controls" id="id76">Ambisonic Input Controls</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-converter" id="id76">FB360 Converter</a><ul>
-<li><a class="reference internal" href="#id18" id="id77">Parameters</a></li>
-<li><a class="reference internal" href="#channel-output" id="id78">8 Channel Output</a></li>
+<li><a class="reference internal" href="#fb360-converter" id="id77">FB360 Converter</a><ul>
+<li><a class="reference internal" href="#id18" id="id78">Parameters</a></li>
+<li><a class="reference internal" href="#channel-output" id="id79">8 Channel Output</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-control" id="id79">FB360 Control</a><ul>
-<li><a class="reference internal" href="#id21" id="id80">Parameters</a></li>
-<li><a class="reference internal" href="#using-focus-control" id="id81">Using Focus Control</a></li>
+<li><a class="reference internal" href="#fb360-control" id="id80">FB360 Control</a><ul>
+<li><a class="reference internal" href="#id21" id="id81">Parameters</a></li>
+<li><a class="reference internal" href="#using-focus-control" id="id82">Using Focus Control</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fb360-loudness" id="id82">FB360 Loudness</a></li>
-<li><a class="reference internal" href="#vr-video-player" id="id83">VR Video Player</a><ul>
-<li><a class="reference internal" href="#remote-mode" id="id84">Remote Mode</a></li>
-<li><a class="reference internal" href="#standalone-mode" id="id85">Standalone Mode</a></li>
+<li><a class="reference internal" href="#fb360-loudness" id="id83">FB360 Loudness</a></li>
+<li><a class="reference internal" href="#vr-video-player" id="id84">VR Video Player</a><ul>
+<li><a class="reference internal" href="#remote-mode" id="id85">Remote Mode</a></li>
+<li><a class="reference internal" href="#standalone-mode" id="id86">Standalone Mode</a></li>
 </ul>
 </li>
 </ul>
@@ -841,9 +862,8 @@ plugin. Click the “X” on the tag to unload the video.</p>
 <p><strong>Video Window:</strong></p>
 <a class="reference internal image-reference" href="../../_images/videoPlayerWindow.png"><img alt="../../_images/videoPlayerWindow.png" src="../../_images/videoPlayerWindow.png" style="width: 70%;" /></a>
 <p>The video window has the following options:</p>
-<ul>
-<li><p class="first"><em>Projection</em>: The first drop down menu sets the projection used for the video.</p>
 <ul class="simple">
+<li><em>Projection</em>: The first drop down menu sets the projection used for the video.<ul>
 <li><em>360 View</em>: Shows a 360/spherical projection of the video as you would see on a VR headset
 or 360 video player. Click and drag with the mouse (or use the WASD keys)to look around the video.</li>
 <li><em>Global Equirect</em>: Shows an equirectangular projection of the video and all instances of the Spatialiser plugin in a single view.
@@ -859,18 +879,14 @@ in a new project, or after a fresh Reaper installation, this doesn’t seem to b
 </li>
 </ul>
 </li>
-<li><p class="first"><em>Rotation Source</em>:</p>
-<ul class="simple">
+<li><em>Rotation Source</em>:<ul>
 <li><em>Mouse</em>: Use the mouse to rotate the 360 video and audio</li>
 <li><em>VR</em>: Use a VR headset as the source of rotation</li>
-<li><em>–computer-name–</em>: Use a remote computer running an instance of the Video Player app (running in “Remote”</li>
+<li><em>–computer-name–</em>: Use a remote computer running an instance of the Video Player app (running in “Remote”
+mode) as the source of rotations. Each detected Video Player listed in the drop-down. The network interface is displayed in parentheses;
+for acceptable video latency ensure that you use a wired Ethernet connection, not a wireless connection.</li>
 </ul>
-<p>mode) as the source of rotations. Each detected Video Player listed in the drop-down. The network interface is displayed in parentheses;</p>
 </li>
-</ul>
-<blockquote>
-<div>for acceptable video latency ensure that you use a wired Ethernet connection, not a wireless connection.</div></blockquote>
-<ul class="simple">
 <li><em>Right Toolbar</em>:<ul>
 <li><em>Opacity</em>: A darkened overlay on the video to increase visibility of the sound objects.</li>
 <li><em>Grid</em>: A grid overlay showing azimuth and elevation values.</li>
@@ -1246,20 +1262,20 @@ that has focus enabled the focus parameters will automatically be set to match t
 <span id="id25"></span><h1>Using Pro Tools HD<a class="headerlink" href="#using-pro-tools-hd" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id26">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-a-new-project" id="id86">Creating A New Project</a></li>
-<li><a class="reference internal" href="#project-structure" id="id87">Project Structure</a><ul>
-<li><a class="reference internal" href="#mastering" id="id88">Mastering</a></li>
-<li><a class="reference internal" href="#d-and-head-locked-stereo" id="id89">3D And Head-locked Stereo</a></li>
-<li><a class="reference internal" href="#mixing" id="id90">Mixing</a></li>
-<li><a class="reference internal" href="#sub-mixes" id="id91">Sub-Mixes</a></li>
-<li><a class="reference internal" href="#previewing-your-mix" id="id92">Previewing Your Mix</a></li>
-<li><a class="reference internal" href="#creating-new-tracks" id="id93">Creating New Tracks</a></li>
+<li><a class="reference internal" href="#creating-a-new-project" id="id87">Creating A New Project</a></li>
+<li><a class="reference internal" href="#project-structure" id="id88">Project Structure</a><ul>
+<li><a class="reference internal" href="#mastering" id="id89">Mastering</a></li>
+<li><a class="reference internal" href="#d-and-head-locked-stereo" id="id90">3D And Head-locked Stereo</a></li>
+<li><a class="reference internal" href="#mixing" id="id91">Mixing</a></li>
+<li><a class="reference internal" href="#sub-mixes" id="id92">Sub-Mixes</a></li>
+<li><a class="reference internal" href="#previewing-your-mix" id="id93">Previewing Your Mix</a></li>
+<li><a class="reference internal" href="#creating-new-tracks" id="id94">Creating New Tracks</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#sample-rate-considerations" id="id94">Sample Rate Considerations</a></li>
-<li><a class="reference internal" href="#ambisonics-b-format" id="id95">Ambisonics/B-format</a></li>
-<li><a class="reference internal" href="#id28" id="id96">Working With Video</a></li>
-<li><a class="reference internal" href="#exporting-a-mix" id="id97">Exporting A Mix</a></li>
+<li><a class="reference internal" href="#sample-rate-considerations" id="id95">Sample Rate Considerations</a></li>
+<li><a class="reference internal" href="#ambisonics-b-format" id="id96">Ambisonics/B-format</a></li>
+<li><a class="reference internal" href="#id28" id="id97">Working With Video</a></li>
+<li><a class="reference internal" href="#exporting-a-mix" id="id98">Exporting A Mix</a></li>
 </ul>
 </div>
 <p>An example Pro Tools HD project and template are automatically installed on your computer. Follow the setup instructions in the <a class="reference internal" href="#getting-started"><span class="std std-ref">Getting Started</span></a> section which shows you where to find an example project, along with a backup copy of the Pro Tools HD template and I/O settings. Use the example project to familiarise yourself with the FB360 Spatial Workstation.</p>
@@ -1411,19 +1427,19 @@ to the app using the external encoder application. See <a class="reference inter
 <span id="id29"></span><h1>Using Nuendo<a class="headerlink" href="#using-nuendo" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id30">
 <ul class="simple">
-<li><a class="reference internal" href="#id31" id="id98">Creating A New Project</a></li>
-<li><a class="reference internal" href="#id32" id="id99">Project Structure</a><ul>
-<li><a class="reference internal" href="#creating-a-new-bus" id="id100">Creating a new bus</a></li>
-<li><a class="reference internal" href="#creating-new-group-channels" id="id101">Creating new group channels</a></li>
-<li><a class="reference internal" href="#id33" id="id102">Creating New Tracks</a></li>
+<li><a class="reference internal" href="#id31" id="id99">Creating A New Project</a></li>
+<li><a class="reference internal" href="#id32" id="id100">Project Structure</a><ul>
+<li><a class="reference internal" href="#creating-a-new-bus" id="id101">Creating a new bus</a></li>
+<li><a class="reference internal" href="#creating-new-group-channels" id="id102">Creating new group channels</a></li>
+<li><a class="reference internal" href="#id33" id="id103">Creating New Tracks</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#panner-plugin" id="id103">Panner plugin</a></li>
-<li><a class="reference internal" href="#control-room" id="id104">Control Room</a></li>
-<li><a class="reference internal" href="#id36" id="id105">Mastering</a></li>
-<li><a class="reference internal" href="#id37" id="id106">Mixing</a></li>
-<li><a class="reference internal" href="#id38" id="id107">Ambisonics/B-Format</a></li>
-<li><a class="reference internal" href="#exporting-bouncing-a-mix" id="id108">Exporting/Bouncing A Mix</a></li>
+<li><a class="reference internal" href="#panner-plugin" id="id104">Panner plugin</a></li>
+<li><a class="reference internal" href="#control-room" id="id105">Control Room</a></li>
+<li><a class="reference internal" href="#id36" id="id106">Mastering</a></li>
+<li><a class="reference internal" href="#id37" id="id107">Mixing</a></li>
+<li><a class="reference internal" href="#id38" id="id108">Ambisonics/B-Format</a></li>
+<li><a class="reference internal" href="#exporting-bouncing-a-mix" id="id109">Exporting/Bouncing A Mix</a></li>
 </ul>
 </div>
 <p>An example Nuendo 8 project and template are automatically installed on your computer. Follow the setup instructions in the <a class="reference internal" href="#getting-started"><span class="std std-ref">Getting Started</span></a> section which shows you where to find them. Use the example project to familiarise yourself with the FB360 Spatial Workstation.</p>
@@ -1602,14 +1618,14 @@ to the app.</p>
 <span id="id39"></span><h1>Using Reaper<a class="headerlink" href="#using-reaper" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id40">
 <ul class="simple">
-<li><a class="reference internal" href="#id41" id="id109">Project Structure</a><ul>
-<li><a class="reference internal" href="#reaper-creating-new-tracks" id="id110">Creating New Tracks</a></li>
+<li><a class="reference internal" href="#id41" id="id110">Project Structure</a><ul>
+<li><a class="reference internal" href="#reaper-creating-new-tracks" id="id111">Creating New Tracks</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id43" id="id111">Mastering</a></li>
-<li><a class="reference internal" href="#id44" id="id112">Mixing</a></li>
-<li><a class="reference internal" href="#id45" id="id113">Ambisonics/B-Format</a></li>
-<li><a class="reference internal" href="#id46" id="id114">Exporting/Bouncing A Mix</a></li>
+<li><a class="reference internal" href="#id43" id="id112">Mastering</a></li>
+<li><a class="reference internal" href="#id44" id="id113">Mixing</a></li>
+<li><a class="reference internal" href="#id45" id="id114">Ambisonics/B-Format</a></li>
+<li><a class="reference internal" href="#id46" id="id115">Exporting/Bouncing A Mix</a></li>
 </ul>
 </div>
 <img alt="../../_images/ReaperProject.png" src="../../_images/ReaperProject.png" />
@@ -1788,13 +1804,13 @@ Desktop Mode)</li>
 <span id="id49"></span><h1>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">¶</a></h1>
 <div class="contents h1-local-toc local topic" id="id50">
 <ul class="simple">
-<li><a class="reference internal" href="#encoding-assets" id="id115">Encoding Assets</a><ul>
-<li><a class="reference internal" href="#additional-requirements-windows-only" id="id116">Additional Requirements (Windows Only)</a></li>
-<li><a class="reference internal" href="#encoding-for-facebook-360" id="id117">Encoding For Facebook 360</a></li>
-<li><a class="reference internal" href="#encoding-to-other-formats" id="id118">Encoding To Other Formats</a></li>
+<li><a class="reference internal" href="#encoding-assets" id="id116">Encoding Assets</a><ul>
+<li><a class="reference internal" href="#additional-requirements-windows-only" id="id117">Additional Requirements (Windows Only)</a></li>
+<li><a class="reference internal" href="#encoding-for-facebook-360" id="id118">Encoding For Facebook 360</a></li>
+<li><a class="reference internal" href="#encoding-to-other-formats" id="id119">Encoding To Other Formats</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#running-the-encoder-from-the-command-line" id="id119">Running the Encoder from the Command Line</a></li>
+<li><a class="reference internal" href="#running-the-encoder-from-the-command-line" id="id120">Running the Encoder from the Command Line</a></li>
 </ul>
 </div>
 <p>The Encoder application is installed in <em>Mac HD/Applications/FB360
@@ -1812,8 +1828,8 @@ computer.</p>
 <li>The Python 2.7 installer can be downloaded from
 <a class="reference external" href="https://www.python.org/downloads/release/python-2712/">here</a>.
 Follow the instructions with the installer.</li>
-<li>Mp4Box can be installed using the GPAC installer from
-<a class="reference external" href="https://gpac.wp.mines-telecom.fr/downloads/">here</a>. The GPAC
+<li>Mp4Box can be installed using the GPAC 0.8.x installer from
+<a class="reference external" href="https://gpac.wp.imt.fr/downloads/gpac-legacy-builds/">here</a>. The GPAC
 installer includes Mp4Box and other components. Installing the
 additional components is optional</li>
 </ol>
@@ -1993,6 +2009,157 @@ brew install mp4box
 the encoder please post in the Spatial Workstation group!</p>
 </div>
 </div>
+<div class="section" id="osc-protocol">
+<h1>OSC Protocol<a class="headerlink" href="#osc-protocol" title="Permalink to this headline">¶</a></h1>
+<div class="contents h1-local-toc local topic" id="id53">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id121">Overview</a></li>
+<li><a class="reference internal" href="#discovery" id="id122">Discovery</a></li>
+<li><a class="reference internal" href="#subscription" id="id123">Subscription</a></li>
+<li><a class="reference internal" href="#protocol" id="id124">Protocol</a><ul>
+<li><a class="reference internal" href="#clock" id="id125">Clock</a></li>
+<li><a class="reference internal" href="#orientation" id="id126">Orientation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debugging" id="id127">Debugging</a><ul>
+<li><a class="reference internal" href="#zeroconf" id="id128">Zeroconf</a></li>
+<li><a class="reference internal" href="#spatial-workstation" id="id129">Spatial Workstation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This section is for developers, if you are not writing software to interoperate
+with the Spatial Workstation then you won’t need to read further.</p>
+<p>The Spatial Workstation uses Open Sound Control (OSC) for some
+inter-process (and inter-machine) communication. We think it will be
+valuable for the ecosystem to also be able to communicate with the
+Spatial Workstation so as of version 3.4 we have cleaned up the protocol
+and are documenting it for public use.</p>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id53">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>There are two OSC services: clock and orientation. The clock service
+sends timecode messages at a rate of about 60 Hz, for synchronizing
+video clients with the audio in the DAW. The orientation service sends
+head tracking information from a video source for the binaural rendering
+in the Control plugin. The standalone video player is an orientation
+source and clock subscriber, but e.g.&nbsp;a pair of headphones with
+headtracking would probably be an orientation source and subscribe to
+nothing.</p>
+</div>
+<div class="section" id="discovery">
+<h2><a class="toc-backref" href="#id53">Discovery</a><a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h2>
+<p>The clock service typically listens on port 6100 and the orientation
+service typically listens on port 5125. However, if those ports are
+unavailable, other ports may be chosen. In any case, we may also need to
+discover services on other machines in the local network. We use
+Zeroconf for service discovery (also known as Bonjour or Rendezvous).
+Services register with Zeroconf, and subscribers looking for a service
+will browse for those services. There may be multiple instances of each
+service, so usually the user will be given a choice e.g.&nbsp;with a drop-down box.</p>
+</div>
+<div class="section" id="subscription">
+<h2><a class="toc-backref" href="#id53">Subscription</a><a class="headerlink" href="#subscription" title="Permalink to this headline">¶</a></h2>
+<p>OSC over UDP is connectionless. We need to know what ports to send to,
+and we don’t want to pollute the network with unnecessary traffic, so we
+use a keepalive subscription mechanism. A subscriber discovers the
+service then sends periodic subscription messages. The service will then
+send its data to the subscriber until the subscription expires.
+Typically a subscription is for 4 seconds with a renewal sent every
+second.</p>
+</div>
+<div class="section" id="protocol">
+<h2><a class="toc-backref" href="#id53">Protocol</a><a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clock">
+<h3><a class="toc-backref" href="#id53">Clock</a><a class="headerlink" href="#clock" title="Permalink to this headline">¶</a></h3>
+<p>Zeroconf type: <code class="docutils literal notranslate"><span class="pre">_fb360sw-clock_osc._udp</span></code></p>
+<p>Subscriber periodically sends “<code class="docutils literal notranslate"><span class="pre">/fb360sw/clock/subscribe</span> <span class="pre">,ii</span></code>” (subscription
+duration in milliseconds, port number). Replies will be sent to the originating
+IP address and designated port.</p>
+<p>Service sends “<code class="docutils literal notranslate"><span class="pre">/fb360sw/clock/timecode</span> <span class="pre">,hi</span></code>” (int64 samples, int32 sample
+rate), until the subscription expires. The Spatial Workstation plugins
+typically send these messages at 60 Hz.</p>
+</div>
+<div class="section" id="orientation">
+<h3><a class="toc-backref" href="#id53">Orientation</a><a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h3>
+<p>Zeroconf type: <code class="docutils literal notranslate"><span class="pre">_fb360sw-orientation_osc._udp</span></code></p>
+<p>Subscriber periodically sends “<code class="docutils literal notranslate"><span class="pre">/fb360sw/orientation/subscribe</span> <span class="pre">,ii</span></code>”
+(subscription duration in milliseconds, port number)</p>
+<p>Service sends “<code class="docutils literal notranslate"><span class="pre">/fb360sw/orientation/quaternion</span> <span class="pre">,ffff</span></code>”. The quaternion is
+oriented with x right, y up, and z forward. These are the semantics that <a class="reference external" href="https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html">Unity</a>
+uses (among others). The Spatial Workstation Video Player typically sends these
+messages at 60 Hz.</p>
+</div>
+</div>
+<div class="section" id="debugging">
+<h2><a class="toc-backref" href="#id53">Debugging</a><a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zeroconf">
+<h3><a class="toc-backref" href="#id53">Zeroconf</a><a class="headerlink" href="#zeroconf" title="Permalink to this headline">¶</a></h3>
+<p>There are three interesting operations: register, browse, and resolve.
+macOS provides a tool called <code class="docutils literal notranslate"><span class="pre">dns-sd</span></code> which can be used for manually
+performing Zeroconf operations at the command line.</p>
+<p>If I want to register for the orientation service as “Fred” in the local
+domain on port 1234, I can simulate that using <code class="docutils literal notranslate"><span class="pre">dns-sd</span></code> with this
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dns-sd -R Fred _fb360sw-orientation_osc._udp local 1234
+Registering Service Fred._fb360sw-orientation_osc._udp.local port 1234
+DATE: ---Fri 26 Apr 2019---
+17:09:15.122  ...STARTING...
+17:09:16.001  Got a reply for service Fred._fb360sw-orientation_osc._udp.local.: Name now registered and active
+</pre></div>
+</div>
+<p>If I want to browse for orientation services, I can use this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dns-sd -B _fb360sw-orientation_osc._udp
+Browsing for _fb360sw-orientation_osc._udp
+DATE: ---Fri 26 Apr 2019---
+16:09:06.157  ...STARTING...
+Timestamp     A/R  Flags  if Domain   Service Type         Instance Name
+17:09:16.257  Add      3   5 local.   _fb360sw-orientation_osc._udp. Fred
+17:09:16.257  Add      2  12 local.   _fb360sw-orientation_osc._udp. Fred
+17:10:22.587  Add      3   5 local.   _fb360sw-orientation_osc._udp. George
+17:10:22.588  Add      2  12 local.   _fb360sw-orientation_osc._udp. George
+</pre></div>
+</div>
+<p>In this case we see that there are two orientation services to choose
+from: Fred and George. They’re both available on two interfaces,
+actually (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">12</span></code>).</p>
+<p>Let’s say we want to connect to George. We need to know his IP address
+and port.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dns-sd -L George _fb360sw-orientation_osc._udp
+Lookup George._fb360sw-orientation_osc._udp.local
+DATE: ---Fri 26 Apr 2019---
+17:12:17.279  ...STARTING...
+17:12:17.280  George._fb360sw-orientation_osc._udp.local. can be reached at georgeHost.local.:5678 (interface 5) Flags: 1
+17:12:17.280  George._fb360sw-orientation_osc._udp.local. can be reached at georgeHost.local.:5678 (interface 12)
+$ dns-sd -G v4v6 georgeHost.local.
+DATE: ---Fri 26 Apr 2019---
+17:13:55.194  ...STARTING...
+Timestamp     if  Hostname            Address                                      TTL
+17:13:55.195   5  georgeHost.local.   FE80:0000:0000:0000:18C9:B10D:0FD4:415E%en0  120
+17:13:55.195   5  georgeHost.local.   2620:010D:C082:1054:1072:5521:6B23:387E%&lt;0&gt;  120
+17:13:55.195   5  georgeHost.local.   2620:010D:C082:1054:0000:0000:0000:0A23%&lt;0&gt;  120
+17:13:55.195  12  georgeHost.local.   FE80:0000:0000:0000:1CAD:75B1:321D:E34C%en3  120
+17:13:55.195  12  georgeHost.local.   2620:010D:C082:1064:085D:E1A7:8402:6264%&lt;0&gt;  120
+17:13:55.195  12  georgeHost.local.   2620:010D:C082:1064:0000:0000:0000:066F%&lt;0&gt;  120
+17:13:55.195   5  georgeHost.local.   172.24.107.25                                120
+17:13:55.195  12  georgeHost.local.   172.25.189.160                               120
+</pre></div>
+</div>
+</div>
+<div class="section" id="spatial-workstation">
+<h3><a class="toc-backref" href="#id53">Spatial Workstation</a><a class="headerlink" href="#spatial-workstation" title="Permalink to this headline">¶</a></h3>
+<p>If you are properly registering as an orientation service, then your
+orientation source should show up in the orientation drop-down in the
+breakout window. That drop-down always has “Mouse” as a source (for
+controlling orientation with the mouse in the breakout window), and will
+have other sources as appropriate including yours if you’ve registered
+properly. If the user selects your source, then the plugins will send
+periodic subscription messages and expect headtracking information to be
+sent until the subscription expires. If the messages are being
+successfully sent then you will see the video orientation changing as
+directed.</p>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -2005,7 +2172,7 @@ the encoder please post in the Spatial Workstation group!</p>
         <a href="../SDK/Audio360_SDK_GettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../index.html" class="btn btn-neutral" title="Facebook Audio 360" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Facebook Audio 360" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2028,27 +2195,16 @@ the encoder please post in the Spatial Workstation group!</p>
   </div>
   
 
-
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
