@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,39 +11,43 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../../_static/overrides.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Knowledge Base" href="../../KB.html" />
     <link rel="prev" title="Introduction" href="../SpatialWorkstation/SpatialWorkstation.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -74,6 +77,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#using-reaper">Using Reaper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#video-format-and-codec">Video Format And Codec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#encoder">Encoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SpatialWorkstation/SpatialWorkstation.html#osc-protocol">OSC Protocol</a></li>
 </ul>
 <p class="caption"><span class="caption-text">AUDIO360 SDK</span></p>
 <ul class="current">
@@ -226,6 +231,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -417,53 +423,53 @@ your app (typically <em>Module: app</em>)</p>
 </ol>
 <p>You can now setup the audio engine. The Java classes and native
 libraries will be included every time you build your project.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="p">{</span>
 
-    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spat</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">AudioObject</span> <span class="n">object</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
-
-        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="cm">/* context */</span><span class="o">);</span>
-        <span class="n">spat</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
-        <span class="n">object</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createAudioObject</span><span class="o">();</span>
-        <span class="n">spat</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;file.tbe&quot;</span><span class="o">);</span>
-        <span class="n">spat</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-        <span class="n">object</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;mono.opus&quot;</span><span class="o">);</span>
-        <span class="n">object</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>
+    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spat</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">AudioObject</span> <span class="n">object</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="p">;</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
+
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="cm">/* context */</span><span class="p">);</span>
+        <span class="n">spat</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderFile</span><span class="p">();</span>
+        <span class="n">object</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createAudioObject</span><span class="p">();</span>
+        <span class="n">spat</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;file.tbe&quot;</span><span class="p">);</span>
+        <span class="n">spat</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+        <span class="n">object</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;mono.opus&quot;</span><span class="p">);</span>
+        <span class="n">object</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">onResume</span><span class="p">();</span>
         <span class="c1">// Resume all audio processing</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+    <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">onPause</span><span class="p">();</span>
         <span class="c1">// Suspend all audio processing when the app is paused</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">suspend</span><span class="o">();</span>
-    <span class="o">}</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">suspend</span><span class="p">();</span>
+    <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span> <span class="o">(){</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderFile</span><span class="o">(</span><span class="n">spat</span><span class="o">);</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">destroyAudioObject</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-        <span class="n">spat</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="n">object</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span> <span class="p">(){</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">();</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">destroySpatDecoderFile</span><span class="p">(</span><span class="n">spat</span><span class="p">);</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">destroyAudioObject</span><span class="p">(</span><span class="n">object</span><span class="p">);</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+        <span class="n">spat</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">object</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -609,40 +615,40 @@ from the <strong class="command">AudioEngine</strong>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.twobigears.audio360.*</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomeActivityClass</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spatFile</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">AudioObject</span> <span class="n">obj</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="o">;</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">AudioEngine</span> <span class="n">engine</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">SpatDecoderFile</span> <span class="n">spatFile</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">AudioObject</span> <span class="n">obj</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mf">48000.f</span><span class="p">;</span>
 
-    <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span>
-    <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">()</span>
+    <span class="p">{</span>
         <span class="c1">// Create the AudioEngine with default settings and sample rate</span>
-        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="p">);</span>
 
         <span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
-        <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
-        <span class="n">spatFile</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createAudioObject</span><span class="o">();</span>
-    <span class="o">}</span>
+        <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderQueue</span><span class="p">();</span>
+        <span class="n">spatFile</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderFile</span><span class="p">();</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createAudioObject</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span>
-    <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">onDestroy</span><span class="p">()</span>
+    <span class="p">{</span>
         <span class="c1">// Cleanup</span>
         <span class="c1">// These objects can be explicitly destroyed, but will also be</span>
         <span class="c1">// automatically destroyed if they aren&#39;t when engine.delete() is called</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderQueue</span><span class="o">(</span><span class="n">spatQueue</span><span class="o">);</span>
-        <span class="n">spatQueue</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">destroySpatDecoderFile</span><span class="o">(</span><span class="n">spatFile</span><span class="o">);</span>
-        <span class="n">spatFile</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="n">engine</span><span class="o">.</span><span class="na">destroyAudioObject</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
-        <span class="n">spatFile</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">destroySpatDecoderQueue</span><span class="p">(</span><span class="n">spatQueue</span><span class="p">);</span>
+        <span class="n">spatQueue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">destroySpatDecoderFile</span><span class="p">(</span><span class="n">spatFile</span><span class="p">);</span>
+        <span class="n">spatFile</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">destroyAudioObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+        <span class="n">spatFile</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-        <span class="n">engine</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+        <span class="n">engine</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -803,24 +809,24 @@ completed playing.</dd>
 </div>
 <div class="section" id="java">
 <h3>Java:<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">init</span><span class="o">()</span>
-<span class="o">{</span>
-  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">);</span>
-  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="p">);</span>
+  <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
-  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderFile</span><span class="p">();</span>
 
-  <span class="n">file</span><span class="o">.</span><span class="na">setEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">setEventListener</span><span class="p">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-          <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="na">DECODER_INIT</span><span class="o">)</span> <span class="o">{</span>
-              <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-          <span class="o">}</span>
-      <span class="o">}</span>
-  <span class="o">});</span>
-<span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="p">(</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="p">.</span><span class="na">DECODER_INIT</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">file</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -913,15 +919,15 @@ pauses the main mixer, thereby pausing all audio objects in the app.</p>
 </div>
 <div class="section" id="id12">
 <h3>Java:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourAppPauseCallback</span><span class="o">()</span>
-<span class="o">{</span>
-    <span class="n">engine</span><span class="o">.</span><span class="na">suspend</span><span class="o">();</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourAppPauseCallback</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">engine</span><span class="p">.</span><span class="na">suspend</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span class="kt">void</span> <span class="nf">yourAppResumeCallback</span><span class="o">()</span>
-<span class="o">{</span>
-    <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-<span class="o">}</span>
+<span class="kt">void</span> <span class="nf">yourAppResumeCallback</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -944,11 +950,11 @@ a quaternion, direction vectors or Euler angles. Ensure that you are using the c
 </div>
 <div class="section" id="id14">
 <h3>Java:<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
-<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="p">);</span>
+<span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
-<span class="n">TBQuat</span> <span class="n">quat</span> <span class="o">=</span> <span class="n">someValue</span><span class="o">;</span>
-<span class="n">engine</span><span class="o">.</span><span class="na">setListenerRotation</span><span class="o">(</span><span class="n">quat</span><span class="o">);</span>
+<span class="n">TBQuat</span> <span class="n">quat</span> <span class="o">=</span> <span class="n">someValue</span><span class="p">;</span>
+<span class="n">engine</span><span class="p">.</span><span class="na">setListenerRotation</span><span class="p">(</span><span class="n">quat</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -990,19 +996,19 @@ the <strong class="command">ChannelMap</strong> enumerator.</p>
 <div class="section" id="id16">
 <h3>Java:<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create the AudioEngine with default settings</span>
-<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="o">);</span>
-<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/* context */</span><span class="p">);</span>
+<span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
 <span class="c1">// Create objects from AudioEngine&#39;s memory pool</span>
-<span class="n">SpatDecoderQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
+<span class="n">SpatDecoderQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderQueue</span><span class="p">();</span>
 
-<span class="n">ByteBuffer</span> <span class="n">buffer</span> <span class="o">...</span> <span class="c1">// pre-populated 16 bit integer audio in a ByteBuffer, in TBE_8_2 format</span>
+<span class="n">ByteBuffer</span> <span class="n">buffer</span> <span class="p">...</span> <span class="c1">// pre-populated 16 bit integer audio in a ByteBuffer, in TBE_8_2 format</span>
 <span class="kt">int</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">getFreeSpaceInQueue</span><span class="o">(</span><span class="n">ChannelMap</span><span class="o">.</span><span class="na">TBE_8_2</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="o">)</span>
-<span class="o">{</span>
-  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">enqueueData</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">numSamplesInBuffer</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">getFreeSpaceInQueue</span><span class="p">(</span><span class="n">ChannelMap</span><span class="p">.</span><span class="na">TBE_8_2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">enqueueData</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">numSamplesInBuffer</span><span class="p">,</span> <span class="n">ChannelMap</span><span class="p">::</span><span class="n">TBE_8_2</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1048,16 +1054,16 @@ samples left in the queue.</p>
 </div>
 <div class="section" id="id19">
 <h3>Java:<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ByteBuffer</span> <span class="n">buffer</span><span class="o">;</span> <span class="c1">// interleaved buffer of data from source, in TBE_8_2 format</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ByteBuffer</span> <span class="n">buffer</span><span class="p">;</span> <span class="c1">// interleaved buffer of data from source, in TBE_8_2 format</span>
 <span class="kt">int</span> <span class="n">numSamplesInBuffer</span> <span class="c1">// total number of audio samples in the buffer</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">getFreeSpaceInQueue</span><span class="o">(</span><span class="n">map</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="o">)</span>
-<span class="o">{</span>
-  <span class="n">bool</span> <span class="n">endOfStream</span> <span class="o">=</span> <span class="n">someStream</span><span class="o">.</span><span class="na">hasEnded</span><span class="o">();</span>
-  <span class="n">queue</span><span class="o">.</span><span class="na">setEndOfStream</span><span class="o">(</span><span class="n">endOfStream</span><span class="o">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">getFreeSpaceInQueue</span><span class="p">(</span><span class="n">map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">numSamplesInBuffer</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">bool</span> <span class="n">endOfStream</span> <span class="o">=</span> <span class="n">someStream</span><span class="p">.</span><span class="na">hasEnded</span><span class="p">();</span>
+  <span class="n">queue</span><span class="p">.</span><span class="na">setEndOfStream</span><span class="p">(</span><span class="n">endOfStream</span><span class="p">);</span>
 
-  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">&gt;</span><span class="n">enqueueData</span><span class="o">(</span><span class="n">pcm_data</span><span class="o">,</span> <span class="n">numSamplesInBuffer</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">::</span><span class="n">TBE_8_2</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="kt">int</span> <span class="n">num_enqueued</span> <span class="o">=</span> <span class="n">queue</span><span class="o">&gt;</span><span class="n">enqueueData</span><span class="p">(</span><span class="n">pcm_data</span><span class="p">,</span> <span class="n">numSamplesInBuffer</span><span class="p">,</span> <span class="n">ChannelMap</span><span class="p">::</span><span class="n">TBE_8_2</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1125,28 +1131,28 @@ On Android, you can also load files from the app’s <em>asset</em> folder with 
 </div>
 <div class="section" id="id21">
 <h3>Java:<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">SpatDecoderFile</span> <span class="n">file</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">init</span><span class="o">()</span>
-<span class="o">{</span>
-  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">);</span>
-  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="p">);</span>
+  <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
-  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderFile</span><span class="p">();</span>
 
-  <span class="n">file</span><span class="o">.</span><span class="na">setEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">setEventListener</span><span class="p">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-          <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="na">DECODER_INIT</span><span class="o">)</span> <span class="o">{</span>
-              <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-          <span class="o">}</span>
-      <span class="o">}</span>
-  <span class="o">});</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="p">(</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="p">.</span><span class="na">DECODER_INIT</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">file</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
 
-  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;/full/path/to/file.tbe&quot;</span><span class="o">);</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;/full/path/to/file.tbe&quot;</span><span class="p">);</span>
   <span class="c1">// or load a file from the app&#39;s asset folder</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;asset:///file .tbe&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;asset:///file .tbe&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1204,39 +1210,39 @@ audio to the video.</p>
 </div>
 <div class="section" id="id23">
 <h3>Java:<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourInitFunction</span><span class="o">()</span>
-<span class="o">{</span>
-  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">)</span>
-  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">yourInitFunction</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="p">)</span>
+  <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
-  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderFile</span><span class="o">();</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;asset:///file.tbe&quot;</span><span class="o">);</span>
+  <span class="n">file</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderFile</span><span class="p">();</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;asset:///file.tbe&quot;</span><span class="p">);</span>
 
   <span class="c1">// Set the decoder to by synchronised to an external source</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">setSyncMode</span><span class="o">(</span><span class="n">SyncMode</span><span class="o">.</span><span class="na">EXTERNAL</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">setSyncMode</span><span class="p">(</span><span class="n">SyncMode</span><span class="p">.</span><span class="na">EXTERNAL</span><span class="p">);</span>
+<span class="p">}</span>
 
 <span class="c1">// Your app&#39;s update loop</span>
-<span class="kt">void</span> <span class="nf">update</span><span class="o">()</span>
-<span class="o">{</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
   <span class="c1">// Get the elapsed time/playback position from the</span>
   <span class="c1">// video player/decoder you are using.</span>
   <span class="c1">// Make sure the value is in milliseconds!</span>
-  <span class="kt">double</span> <span class="n">videoTimeInMs</span> <span class="o">=</span> <span class="n">VideoPlayer</span><span class="o">.</span><span class="na">getTimeMs</span><span class="o">();</span>
+  <span class="kt">double</span> <span class="n">videoTimeInMs</span> <span class="o">=</span> <span class="n">VideoPlayer</span><span class="p">.</span><span class="na">getTimeMs</span><span class="p">();</span>
 
   <span class="c1">// Pass the video time to SpatDecoderFile</span>
   <span class="c1">// This will automatically force it to synchronise</span>
   <span class="c1">// with the video (since setSyncMode was set to EXTERNAL)</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">setExternalClockInMs</span><span class="o">(</span><span class="n">videoTimeInMs</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">setExternalClockInMs</span><span class="p">(</span><span class="n">videoTimeInMs</span><span class="p">);</span>
+<span class="p">}</span>
 
 <span class="c1">// Some event in your application that triggers</span>
 <span class="c1">// playback of the video and audio</span>
-<span class="kt">void</span> <span class="nf">somePlayEvent</span><span class="o">()</span>
-<span class="o">{</span>
-  <span class="n">VideoPlayer</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-<span class="o">}</span>
+<span class="kt">void</span> <span class="nf">somePlayEvent</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">VideoPlayer</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1301,30 +1307,30 @@ event is dispatched to the AudioObject’s event callback.</p>
 </div>
 <div class="section" id="id27">
 <h3>Java:<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AudioObject</span> <span class="n">obj</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AudioObject</span> <span class="n">obj</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">init</span><span class="o">()</span>
-<span class="o">{</span>
-  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">SAMPLE_RATE</span><span class="o">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="o">);</span>
-  <span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">SAMPLE_RATE</span><span class="p">,</span> <span class="k">this</span> <span class="cm">/*context*/</span><span class="p">);</span>
+  <span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
-  <span class="n">obj</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createAudioObject</span><span class="o">();</span>
+  <span class="n">obj</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createAudioObject</span><span class="p">();</span>
 
-  <span class="n">obj</span><span class="o">.</span><span class="na">setEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">obj</span><span class="p">.</span><span class="na">setEventListener</span><span class="p">(</span><span class="k">new</span> <span class="n">EventListener</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-          <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="na">DECODER_INIT</span><span class="o">)</span> <span class="o">{</span>
-              <span class="n">obj</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-          <span class="o">}</span>
-      <span class="o">}</span>
-  <span class="o">});</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewEvent</span><span class="p">(</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="p">.</span><span class="na">DECODER_INIT</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">obj</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
 
-  <span class="n">obj</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;/full/path/to/mono_file.opus&quot;</span><span class="o">);</span>
+  <span class="n">obj</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;/full/path/to/mono_file.opus&quot;</span><span class="p">);</span>
   <span class="c1">// or load a file from the app&#39;s asset folder</span>
-  <span class="n">file</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="s">&quot;asset:///mono_file.opus&quot;</span><span class="o">);</span>
-  <span class="n">obj</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">TBVector</span><span class="o">(-</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
-  <span class="n">obj</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-<span class="o">}</span>
+  <span class="n">file</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="s">&quot;asset:///mono_file.opus&quot;</span><span class="p">);</span>
+  <span class="n">obj</span><span class="p">.</span><span class="na">setPosition</span><span class="p">(</span><span class="k">new</span> <span class="n">TBVector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+  <span class="n">obj</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1425,25 +1431,25 @@ the amplitude of the areas that aren’t in focus.</p>
 </pre></div>
 </div>
 <p>Java:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">someFunction</span><span class="o">()</span>
-<span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">someFunction</span><span class="p">()</span>
+<span class="p">{</span>
   <span class="c1">// All focus parameters can be changed during runtime.</span>
 
   <span class="c1">// Enable focus control and get it to follow</span>
   <span class="c1">// the listener&#39;s orientation.</span>
-  <span class="n">spat</span><span class="o">.</span><span class="na">enableFocus</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+  <span class="n">spat</span><span class="p">.</span><span class="na">enableFocus</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
   <span class="c1">// Set the off-focus level (range of -24dB to 0dB) and the focus area (range of 40 to 120 degrees)</span>
   <span class="c1">// An off-focus level of 0 equals no focus effect.</span>
   <span class="c1">// Default off-focus level = 0dB</span>
   <span class="c1">// Default width = 90.0f</span>
-  <span class="n">spat</span><span class="o">.</span><span class="na">setOffFocusLeveldB</span><span class="o">(-</span><span class="mf">6.f</span><span class="o">);</span>
-  <span class="n">spat</span><span class="o">.</span><span class="na">setFocusWidthDegrees</span><span class="o">(</span><span class="mf">100.f</span><span class="o">);</span>
+  <span class="n">spat</span><span class="p">.</span><span class="na">setOffFocusLeveldB</span><span class="p">(</span><span class="o">-</span><span class="mf">6.f</span><span class="p">);</span>
+  <span class="n">spat</span><span class="p">.</span><span class="na">setFocusWidthDegrees</span><span class="p">(</span><span class="mf">100.f</span><span class="p">);</span>
 
   <span class="c1">// Alternatively, you can set the focus area to be in any direction you want.</span>
-  <span class="n">spat</span><span class="o">.</span><span class="na">enableFocus</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
-  <span class="n">spat</span><span class="o">.</span><span class="na">setFocusOrientationQuat</span><span class="o">(</span><span class="n">someQuaternion</span><span class="o">);</span>
-<span class="o">}</span>
+  <span class="n">spat</span><span class="p">.</span><span class="na">enableFocus</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+  <span class="n">spat</span><span class="p">.</span><span class="na">setFocusOrientationQuat</span><span class="p">(</span><span class="n">someQuaternion</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -1790,7 +1796,7 @@ your app (typically <em>Module: app</em>)</p>
 </li>
 </ol>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// For ExoPlayer v2.8.0</span>
-<span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="s">&quot;:audio360-exo28&quot;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="nf">project</span><span class="p">(</span><span class="s">&quot;:audio360-exo28&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
@@ -1810,22 +1816,22 @@ Customising the <em>Renderer</em> requires the use of <em>ExoPlayer</em> and not
 <p>The ExoPlayer factory constructor can be used to customise the renderer
 used by the player in ExoPlayer v2.8.0</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Setup the Audio360 engine</span>
-<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="mf">48000.f</span><span class="o">);</span> <span class="c1">// spatial audio + opus is at 48000 Hz</span>
-<span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">createSpatDecoderQueue</span><span class="o">();</span>
-<span class="n">engine</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">AudioEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">AudioEngine</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="mf">48000.f</span><span class="p">);</span> <span class="c1">// spatial audio + opus is at 48000 Hz</span>
+<span class="n">SpatDecoderQueue</span> <span class="n">spatQueue</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">createSpatDecoderQueue</span><span class="p">();</span>
+<span class="n">engine</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
 
 <span class="c1">// Default video renderer. ExoPlayer will pick whatever suits the codec</span>
-<span class="n">MediaCodecVideoRenderer</span> <span class="n">videoRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaCodecVideoRenderer</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MediaCodecSelector</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">);</span>
+<span class="n">MediaCodecVideoRenderer</span> <span class="n">videoRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaCodecVideoRenderer</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">MediaCodecSelector</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
 
 <span class="c1">// The output latency of the engine can be used to compensate for sync</span>
-<span class="kt">double</span> <span class="n">latency</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">getOutputLatencyMs</span><span class="o">();</span>
+<span class="kt">double</span> <span class="n">latency</span> <span class="o">=</span> <span class="n">engine</span><span class="p">.</span><span class="na">getOutputLatencyMs</span><span class="p">();</span>
 
 <span class="c1">// Audio: opus codec with the spatial audio engine</span>
-<span class="n">AudioSink</span> <span class="n">audio360Sink</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio360Sink</span><span class="o">(</span><span class="n">spat</span><span class="o">,</span> <span class="n">ChannelMap</span><span class="o">.</span><span class="na">TBE_8_2</span><span class="o">,</span> <span class="n">latency</span><span class="o">);</span>
-<span class="n">OpusRenderer</span> <span class="n">audioRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OpusRenderer</span><span class="o">(</span><span class="n">audio360Sink</span><span class="o">);</span>
+<span class="n">AudioSink</span> <span class="n">audio360Sink</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio360Sink</span><span class="p">(</span><span class="n">spat</span><span class="p">,</span> <span class="n">ChannelMap</span><span class="p">.</span><span class="na">TBE_8_2</span><span class="p">,</span> <span class="n">latency</span><span class="p">);</span>
+<span class="n">OpusRenderer</span> <span class="n">audioRenderer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OpusRenderer</span><span class="p">(</span><span class="n">audio360Sink</span><span class="p">);</span>
 
 <span class="c1">// This is pretty much it. ExoPlayer will now be created with the custom audio renderer</span>
-<span class="n">ExoPlayer</span> <span class="n">player</span> <span class="o">=</span> <span class="n">ExoPlayerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="k">new</span> <span class="n">Renderer</span><span class="o">[]{</span><span class="n">videoRenderer</span><span class="o">,</span> <span class="n">audioRenderer</span><span class="o">},</span> <span class="k">new</span> <span class="n">DefaultTrackSelector</span><span class="o">());</span>
+<span class="n">ExoPlayer</span> <span class="n">player</span> <span class="o">=</span> <span class="n">ExoPlayerFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="k">new</span> <span class="n">Renderer</span><span class="o">[]</span><span class="p">{</span><span class="n">videoRenderer</span><span class="p">,</span> <span class="n">audioRenderer</span><span class="p">},</span> <span class="k">new</span> <span class="n">DefaultTrackSelector</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>All other functionality of the audio engine (object pools, updating the
@@ -1958,7 +1964,7 @@ documentation, applies.</p>
         <a href="../../KB.html" class="btn btn-neutral float-right" title="Knowledge Base" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../SpatialWorkstation/SpatialWorkstation.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../SpatialWorkstation/SpatialWorkstation.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1981,27 +1987,16 @@ documentation, applies.</p>
   </div>
   
 
-
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
