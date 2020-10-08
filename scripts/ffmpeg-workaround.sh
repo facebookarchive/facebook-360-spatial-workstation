@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Copy and paste this into Terminal on macOS:
-# /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/fugalh/695c94d135ed2ed3534be9adc04e7b88/raw/9a69ed700146ad997334c69f5591f6e3bce18e40/fb360_spatial_workstation-ffmpeg-workaround.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/facebookincubator/facebook-360-spatial-workstation/master/scripts/ffmpeg-workaround.sh)"
 
 spatworks="$HOME/Library/Application Support/FB360 Spatial Workstation"
 ffmpeg_cellar="/usr/local/Cellar/ffmpeg@3.4/3.4.2"
