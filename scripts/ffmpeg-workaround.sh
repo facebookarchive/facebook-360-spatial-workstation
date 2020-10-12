@@ -7,6 +7,7 @@ spatworks="$HOME/Library/Application Support/FB360 Spatial Workstation"
 ffmpeg_cellar="/usr/local/Cellar/ffmpeg@3.4/3.4.2"
 
 # download homebrew and xcode command line tools if required
+test -x /usr/local/bin/brew || \
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 set -ex
