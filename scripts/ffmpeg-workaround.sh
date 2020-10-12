@@ -12,7 +12,11 @@ ffmpeg_cellar="/usr/local/Cellar/ffmpeg@3.4/3.4.2"
 set -ex
 
 # install ffmpeg version 3.4.2 if necessary
-test -d "$ffmpeg_cellar" || brew install ffmpeg@3.4 || test -x "$ffmpeg_cellar/bin/ffmpeg"
+if [ ! -x "$ffmpeg_cellar/bin/ffmpeg"]; then
+    # If brew can't link because of permissions on /usr/local, keg-only is
+    # still ok, so we test again after trying to install
+    brew install sy1vain/ffmpeg/ffmpeg@3.4 || test -x "$ffmpeg_cellar/bin/ffmpeg"
+fi
 
 # prepare directory, backing up what exists if needed
 mkdir -p "$spatworks"
