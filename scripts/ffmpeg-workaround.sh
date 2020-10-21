@@ -3,6 +3,15 @@
 # Copy and paste this into Terminal on macOS:
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/facebookincubator/facebook-360-spatial-workstation/master/scripts/ffmpeg-workaround.sh)"
 
+echo ' '
+echo ' '
+echo '*************************************************'
+echo 'Downloading, compiling, and installing FFmpeg.'
+echo 'If you run into issues: https://www.facebook.com/groups/audio360support/'
+echo '*************************************************'
+echo ' '
+echo ' '
+
 spatworks="$HOME/Library/Application Support/FB360 Spatial Workstation"
 ffmpeg_cellar="/usr/local/Cellar/ffmpeg@3.4/3.4.2"
 
@@ -33,3 +42,12 @@ mkdir -p ffmpeg-3.2/bin
 cd ffmpeg-3.2/bin
 ln -sf "$ffmpeg_cellar/bin/"* .
 ln -sf "$ffmpeg_cellar/lib/"*dylib .
+
+set +ex
+
+echo ' '
+echo ' '
+echo '*************************************************'
+echo 'Completed!'
+echo 'If you run into issues: https://www.facebook.com/groups/audio360support/'
+echo '*************************************************'
