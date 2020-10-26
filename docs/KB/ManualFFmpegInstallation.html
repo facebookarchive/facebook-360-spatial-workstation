@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Encoding a Quad-Binaural Mix &mdash; Facebook Audio 360  documentation</title>
+  <title>Manual Installation of FFmpeg &mdash; Facebook Audio 360  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Manual Installation of FFmpeg" href="ManualFFmpegInstallation.html" />
-    <link rel="prev" title="Creating Videos with Spatial Audio for Facebook 360" href="CreatingVideosSpatialAudioFacebook360.html" /> 
+    <link rel="next" title="Mastering And Avoiding Distortion" href="MasteringAndAvoidingDistortion.html" />
+    <link rel="prev" title="Encoding a Quad-Binaural Mix" href="EncodingQuadBinauralMix.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,13 +113,12 @@
 <li class="toctree-l2"><a class="reference internal" href="AddSpatialAudioToOculusVideo.html">Add Spatial Audio To Oculus Video (Gear VR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingANewProjectInProTools.html">Creating A New Project In Pro Tools 10 and 11</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CreatingVideosSpatialAudioFacebook360.html">Creating Videos with Spatial Audio for Facebook 360</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Encoding a Quad-Binaural Mix</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#samsung-vr-filenames">Samsung VR Filenames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#encoding-with-ffmpeg">Encoding with FFmpeg</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#encoding-with-iffmpeg">Encoding with iFFmpeg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncodingQuadBinauralMix.html">Encoding a Quad-Binaural Mix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Manual Installation of FFmpeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos">macOS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ManualFFmpegInstallation.html">Manual Installation of FFmpeg</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MasteringAndAvoidingDistortion.html">Mastering And Avoiding Distortion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OculusVideoOnRift.html">Add Spatial Audio To Oculus Video (Oculus Rift)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialWorkstationWorkflow.html">Spatial Workstation Workflow</a></li>
@@ -186,7 +185,7 @@
         
           <li><a href="../KB.html">Knowledge Base</a> &gt;</li>
         
-      <li>Encoding a Quad-Binaural Mix</li>
+      <li>Manual Installation of FFmpeg</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,67 +202,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="encoding-a-quad-binaural-mix">
-<span id="id1"></span><h1>Encoding a Quad-Binaural Mix<a class="headerlink" href="#encoding-a-quad-binaural-mix" title="Permalink to this headline">¶</a></h1>
-<div class="contents h1-local-toc local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#samsung-vr-filenames" id="id2">Samsung VR Filenames</a></li>
-<li><a class="reference internal" href="#encoding-with-ffmpeg" id="id3">Encoding with FFmpeg</a></li>
-<li><a class="reference internal" href="#encoding-with-iffmpeg" id="id4">Encoding with iFFmpeg</a></li>
-</ul>
-</div>
+  <div class="section" id="manual-installation-of-ffmpeg">
+<span id="id1"></span><h1>Manual Installation of FFmpeg<a class="headerlink" href="#manual-installation-of-ffmpeg" title="Permalink to this headline">¶</a></h1>
+<p>If FFmpeg fails to download during your installation of Spatial Workstation, use the steps below to manually compile and install it. Depending on your computer, this may take up to 20 minutes or more to complete.</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p><strong>NOTE: THIS REQUIRES WINDOWS 10.</strong></p>
+<p>Compiling and installing FFmpeg on Windows requires the Windows Subsystem for Linux to be enabled (Windows 10 only).</p>
 <ol class="arabic simple">
-<li>Export the spatialised mix from the DAW using the instructions in the
-Spatial Workstation User Guide.</li>
-<li>Load the exported audio into the FB360 Encoder, select ‘Quad
-Binaural’ from the drop down menu and click ‘Encode’.</li>
-<li>Below are instructions for adding the audio tracks to video using
-FFmpeg and iFFmpeg. If you are uncomfortable using the command line
-then iFFmpeg may be preferable.</li>
+<li>Press the Windows key on your keyboard to bring up Windows search on your computer</li>
+<li>Type “Turn Windows features on and off”. Click on the result “Turn Windows features on and off”. The “Windows Features” window should now show</li>
+<li>Enable “Windows Subsystem for Linux” and click OK. You may be asked to restart your computer.</li>
+<li>Open “Microsoft Store”, search for “Ubuntu” and install it</li>
+<li>Once Ubuntu is installed, launch it and you should see a terminal window</li>
+<li>You will be asked to setup a username and password. Choose a username and password of your choice.</li>
+<li>Copy and paste the following into the Ubuntu terminal window (you may need to right-click to paste):</li>
 </ol>
-<div class="section" id="samsung-vr-filenames">
-<h2><a class="toc-backref" href="#contents">Samsung VR Filenames</a><a class="headerlink" href="#samsung-vr-filenames" title="Permalink to this headline">¶</a></h2>
-<p>When using the video with Samsung VR make sure the filename is in the
-correct form. See
-<a class="reference external" href="https://samsungvr.com/portal/content/faq_tech_gear_vr">here</a> for
-more details.</p>
-</div>
-<div class="section" id="encoding-with-ffmpeg">
-<h2><a class="toc-backref" href="#contents">Encoding with FFmpeg</a><a class="headerlink" href="#encoding-with-ffmpeg" title="Permalink to this headline">¶</a></h2>
-<p><em>Thanks to Evan Mangiamele!</em></p>
-<p>Use these FFmpeg commands to encode a quad-binaural mix to a video.</p>
-<p>If your input files are WAV, then use this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">video</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">i</span> <span class="mf">0.</span><span class="n">wav</span> <span class="o">-</span><span class="n">i</span> <span class="mf">90.</span><span class="n">wav</span> <span class="o">-</span><span class="n">i</span> <span class="mf">180.</span><span class="n">wav</span> <span class="o">-</span><span class="n">i</span> <span class="mf">270.</span><span class="n">wav</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">1</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">2</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">3</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">4</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="n">vcodec</span> <span class="n">copy</span> <span class="o">-</span><span class="n">acodec</span> <span class="n">libfdk_aac</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/facebookincubator/facebook-360-spatial-workstation/master/scripts/ffmpeg-workaround-win.sh)&quot;</span>
 </pre></div>
 </div>
-<p>If your input files are already AAC, then use this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="n">video</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">i</span> <span class="mf">0.</span><span class="n">aac</span> <span class="o">-</span><span class="n">i</span> <span class="mf">90.</span><span class="n">aac</span> <span class="o">-</span><span class="n">i</span> <span class="mf">180.</span><span class="n">aac</span> <span class="o">-</span><span class="n">i</span> <span class="mf">270.</span><span class="n">aac</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">0</span><span class="p">:</span><span class="n">v</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">1</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">2</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">3</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="nb">map</span> <span class="mi">4</span><span class="p">:</span><span class="n">a</span> <span class="o">-</span><span class="n">vcodec</span> <span class="n">copy</span> <span class="o">-</span><span class="n">acodec</span> <span class="n">copy</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span><span class="o">.</span>
+<p>The script should print ‘Completed!’ if successful. You should now be able to use the video decoding and encoding functionality in Spatial Workstation. Post to the group if you run into issues: <a class="reference external" href="https://www.facebook.com/groups/audio360support/">https://www.facebook.com/groups/audio360support/</a></p>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<p>Open Terminal from Applications &gt; Utilities. Copy and paste the following into the Terminal window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/facebookincubator/facebook-360-spatial-workstation/master/scripts/ffmpeg-workaround.sh)&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="encoding-with-iffmpeg">
-<h2><a class="toc-backref" href="#contents">Encoding with iFFmpeg</a><a class="headerlink" href="#encoding-with-iffmpeg" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Import the video file</p>
-</li>
-<li><p class="first">Add an Audio stream and click ‘Edit’.</p>
-<p><a class="reference internal" href="../_images/iFFmpegAddAudioStream.png"><img alt="image0" src="../_images/iFFmpegAddAudioStream.png" style="width: 193px; height: 292px;" /></a></p>
-</li>
-<li><p class="first">Click ‘Add External File’ and select the 0.wav file. Set the Codec to
-‘AAC’. If your input files are already AAC then you can set ‘Codec’
-to ‘PassThru’.</p>
-<p><a class="reference internal" href="../_images/iFFmpegSetCodec.png"><img alt="image1" src="../_images/iFFmpegSetCodec.png" style="width: 515px; height: 267px;" /></a></p>
-</li>
-<li><p class="first">Repeat steps 2 and 3 for the 90.wav, 180.wav and 270.wav files in
-that order. You should end up with 4 separate audio streams.</p>
-<p><a class="reference internal" href="../_images/iFFmpegQuadAudioStreams.png"><img alt="image2" src="../_images/iFFmpegQuadAudioStreams.png" style="width: 359px; height: 435px;" /></a></p>
-</li>
-<li><p class="first">If the video is already in the correct format you can edit the video
-stream and set ‘Codec’ to ‘PassThru’.</p>
-</li>
-<li><p class="first">Click the ‘Convert’ button</p>
-</li>
-</ol>
+<p>The script should print ‘Completed!’ if successful. You should now be able to use the video decoding and encoding functionality in Spatial Workstation. Post to the group if you run into issues: <a class="reference external" href="https://www.facebook.com/groups/audio360support/">https://www.facebook.com/groups/audio360support/</a></p>
 </div>
 </div>
 
@@ -275,10 +241,10 @@ stream and set ‘Codec’ to ‘PassThru’.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ManualFFmpegInstallation.html" class="btn btn-neutral float-right" title="Manual Installation of FFmpeg" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MasteringAndAvoidingDistortion.html" class="btn btn-neutral float-right" title="Mastering And Avoiding Distortion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="CreatingVideosSpatialAudioFacebook360.html" class="btn btn-neutral float-left" title="Creating Videos with Spatial Audio for Facebook 360" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="EncodingQuadBinauralMix.html" class="btn btn-neutral float-left" title="Encoding a Quad-Binaural Mix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
