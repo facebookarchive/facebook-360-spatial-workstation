@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Facebook, Inc. and its affiliates.
 
 # REQUIRES WINDOWS 10
 # Compile FFmpeg on Windows using with the Windows Subsystem for Linux.
