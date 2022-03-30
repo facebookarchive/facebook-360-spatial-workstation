@@ -1,5 +1,7 @@
 #!/bin/bash
+# Copyright (c) Meta Platforms, Inc. and affiliates.
 # author: Hans Fugal
+
 function usage {
     {
         test -n "$1" && echo -e "$1\n"
